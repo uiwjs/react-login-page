@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.939e30e1.css",
-    "main.js": "/static/js/main.9b2c16d7.js",
-    "static/js/586.e96068de.chunk.js": "/static/js/586.e96068de.chunk.js",
+    "main.js": "/static/js/main.b2eb21f3.js",
+    "static/js/586.bf9ea0ef.chunk.js": "/static/js/586.bf9ea0ef.chunk.js",
     "static/css/96.914ccb13.chunk.css": "/static/css/96.914ccb13.chunk.css",
     "static/js/96.df882801.chunk.js": "/static/js/96.df882801.chunk.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.0b026c6b.js",
@@ -10,8 +10,8 @@
     "static/media/logo.svg": "/static/media/logo.65931f3b068d419cae9a04f0cee8fb78.svg",
     "index.html": "/index.html",
     "main.939e30e1.css.map": "/static/css/main.939e30e1.css.map",
-    "main.9b2c16d7.js.map": "/static/js/main.9b2c16d7.js.map",
-    "586.e96068de.chunk.js.map": "/static/js/586.e96068de.chunk.js.map",
+    "main.b2eb21f3.js.map": "/static/js/main.b2eb21f3.js.map",
+    "586.bf9ea0ef.chunk.js.map": "/static/js/586.bf9ea0ef.chunk.js.map",
     "96.914ccb13.chunk.css.map": "/static/css/96.914ccb13.chunk.css.map",
     "96.df882801.chunk.js.map": "/static/js/96.df882801.chunk.js.map",
     "refractor-vendor.0b026c6b.js.map": "/static/js/refractor-vendor.0b026c6b.js.map",
@@ -21,6 +21,6 @@
     "static/js/refractor-vendor.0b026c6b.js",
     "static/js/react-vendor.358396c9.js",
     "static/css/main.939e30e1.css",
-    "static/js/main.9b2c16d7.js"
+    "static/js/main.b2eb21f3.js"
   ]
 }

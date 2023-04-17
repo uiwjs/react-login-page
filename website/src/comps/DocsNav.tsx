@@ -67,7 +67,6 @@ export const DocsNav = () => {
             return <MenuTitle key={key}>{item.label}</MenuTitle>;
           }
           if (!item.path) return null;
-          console.log('item:', item.path);
           return (
             <NavLink key={`/docs/${item.path}`} to={`/docs/${item.path}`}>
               {item.label}

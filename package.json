@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "repository": {
+    "url": "https://github.com/uiwjs/react-login-page.git"
+  },
+  "scripts": {
+    "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
+    "doc": "npm run-script build --workspace website",
+    "start": "npm run-script start --workspace website",
+    "build": "lerna exec --scope @react-login-page/* --scope react-login-page -- npm run build",
+    "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
+    "hoist": "lerna bootstrap --hoist",
+    "clean": "lerna clean --yes"
+  },
+  "workspaces": {
+    "packages": [
+      "core",
+      "website",
+      "pages/*"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.0",
+    "lerna": "^6.0.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.0",
+    "tsbb": "^4.1.5"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "website",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Website",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "kkt build",
+    "start": "kkt start",
+    "map": "source-map-explorer build/static/js/*.js --html build/website-result.html"
+  },
+  "devDependencies": {
+    "@kkt/less-modules": "^7.4.9",
+    "@kkt/raw-modules": "^7.4.9",
+    "@kkt/scope-plugin-options": "^7.4.9",
+    "@types/katex": "^0.16.0",
+    "@types/react": "~18.0.9",
+    "@types/react-dom": "~18.0.3",
+    "@types/styled-components": "^5.1.25",
+    "kkt": "^7.4.9",
+    "source-map-explorer": "~2.5.2"
+  },
+  "dependencies": {
+    "@react-login-page/base": "0.0.1",
+    "@uiw/copy-to-clipboard": "^1.0.14",
+    "@uiw/react-back-to-top": "^1.1.2",
+    "@uiw/react-markdown-preview": "^4.1.10",
+    "@wcj/dark-mode": "^1.0.15",
+    "markdown-react-code-preview-loader": "^2.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "react-login-page": "0.0.1",
+    "react-code-preview-layout": "^3.0.0",
+    "framer-motion": "^10.12.0",
+    "styled-components": "^5.3.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

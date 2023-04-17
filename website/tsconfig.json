@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig",
+  "exclude": ["build"],
+  "include": ["src/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": false,
+    "noEmit": false
+  }
+}

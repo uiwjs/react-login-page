@@ -1,12 +1,16 @@
 <!--rehype:ignore:start-->
+<br />
+<br />
+<br />
 <p align="center">
   <a href="https://uiwjs.github.io/react-login-page">
     <img alt="react-codemirror logo" src="https://uiwjs.github.io/react-login-page/logo.svg">
   </a>
 </p>
-<p align="center">
-  <h1> React Login Pages </h1>
-</p>
+<h3 align="center">React Login Pages</h3>
+<br />
+<br />
+<br />
 <!--rehype:ignore:end-->
 
 Getting Started

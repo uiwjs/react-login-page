@@ -1,5 +1,9 @@
 {
-  "version": "1.0.0",
-  "packages": ["website", "core", "pages/*"],
+  "version": "0.1.0",
+  "packages": [
+    "website",
+    "core",
+    "pages/*"
+  ],
   "useWorkspaces": true
 }

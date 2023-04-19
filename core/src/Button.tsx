@@ -3,7 +3,10 @@ import { useStore } from './store';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   name?: string;
+  /** Can be shown or hidden with controls */
   visible?: boolean;
+  /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
+  index?: number;
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {

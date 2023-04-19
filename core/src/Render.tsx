@@ -1,21 +1,18 @@
 import { FC, Fragment, Children, cloneElement, isValidElement } from 'react';
-import { useStore, RenderStateProps } from './store';
+import { useStore, RenderStateProps , InitialState} from './store';
 
 export type RenderChildren =
-  | { children?: (props: Required<RenderStateProps>) => React.ReactNode }
+  | { children?: (props: Required<RenderStateProps>, data: InitialState['data']) => React.ReactNode }
   | { children?: React.ReactNode };
 
 export const Render: FC<RenderChildren> = ({ children }) => {
-  const { fields = {}, buttons = {}, blocks = {} } = useStore();
-  const childs = typeof children === 'function' ? [children] : Children.toArray(children);
+  const { fields = {}, buttons = {}, blocks = {}, data } = useStore();
+  const childs = typeof children === 'function' ? [] : Children.toArray(children);
   return (
     <Fragment>
-      {typeof children === 'function' && !isValidElement(children) && children({ fields, buttons, blocks })}
-      {childs.map((child, key) => {
+      {typeof children === 'function' && !isValidElement(children) && children({ fields, buttons, blocks }, { ...data })}
+      {typeof children !== 'function' && childs.map((child, key) => {
         if (!isValidElement(child)) return null;
-        if (child.type && typeof child.type === 'string') {
-          return cloneElement(child, { key });
-        }
         return cloneElement(child, {
           ...child.props,
           key,

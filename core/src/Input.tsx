@@ -5,7 +5,10 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   name?: string;
   /** Used to define the name of form controls */
   rename?: string;
+  /** Can be shown or hidden with controls */
   visible?: boolean;
+  /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
+  index?: number;
 }
 
 export const Input: FC<PropsWithChildren<InputProps>> = (props) => {
@@ -15,8 +18,12 @@ export const Input: FC<PropsWithChildren<InputProps>> = (props) => {
   useEffect(() => {
     if (ref.current !== props && name) {
       ref.current = { ...props };
+      const oldProps = fields[name]?.props;
+      if (rename) {
+        console.log('oldProps:', oldProps, name, rename, fields[name])
+      }
       dispatch({
-        fields: { ...fields, [name]: visible ? <input {...elmProps} name={rename || name} /> : null },
+        fields: { ...fields, [name]: visible ? <input  {...elmProps} name={rename || name} /> : null },
       });
     }
   }, [props, name, ref]);

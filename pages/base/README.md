@@ -37,7 +37,7 @@ const styles= { height: 460 }
 const Demo = () => (
   <div style={styles}>
     <LoginPage>
-      <Username placeholder="请输入用户名" name="userUserName" />
+      <Username name="userUserName" />
       <Password placeholder="请输入密码" name="userPassword" />
       <Submit>提交</Submit>
       <Reset>重置</Reset>
@@ -85,7 +85,7 @@ export default Demo;
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Reset, Logo, Footer } from '@react-login-page/base';
+import LoginPage, { Reset, Logo, Footer, Username, Password, Input } from '@react-login-page/base';
 
 const LogoSVG = () => (
   <svg width="28" height="28" viewBox="0 0 92 92">
@@ -94,10 +94,13 @@ const LogoSVG = () => (
 );
 
 const Demo = () => (
-  <LoginPage style={{ height: 380 }}>
+  <LoginPage style={{ height: 420 }}>
     <Logo>
       <LogoSVG />
     </Logo>
+    <Username index={3} />
+    <Password index={2} />
+    <Input name="phone" index={1} placeholder="Phone number" />
     <Footer>
       Not a member? <a href="#">Sign up now</a> 
     </Footer>
@@ -168,6 +171,39 @@ Custom CSS style overrides
 .login-page-base section button:active {
   background-color: #00528a;
 }
+```
+
+## API
+
+Components be provided to modify control properties and perform other related functions.
+
+```jsx
+import LoginPage from '@react-login-page/base';
+// buttons
+import { Reset, Submit } from '@react-login-page/base';
+// blocks
+import { Logo, Title, Footer } from '@react-login-page/base';
+// fields
+import { Username, Password } from '@react-login-page/base';
+// Basic Components
+import { Button, Input } from '@react-login-page/base';
+
+// Define the order of `Password` controls
+<Password index={2} />
+
+// Hiding the `Password` control
+<Password visible={false} />
+
+// add input control
+<Input name="phone" index={1} placeholder="Phone number" />
+
+// Add footer content
+<Footer>
+  Not a member? <a href="#">Sign up now</a> 
+</Footer>
+
+// Modify logo image
+<Logo>⚛️</Logo>
 ```
 
 ## Contributors

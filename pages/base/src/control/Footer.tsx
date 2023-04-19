@@ -1,7 +1,6 @@
-import { FC } from 'react';
-import { Block, BlockProps } from 'react-login-page';
+import { Block, BlockProps, BlockTagType } from 'react-login-page';
 
-export const Footer: FC<BlockProps> = (props) => {
+export const Footer = <Tag extends BlockTagType = 'footer'>(props: BlockProps<Tag | 'footer'>) => {
   const { name, ...elmProps } = props;
-  return <Block {...elmProps} name="footer" />;
+  return <Block {...elmProps} name="footer" tagName="footer" />;
 };

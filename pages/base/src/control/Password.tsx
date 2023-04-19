@@ -3,5 +3,5 @@ import { Input, InputProps } from 'react-login-page';
 
 export const Password: FC<InputProps> = (props) => {
   const { name, ...elmProps } = props;
-  return <Input type="password" {...elmProps} name="password" rename={name} />;
+  return <Input type="password" placeholder="Password" {...elmProps} name="password" rename={name} />;
 };

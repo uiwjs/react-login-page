@@ -3,5 +3,8 @@ import { Button, ButtonProps } from 'react-login-page';
 
 export const Submit: FC<Omit<ButtonProps, 'name'>> = (props) => {
   const { ...elmProps } = props;
-  return <Button {...elmProps} name="submit" />;
+  if (!elmProps.children) {
+    elmProps.children = 'Submit';
+  }
+  return <Button type="submit" {...elmProps} name="submit" />;
 };

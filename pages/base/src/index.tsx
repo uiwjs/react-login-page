@@ -1,7 +1,14 @@
-import { FC, PropsWithChildren } from 'react';
-import Login, { Render, Provider, Container, useStore } from 'react-login-page';
+import { FC, PropsWithChildren, cloneElement, isValidElement } from 'react';
+import { Render, Provider, Container, useStore } from 'react-login-page';
+import { Password } from './control/Password';
+import { Username } from './control/Username';
+import { Submit } from './control/Submit';
+import { Logo } from './control/Logo';
+import { Title } from './control/Title';
+
 import './index.css';
 
+export * from 'react-login-page';;
 export * from './control/Username';
 export * from './control/Password';
 export * from './control/Submit';
@@ -11,20 +18,29 @@ export * from './control/Logo';
 export * from './control/Footer';
 
 const RenderLogin = () => {
-  const { fields = {}, buttons = {}, blocks = {} } = useStore();
+  const { blocks = {}, data } = useStore();
+  const { fields, buttons } = data || { fields: [] };
   return (
     <Render>
       <div className="login-page-base-wrapper">
         <header>
           {blocks.logo} {blocks.title}
         </header>
-        {fields.username && <label>{fields.username}</label>}
-        {fields.password && <label>{fields.password}</label>}
+        {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
+          if (!item.children) return null;
+          return <label key={item.name + idx}>{item.children}</label>
+        })}
         <section>
-          {buttons.submit}
-          {buttons.reset}
+          {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
+            const child = item.children;
+            if (!isValidElement(child)) return null;
+            return cloneElement(child, {
+              ...child.props,
+              key: item.name + idx,
+            })
+          })}
         </section>
-        {blocks.footer && <footer>{blocks.footer}</footer>}
+        {blocks.footer}
       </div>
     </Render>
   );
@@ -37,16 +53,14 @@ const LoginPage: FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>> = (
 }) => {
   return (
     <Provider>
+      <Username />
+      <Password />
+      <Logo />
+      <Title />
+      <Submit />
       <Container {...divProps} className={`login-page-base ${className || ''}`}>
         <RenderLogin />
       </Container>
-      <Login.Block name="logo">⚛️</Login.Block>
-      <Login.Block name="title">Login</Login.Block>
-      <Login.Input name="username" placeholder="Username" spellCheck />
-      <Login.Input name="password" type="password" placeholder="Password" />
-      <Login.Button name="submit" type="submit">
-        Submit
-      </Login.Button>
       {children}
     </Provider>
   );

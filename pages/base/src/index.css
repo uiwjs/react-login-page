@@ -1,4 +1,4 @@
-.login-page-base {
+[data-color-mode*='dark'] .login-page-base, .login-page-base {
   --login-bg: #2c3338;
   --login-color: #fff;
   --login-input: #fff;
@@ -10,6 +10,24 @@
   --login-btn-focus: rgba(0,142,240,.26);
   --login-btn-hover: #0070bd;
   --login-btn-active: #00528a;
+}
+[data-color-mode*='light'] .login-page-base {
+  --login-bg: #edeff3;
+  --login-color: #3b4148;
+  --login-input: #525D68;
+  --login-input-bg: #d7dee5;
+  --login-input-hover: #b6c3d1;
+  --login-input-placeholder: #8e98a2;
+  --login-btn: #fff;
+  --login-btn-bg: #008ef0;
+  --login-btn-focus: rgba(0,142,240,.26);
+  --login-btn-hover: #0070bd;
+  --login-btn-active: #00528a;
+}
+
+.login-page-base {
+  --login-line-height: 1.5;
+  line-height: var(--login-line-height);
   background-color: var(--login-bg);
   color: var(--login-color);
   height: 100%;
@@ -68,7 +86,7 @@
 }
 
 .login-page-base input:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px var(--login-input-bg) inset;
+  box-shadow: 0 0 0 1000px var(--login-input-bg) inset;
   color: var(--login-color);
   -webkit-text-fill-color: var(--login-input) !important;
 }

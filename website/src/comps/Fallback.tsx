@@ -12,7 +12,6 @@ const defaultStyle: React.CSSProperties = {
   bottom: 0,
   position: 'absolute',
   zIndex: 9999,
-  color: '#f38702',
 };
 
 export const Fallback = ({ children, style, ...other }: FallbackProps) => (

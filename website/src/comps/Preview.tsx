@@ -1,20 +1,29 @@
 import { FC, Fragment, PropsWithChildren } from 'react';
 import { Root, Element, RootContent } from 'hast';
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import { ScrollRestoration } from 'react-router-dom';
 import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
 import CodeLayout from 'react-code-preview-layout';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useMdData } from './useMdData';
 import { DocsNav } from './DocsNav';
+import { ReactComponent as Arrow } from '../svg/arrow.svg';
+import { NavMenu } from './NavMenu';
+import { mediaStyle } from './DocsLayout';
 
 const MarkdownCode = CodeLayout.Preview;
 const Code = CodeLayout.Code;
 const Toolbar = CodeLayout.Toolbar;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ isShowExample?: boolean; }>`
   flex: 1;
   padding-right: 2rem;
   overflow: hidden;
+  z-index: 1;
+  padding-top: ${({ isShowExample }) => isShowExample ?'56px' : '0'};
+  margin: 0 auto;
+  width: 100%;
+  ${mediaStyle}
 `;
 
 const Markdown = styled(MarkdownPreview)`
@@ -31,14 +40,62 @@ const Markdown = styled(MarkdownPreview)`
 
 interface PreviewProps {
   path?: any;
+  disableNav?: boolean;
 }
+
+const Example = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  height: 100vh;
+`;
+
+
+const startY = keyframes`
+  0%,30% {
+    opacity: 0;
+    transform: translateY(20px)
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px)
+  }
+`;
+
+const PageArrow = styled.div`
+  font-weight: 700;
+  animation: ${startY} 1.5s ease-in-out infinite;
+  width: 26px;
+  display: flex;
+  height: 28px;
+  background-color: rgb(255 255 255 / 57%);
+  margin: 0px auto;
+  position: relative;
+  top: -3rem;
+  border-radius: 0.51rem;
+`;
 
 export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const { mdData } = useMdData(props.path);
   return (
     <Fragment>
-      <DocsNav />
-      <Wrapper>
+      <ScrollRestoration />
+      {!props.disableNav && <DocsNav />}
+      {props.disableNav && (
+        <Example>
+          {props.children}
+          <PageArrow>
+            <Arrow />
+          </PageArrow>
+        </Example>
+      )}
+      {props.disableNav && <NavMenu />}
+      <Wrapper isShowExample={props.disableNav}>
         {mdData && (
           <Markdown
             source={mdData.source}

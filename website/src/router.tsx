@@ -2,6 +2,9 @@ import { Navigate, IndexRouteObject, NonIndexRouteObject } from 'react-router-do
 import { ErrorPage } from './comps/ErrorPage';
 import { Layout } from './comps/Layout';
 import { DocsLayout } from './comps/DocsLayout';
+import { PagesLayout } from './comps/PagesLayout';
+
+import { ReactComponent as Logo } from './svg/logo.svg';
 
 import { Home } from './pages/home';
 import { Preview } from './comps/Preview';
@@ -39,13 +42,34 @@ export const routes: MenuRouteObject = {
           label: 'Getting Started',
           element: <Preview path={() => import('react-login-page/README.md')} />,
         },
+      ],
+    },
+    {
+      path: 'pages',
+      Component: PagesLayout,
+      children: [
         {
-          label: 'Login Pages',
+          index: true,
+          element: <Navigate to="base" />,
         },
         {
           path: 'base',
           label: 'Login · Base',
-          element: <Preview path={() => import('@react-login-page/base/README.md')} />,
+          lazy: async () => {
+            const Login = await import('@react-login-page/base');
+            const LoginExample = Login.default
+            return {
+              element: (
+                <Preview disableNav path={() => import('@react-login-page/base/README.md')}>
+                  <LoginExample>
+                    <LoginExample.Logo>
+                      <Logo />
+                    </LoginExample.Logo>
+                  </LoginExample>
+                </Preview>
+              ),
+            }
+          }
         },
       ],
     },

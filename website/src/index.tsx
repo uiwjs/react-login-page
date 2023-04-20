@@ -7,7 +7,7 @@ import { routes } from './router';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
-    --gradient-from: #3a3c3f;
+    --gradient-from: #1c1e20;
     --gradient-to: #0d1117;
   }
   [data-color-mode*='light'], [data-color-mode*='light'] body {

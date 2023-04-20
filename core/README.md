@@ -111,7 +111,10 @@ export default Demo;
 ### `Login.Block`
 
 ```jsx
+import Login, { Block } from 'react-login-page';
+
 <Login.Block name="title">Login</Login.Block>
+<Block name="title">Login</Block>
 ```
 
 ```jsx
@@ -135,7 +138,10 @@ export declare const Block: {
 ### `Login.Input`
 
 ```jsx
+import Login, { Input } from 'react-login-page';
+
 <Login.Input type="password" placeholder="Password" />
+<Input type="password" placeholder="Password" />
 ```
 
 ```tsx
@@ -155,7 +161,10 @@ export declare const Input: FC<PropsWithChildren<InputProps>>;
 ### `Login.Button`
 
 ```jsx
+import Login, { Button } from 'react-login-page';
+
 <Login.Button name="submit" type="submit" />
+<Button name="submit" type="submit" />
 ```
 
 ```jsx

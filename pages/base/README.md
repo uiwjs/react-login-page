@@ -1,6 +1,11 @@
 @react-login-page/base
 ===
 
+<!--rehype:ignore:start-->
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/1680273/233357735-5ab70bd9-9261-46fc-8f4e-88d9074750f9.png">
+
+<!--rehype:ignore:end-->
+
 ## Install
 
 ```bash
@@ -173,6 +178,37 @@ Custom CSS style overrides
 }
 ```
 
+## Light & Dark Theme
+
+```css
+[data-color-mode*='dark'] .login-page-base {
+  --login-bg: #2c3338;
+  --login-color: #fff;
+  --login-input: #fff;
+  --login-input-bg: #3c4656;
+  --login-input-hover: #434a52;
+  --login-input-placeholder: #838383;
+  --login-btn: var(--login-color);
+  --login-btn-bg: #008ef0;
+  --login-btn-focus: rgba(0,142,240,.26);
+  --login-btn-hover: #0070bd;
+  --login-btn-active: #00528a;
+}
+[data-color-mode*='light'] .login-page-base {
+  --login-bg: #edeff3;
+  --login-color: #3b4148;
+  --login-input: #525D68;
+  --login-input-bg: #d7dee5;
+  --login-input-hover: #b6c3d1;
+  --login-input-placeholder: #8e98a2;
+  --login-btn: #fff;
+  --login-btn-bg: #008ef0;
+  --login-btn-focus: rgba(0,142,240,.26);
+  --login-btn-hover: #0070bd;
+  --login-btn-active: #00528a;
+}
+```
+
 ## API
 
 Components be provided to modify control properties and perform other related functions.
@@ -188,13 +224,17 @@ import { Username, Password } from '@react-login-page/base';
 // Basic Components
 import { Button, Input } from '@react-login-page/base';
 
+<LoginPage>
+  <Password index={2} />
+</LoginPage>
+
 // Define the order of `Password` controls
 <Password index={2} />
 
 // Hiding the `Password` control
 <Password visible={false} />
 
-// add input control
+// Add input control
 <Input name="phone" index={1} placeholder="Phone number" />
 
 // Add footer content
@@ -204,6 +244,30 @@ import { Button, Input } from '@react-login-page/base';
 
 // Modify logo image
 <Logo>⚛️</Logo>
+```
+
+Use [dot notation](https://legacy.reactjs.org/docs/jsx-in-depth.html#using-dot-notation-for-jsx-type) components.
+
+```jsx
+import Login from '@react-login-page/base';
+
+<Login>
+  <Login.Password index={2} />
+</Login>
+
+// Define the order of `Password` controls
+<Login.Password index={2} />
+
+// Hiding the `Password` control
+<Login.Password visible={false} />
+
+// Add footer content
+<Login.Footer>
+  Not a member? <a href="#">Sign up now</a> 
+</Login.Footer>
+
+// Modify logo image
+<Login.Logo>⚛️</Login.Logo>
 ```
 
 ## Contributors

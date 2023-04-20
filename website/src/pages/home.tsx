@@ -50,7 +50,7 @@ export const Home = () => {
       <Title>React Login Page</Title>
       <SubTitle>Install and use react login page components quickly and easily, with flexible APIs for modifying these components.</SubTitle>
       <Nav>
-        <Link to="/docs">Documentation</Link> · v{version}
+        <Link to="/docs">Documentation</Link> · <a href="https://github.com/uiwjs/react-login-page" target="_blank" rel="noreferrer">Github</a> · v{version}
       </Nav>
       <Example />
     </Wrapper>

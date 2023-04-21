@@ -60,6 +60,7 @@ npm install react-login-page --save
 ```jsx mdx:preview
 import React from 'react';
 import Login, { Render } from 'react-login-page';
+import Logo from 'react-login-page/logo';
 
 const Demo = () => {
   return (
@@ -69,8 +70,12 @@ const Demo = () => {
           return (
             <div>
               <header>{blocks.logo} {blocks.title}</header>
-              <label>{fields.username}</label>
-              <label>{fields.password}</label>
+              <div>
+                <label>{fields.username}</label>
+              </div>
+              <div>
+                <label>{fields.password}</label>
+              </div>
               <div>
                 {buttons.submit}
                 {buttons.reset}
@@ -79,7 +84,9 @@ const Demo = () => {
           );
         }}
       </Render>
-      <Login.Block name="logo" tagName="span">⚛️</Login.Block>
+      <Login.Block name="logo" tagName="span">
+        <Logo />
+      </Login.Block>
       <Login.Block name="title" tagName="span">Login</Login.Block>
       <Login.Input name="username" placeholder="Please input Username" />
       <Login.Input name="password" placeholder="please enter password" />
@@ -96,6 +103,7 @@ Change the control order by using `index`, Provide more flexible API encapsulati
 ```jsx mdx:preview
 import React from 'react';
 import Login, { Render } from 'react-login-page';
+import Logo from 'react-login-page/logo-rect';
 
 const Demo = () => {
   return (
@@ -124,11 +132,13 @@ const Demo = () => {
           );
         }}
       </Render>
-      <Login.Block name="logo" tagName="span">⚛️</Login.Block>
+      <Login.Block name="logo" tagName="span">
+        <Logo />
+      </Login.Block>
       <Login.Block name="title" tagName="span">Login</Login.Block>
       <Login.Textarea name="note"></Login.Textarea>
-      <Login.Select name="select">
-        <option value="w" selected="">Choose an item...</option>
+      <Login.Select name="select" defaultValue="1" >
+        <option value="w">Choose an item...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
@@ -145,6 +155,17 @@ const Demo = () => {
 export default Demo;
 ```
 
+### `Logo`
+
+There are two default logos built-in, with a special way to import them. See below for reference:
+
+```tsx
+import Logo from 'react-login-page/logo';
+import Logo from 'react-login-page/logo-rect';
+```
+
+⚠️ If you don't use them, they won't be packaged.
+
 ### `Login.Block`
 
 ```jsx
@@ -155,9 +176,10 @@ import Login, { Block } from 'react-login-page';
 ```
 
 ```jsx
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, AllHTMLAttributes } from 'react';
 import { BlockTagType } from 'react-login-page';
-export interface BlockProps<Tag extends BlockTagType = 'div'> extends React.ReactElement<Tag> {
+
+export interface BlockProps<Tag extends BlockTagType> extends AllHTMLAttributes<Tag> {
   name?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;

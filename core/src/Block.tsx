@@ -1,17 +1,14 @@
-import { PropsWithChildren, useRef, useEffect, createElement } from 'react';
+import { PropsWithChildren, useRef, useEffect, createElement, AllHTMLAttributes } from 'react';
 import { useStore, BlockTagType, Blocks } from './store';
-import { FunctionComponent } from 'react';
 
-// export type BlockTagType = React.ComponentType | keyof JSX.IntrinsicElements;
-
-export interface BlockProps<Tag extends BlockTagType = 'div'> extends React.ReactElement<Tag> {
+export interface BlockProps<T extends BlockTagType> extends AllHTMLAttributes<T> {
   name?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
   /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
   index?: number;
   /** custom created element */
-  tagName?: Tag;
+  tagName?: T;
 }
 
 export const Block = <Tag extends BlockTagType = 'div'>(props: PropsWithChildren<Partial<BlockProps<Tag>>>) => {

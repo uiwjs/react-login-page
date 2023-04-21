@@ -6,9 +6,9 @@ export interface StoreContextValue<Tag extends BlockTagType> extends InitialStat
 
 export type BlockTagType = keyof JSX.IntrinsicElements;
 
-type Fields = React.ReactElement<HTMLInputElement & { index?: number; }>;
-type Buttons = React.ReactElement<HTMLButtonElement & { index?: number; }>;
-type Blocks<Tag extends BlockTagType = 'div'> =  React.ReactElement<Tag & { index?: number; }>;
+export type Fields = React.ReactElement<HTMLInputElement & { index?: number; }>;
+export type Buttons = React.ReactElement<HTMLButtonElement & { index?: number; }>;
+export type Blocks<Tag extends BlockTagType = 'div'> =  React.ReactElement<Tag & { index?: number; }>;
 
 export interface RenderStateProps<Tag extends BlockTagType = 'div'> {
   fields?: Record<string, Fields | null>;

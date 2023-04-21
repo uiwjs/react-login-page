@@ -1,5 +1,6 @@
 import { PropsWithChildren, useRef, useEffect, createElement } from 'react';
-import { useStore, BlockTagType } from './store';
+import { useStore, BlockTagType, Blocks } from './store';
+import { FunctionComponent } from 'react';
 
 // export type BlockTagType = React.ComponentType | keyof JSX.IntrinsicElements;
 
@@ -20,12 +21,9 @@ export const Block = <Tag extends BlockTagType = 'div'>(props: PropsWithChildren
     const { name, visible = true, tagName = 'div', ...elmProps } = props;
     if (ref.current !== elmProps && name) {
       ref.current = { ...elmProps };
-
-      const div = (visible ? createElement(tagName, { ...elmProps }, elmProps.children) : null);
+      const div = (visible ? createElement(tagName, { ...elmProps }, elmProps.children) : null)
       dispatch({
-        // blocks: { ...blocks, [name]: div as unknown as React.ReactElement<Tag> },
-        // @ts-ignore
-        blocks: { ...blocks, [name]: div },
+        blocks: { ...blocks, [name]: div as unknown as Blocks<'div'> },
       });
     }
   }, [props, ref]);

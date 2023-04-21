@@ -82,7 +82,11 @@ const Demo = () => {
             <div>
               <header>{blocks.logo} {blocks.title}</header>
               {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-                return <label key={item.name + idx}>{item.children}</label>
+                return (
+                  <div key={item.name + idx}>
+                    <label>{item.children}{item.children?.props?.extra}</label>
+                  </div>
+                );
               })}
               <div>
                 {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
@@ -98,6 +102,15 @@ const Demo = () => {
       </Render>
       <Login.Block name="logo" tagName="span">⚛️</Login.Block>
       <Login.Block name="title" tagName="span">Login</Login.Block>
+      <Login.Textarea name="note"></Login.Textarea>
+      <Login.Select name="select">
+        <option value="w" selected="">Choose an item...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+      </Login.Select>
+      <Login.Input name="checkbox" type="checkbox" index={3} extra={<span> Remember me </span>} />
       <Login.Input name="username" index={1} placeholder="Please input Username" />
       <Login.Input name="password" index={0} placeholder="please enter password" />
       <Login.Button name="submit" index={1} type="submit">Submit</Login.Button>
@@ -156,6 +169,59 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   index?: number;
 }
 export declare const Input: FC<PropsWithChildren<InputProps>>;
+```
+
+### `Login.Textarea`
+
+```jsx
+import Login, { Textarea } from 'react-login-page';
+
+<Login.Textarea name="note" />
+<Textarea name="note" />
+```
+
+```ts
+import React, { FC, PropsWithChildren } from 'react';
+export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
+  name?: string;
+  /** Used to define the name of form controls */
+  rename?: string;
+  /** Can be shown or hidden with controls */
+  visible?: boolean;
+  /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
+  index?: number;
+}
+export declare const Textarea: FC<PropsWithChildren<TextareaProps>>;
+```
+
+### `Login.Select`
+
+```jsx
+import Login, { Select } from 'react-login-page';
+
+<Login.Select name="selectname">
+  <option value="1">One</option>
+  <option value="2">Two</option>
+</Login.Select>
+
+<Select name="selectname">
+  <option value="1">One</option>
+  <option value="2">Two</option>
+</Select>
+```
+
+```ts
+import React, { FC, PropsWithChildren } from 'react';
+export interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
+  name?: string;
+  /** Used to define the name of form controls */
+  rename?: string;
+  /** Can be shown or hidden with controls */
+  visible?: boolean;
+  /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
+  index?: number;
+}
+export declare const Select: FC<PropsWithChildren<SelectProps>>;
 ```
 
 ### `Login.Button`

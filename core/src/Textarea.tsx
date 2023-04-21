@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useRef, useEffect } from 'react';
 import { useStore } from './store';
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   name?: string;
   /** Used to define the name of form controls */
   rename?: string;
@@ -11,15 +11,15 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   index?: number;
 }
 
-export const Input: FC<PropsWithChildren<InputProps>> = (props) => {
-  const ref = useRef<InputProps>();
+export const Textarea: FC<PropsWithChildren<TextareaProps>> = (props) => {
+  const ref = useRef<TextareaProps>();
   const { fields = {}, dispatch } = useStore();
   const { name, rename, visible = true, ...elmProps } = props;
   useEffect(() => {
     if (ref.current !== props && name) {
       ref.current = { ...props };
       dispatch({
-        fields: { ...fields, [name]: visible ? <input  {...elmProps} name={rename || name} /> : null },
+        fields: { ...fields, [name]: visible ? <textarea {...elmProps} name={rename || name} /> : null },
       });
     }
   }, [props, name, ref]);
@@ -27,4 +27,4 @@ export const Input: FC<PropsWithChildren<InputProps>> = (props) => {
   return null;
 };
 
-Input.displayName = 'Login.Input';
+Textarea.displayName = 'Login.Textarea';

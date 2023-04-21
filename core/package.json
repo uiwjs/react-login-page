@@ -1,6 +1,6 @@
 {
   "name": "react-login-page",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Some `react` login pages, which can be used quickly after installation.",
   "homepage": "https://uiwjs.github.io/react-login-page",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -13,11 +13,11 @@
       "require": "./cjs/index.js",
       "types": "./cjs/index.d.ts"
     },
-    "./logo":  {
+    "./logo": {
       "import": "./esm/logo/Logo.js",
       "require": "./cjs/logo/Logo.js"
     },
-    "./logo-rect":  {
+    "./logo-rect": {
       "import": "./esm/logo/LogoRect.js",
       "require": "./cjs/logo/LogoRect.js"
     },

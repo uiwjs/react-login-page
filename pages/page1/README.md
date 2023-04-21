@@ -2,7 +2,7 @@
 ===
 
 <!--rehype:ignore:start-->
-<img width="571" alt="image" src="https://user-images.githubusercontent.com/1680273/233357735-5ab70bd9-9261-46fc-8f4e-88d9074750f9.png">
+<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/233596590-5a2b7196-b9ca-4d19-bf95-75a903192ec3.png">
 
 <!--rehype:ignore:end-->
 

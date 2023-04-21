@@ -1,28 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.adfa6f58.css",
-    "main.js": "/static/js/main.8ea45d09.js",
-    "static/js/586.6da2c7fe.chunk.js": "/static/js/586.6da2c7fe.chunk.js",
-    "static/js/96.7a60f0e2.chunk.js": "/static/js/96.7a60f0e2.chunk.js",
-    "static/js/284.2714c5f7.chunk.js": "/static/js/284.2714c5f7.chunk.js",
+    "main.css": "/static/css/main.3a56550c.css",
+    "main.js": "/static/js/main.12ebbe8d.js",
+    "static/js/586.953fa06f.chunk.js": "/static/js/586.953fa06f.chunk.js",
+    "static/js/96.8ef4fe24.chunk.js": "/static/js/96.8ef4fe24.chunk.js",
+    "static/js/284.8c71fbc3.chunk.js": "/static/js/284.8c71fbc3.chunk.js",
+    "static/js/164.da13d528.chunk.js": "/static/js/164.da13d528.chunk.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.0b026c6b.js",
-    "react-vendor.js": "/static/js/react-vendor.358396c9.js",
+    "react-vendor.js": "/static/js/react-vendor.d5601d71.js",
+    "static/js/110.a832874d.chunk.js": "/static/js/110.a832874d.chunk.js",
     "static/media/logo-large.svg": "/static/media/logo-large.59414ed4a49a918654d8a8baac5e62e1.svg",
     "static/media/logo.svg": "/static/media/logo.b0d0264681148d201bec1b296f85f97c.svg",
     "index.html": "/index.html",
     "static/media/arrow.svg": "/static/media/arrow.c4532e8bf2b97be87c34837cd1413579.svg",
-    "main.adfa6f58.css.map": "/static/css/main.adfa6f58.css.map",
-    "main.8ea45d09.js.map": "/static/js/main.8ea45d09.js.map",
-    "586.6da2c7fe.chunk.js.map": "/static/js/586.6da2c7fe.chunk.js.map",
-    "96.7a60f0e2.chunk.js.map": "/static/js/96.7a60f0e2.chunk.js.map",
-    "284.2714c5f7.chunk.js.map": "/static/js/284.2714c5f7.chunk.js.map",
+    "main.3a56550c.css.map": "/static/css/main.3a56550c.css.map",
+    "main.12ebbe8d.js.map": "/static/js/main.12ebbe8d.js.map",
+    "586.953fa06f.chunk.js.map": "/static/js/586.953fa06f.chunk.js.map",
+    "96.8ef4fe24.chunk.js.map": "/static/js/96.8ef4fe24.chunk.js.map",
+    "284.8c71fbc3.chunk.js.map": "/static/js/284.8c71fbc3.chunk.js.map",
+    "164.da13d528.chunk.js.map": "/static/js/164.da13d528.chunk.js.map",
     "refractor-vendor.0b026c6b.js.map": "/static/js/refractor-vendor.0b026c6b.js.map",
-    "react-vendor.358396c9.js.map": "/static/js/react-vendor.358396c9.js.map"
+    "react-vendor.d5601d71.js.map": "/static/js/react-vendor.d5601d71.js.map",
+    "110.a832874d.chunk.js.map": "/static/js/110.a832874d.chunk.js.map"
   },
   "entrypoints": [
     "static/js/refractor-vendor.0b026c6b.js",
-    "static/js/react-vendor.358396c9.js",
-    "static/css/main.adfa6f58.css",
-    "static/js/main.8ea45d09.js"
+    "static/js/react-vendor.d5601d71.js",
+    "static/css/main.3a56550c.css",
+    "static/js/main.12ebbe8d.js"
   ]
 }

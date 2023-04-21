@@ -1,8 +1,13 @@
 @react-login-page/page1
 ===
 
+[![npm version](https://img.shields.io/npm/v/@react-login-page/page1.svg)](https://www.npmjs.com/package/@react-login-page/page1)
+[![Downloads](https://img.shields.io/npm/dm/@react-login-page/page1.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page1)
+
 <!--rehype:ignore:start-->
+<a href="https://uiwjs.github.io/react-login-page">
 <img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/233596590-5a2b7196-b9ca-4d19-bf95-75a903192ec3.png">
+</a>
 
 <!--rehype:ignore:end-->
 

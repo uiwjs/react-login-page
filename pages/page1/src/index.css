@@ -1,0 +1,176 @@
+[data-color-mode*='dark'] .login-page-1, .login-page-1 {
+  --login-bg: #2c3338;
+  --login-color: #fff;
+  --login-bg-from: #FC466B;
+  --login-bg-to: #3F5EFB;
+}
+[data-color-mode*='light'] .login-page-1 {
+  --login-bg: #edeff3;
+  --login-color: #3b4148;
+  --login-bg-from: #FC466B;
+  --login-bg-to: #3F5EFB;
+}
+
+.login-page-1 {
+  --login-line-height: 1.5;
+  line-height: var(--login-line-height);
+  background-color: var(--login-bg);
+  background: linear-gradient(45deg, var(--login-bg-from), var(--login-bg-to));
+  color: var(--login-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-page-1-wrapper > article {
+  --gap: 1.87rem;
+  gap: var(--gap);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1.375rem;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 1.375rem 1.375rem 2.175rem -0.275rem rgba(0,0,0,0.2);
+}
+.login-page-1-wrapper {
+  max-width: 20rem;
+  width: 100%;
+  position: relative;
+}
+
+.login-page-1 header {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+  align-items: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.login-page-1 header svg {
+  display: block;
+}
+
+.login-page-1 label input, .login-page-1 section button {
+  background: transparent;
+  padding: 0.57em 1em;
+  width: -webkit-fill-available;
+  border: 0;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  border-radius: 5000px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+  color: #fff;
+  font-family: Montserrat,sans-serif;
+  font-weight: 500;
+  transition: all .2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.login-page-1 input::placeholder {
+  color: #fff;
+}
+
+.login-page-1 input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px rgba(255,255,255,0.3) inset;
+  color: #525D68;
+  -webkit-text-fill-color: #525D68 !important;
+}
+
+.login-page-1 input:focus, .login-page-1 select:focus, .login-page-1 textarea:focus, .login-page-1 button:focus {
+  outline: 0;
+}
+
+.login-page-1 label input:focus {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+}
+.login-page-1 label input:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+}
+
+.login-page-1 section button {
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+.login-page-1 section {
+  padding: 0 0.68rem;
+  display: flex;
+  gap: 1.35rem;
+}
+.login-page-1 section button:active {
+  background: rgba(255,255,255,0.2);
+}
+
+.login-page-1-drops > div {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+  position: absolute;
+  transition: all .2s ease;
+}
+
+.login-page-1-drops div:nth-child(1):hover {
+  transform: translate(-2px,-3px);
+}
+.login-page-1-drops div:nth-child(2):hover {
+  transform: translate(3px,4px);
+}
+.login-page-1-drops div:nth-child(3):hover {
+  transform: translate(4px,0px);
+}
+.login-page-1-drops div:nth-child(4):hover {
+  transform: translate(5px,-5px);
+}
+.login-page-1-drops div:nth-child(1) {
+  height: 80px;
+  width: 80px;
+  top: -20px;
+  left: -40px;
+}
+.login-page-1-drops div:nth-child(2) {
+  height: 80px;
+  width: 80px;
+  bottom: -50px;
+  right: -10px;
+  z-index: 1;
+}
+.login-page-1-drops div:nth-child(3) {
+  height: 100px;
+  width: 100px;
+  bottom: 120px;
+  right: -50px;
+  z-index: 0;
+}
+.login-page-1-drops div:nth-child(4) {
+  height: 120px;
+  width: 120px;
+  top: -60px;
+  right: -60px;
+  z-index: 1;
+}
+.login-page-1-drops div:nth-child(5) {
+  height: 60px;
+  width: 60px;
+  bottom: 170px;
+  left: 90px;
+  z-index: 0;
+}

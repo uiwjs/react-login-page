@@ -12,6 +12,30 @@
 <h3 align="center">React Login Pages</h3>
 <br />
 <br />
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-login-page" target="__blank">
+    <img alt="Downloads" src="https://img.shields.io/npm/dm/react-login-page.svg?style=flat">
+  </a>
+  <a href="https://www.jsdelivr.com/package/npm/react-login-page" target="__blank">
+    <img alt="jsDelivr CDN" src="https://data.jsdelivr.com/v1/package/npm/react-login-page/badge?style=rounded" />
+  </a>
+  <a href="https://bundlephobia.com/package/react-login-page" target="__blank">
+    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/react-login-page">
+  </a>
+  <br />
+  <a href="https://github.com/uiwjs/react-login-page/actions/workflows/main.yml" target="__blank">
+    <img alt="Build & Deploy" src="https://github.com/uiwjs/react-login-page/actions/workflows/main.yml/badge.svg" />
+  </a>
+  <a href="https://uiwjs.github.io/npm-unpkg/#/pkg/react-login-page/file/README.md" target="__blank">
+    <img src="https://img.shields.io/badge/Open%20in-unpkg-blue" alt="Open in unpkg">
+  </a>
+  <a href="https://www.npmjs.com/package/react-login-page" target="__blank">
+    <img alt="npm version" src="https://img.shields.io/npm/v/react-login-page.svg">
+  </a>
+</p>
+
+<br />
+<br />
 <br />
 
 <!--rehype:ignore:end-->

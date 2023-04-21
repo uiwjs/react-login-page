@@ -87,3 +87,10 @@ jobs:
         working-directory: pages/base
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: npm publish --access public
+        name: 📦 @react-login-page/page1 publish to NPM
+        continue-on-error: true
+        working-directory: pages/page1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

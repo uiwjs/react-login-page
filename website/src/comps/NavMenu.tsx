@@ -8,7 +8,7 @@ const Header = styled.header`
   border-top: 1px solid var(--color-border-muted);
   background-color: var(--color-neutral-muted);
   backdrop-filter: saturate(180%) blur(0.3rem);
-  height: 56px;
+  height: 52px;
   z-index: 10;
   margin-top: 100vh;
   position: sticky;

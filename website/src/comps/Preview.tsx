@@ -17,7 +17,8 @@ const Toolbar = CodeLayout.Toolbar;
 
 const Wrapper = styled.div<{ isShowExample?: boolean; }>`
   flex: 1;
-  padding-right: 2rem;
+  padding-right: 0.51rem;
+  padding-left: 0.51rem;
   overflow: hidden;
   z-index: 1;
   padding-top: ${({ isShowExample }) => isShowExample ?'56px' : '0'};

@@ -8,7 +8,7 @@ const Menu = styled.nav`
   a {
     color: var(--color-fg-default);
     color: var(--color-accent-fg);
-    font-size: 0.885rem;
+    font-size: 0.955rem;
     text-decoration: none;
     padding: 0.253rem 0.3rem;
     border-radius: 0.23rem;

@@ -54,13 +54,30 @@ export const routes: MenuRouteObject = {
         },
         {
           path: 'base',
-          label: 'Login · Base',
           lazy: async () => {
             const Login = await import('@react-login-page/base');
             const LoginExample = Login.default
             return {
               element: (
                 <Preview disableNav path={() => import('@react-login-page/base/README.md')}>
+                  <LoginExample>
+                    <LoginExample.Logo>
+                      <Logo />
+                    </LoginExample.Logo>
+                  </LoginExample>
+                </Preview>
+              ),
+            }
+          }
+        },
+        {
+          path: 'page1',
+          lazy: async () => {
+            const Login = await import('@react-login-page/page1');
+            const LoginExample = Login.default
+            return {
+              element: (
+                <Preview disableNav path={() => import('@react-login-page/page1/README.md')}>
                   <LoginExample>
                     <LoginExample.Logo>
                       <Logo />

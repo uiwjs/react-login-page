@@ -5,6 +5,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "sourceMap": false,
-    "noEmit": false
+    "moduleResolution": "node",
+    "noEmit": false,
+    // "paths": {
+    //   "react-login-page/*": ["./node_modules/react-login-page/*"]
+    // }
   }
 }

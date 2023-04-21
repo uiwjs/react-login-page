@@ -1,8 +1,10 @@
 import LoginBase from '@react-login-page/base';
+import LoginLogo from 'react-login-page/logo';
 import LoginPage1 from '@react-login-page/page1';
+import LoginPage2 from '@react-login-page/page2';
+import bannerImage from '@react-login-page/page2/banner-image';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../svg/logo.svg';
 import { mediaStyle } from '../comps/DocsLayout';
 
 const Wrapper = styled.div`
@@ -47,16 +49,26 @@ export const Example = () => {
       <Inner to="/pages/base">
         <LoginBase>
           <LoginBase.Logo>
-            <Logo />
+            <LoginLogo />
           </LoginBase.Logo>
         </LoginBase>
       </Inner>
       <Inner to="/pages/page1">
         <LoginPage1>
           <LoginPage1.Logo>
-            <Logo />
+            <LoginLogo />
           </LoginPage1.Logo>
         </LoginPage1>
+      </Inner>
+      <Inner to="/pages/page2">
+        <LoginPage2>
+          <LoginPage2.Banner>
+            <img src={bannerImage} alt="banner" />
+          </LoginPage2.Banner>
+          <LoginPage2.Logo>
+            <LoginLogo />
+          </LoginPage2.Logo>
+        </LoginPage2>
       </Inner>
     </Wrapper>
   )

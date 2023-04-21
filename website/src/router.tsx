@@ -20,7 +20,7 @@ export interface MenuRouteObject
 export const routes: MenuRouteObject = {
   path: '/',
   Component: Layout,
-  errorElement: <ErrorPage />,
+  ErrorBoundary: ErrorPage,
   children: [
     {
       index: true,
@@ -79,6 +79,28 @@ export const routes: MenuRouteObject = {
               element: (
                 <Preview disableNav path={() => import('@react-login-page/page1/README.md')}>
                   <LoginExample>
+                    <LoginExample.Logo>
+                      <Logo />
+                    </LoginExample.Logo>
+                  </LoginExample>
+                </Preview>
+              ),
+            }
+          }
+        },
+        {
+          path: 'page2',
+          lazy: async () => {
+            const Login = await import('@react-login-page/page2');
+            const bannerImage =  await import('@react-login-page/page2/banner-image');
+            const LoginExample = Login.default;
+            return {
+              element: (
+                <Preview disableNav path={() => import('@react-login-page/page2/README.md')}>
+                  <LoginExample>
+                    <LoginExample.Banner>
+                      <img src={bannerImage.default} alt="banner" />
+                    </LoginExample.Banner>
                     <LoginExample.Logo>
                       <Logo />
                     </LoginExample.Logo>

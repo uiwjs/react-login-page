@@ -36,6 +36,7 @@
   },
   "files": [
     "README.md",
+    "*.d.ts",
     "src",
     "esm",
     "cjs"

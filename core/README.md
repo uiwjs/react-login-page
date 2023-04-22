@@ -43,7 +43,7 @@
 Getting Started
 ===
 
-Encapsulated login page components based on `react-login-page` basic components are provided for quick installation and use. These components help streamline the process of creating login pages and offer flexible APIs for modifying and packaging these components.
+Encapsulated login page components based on `react-login-page` basic components are provided for quick installation and use. These components help streamline the process of creating login pages and offer flexible APIs for modifying and packaging these components. Welcome to choose from our encapsulated [login pages](https://uiwjs.github.io/react-login-page). We also welcome [recommendations](https://github.com/uiwjs/react-login-page/issues/new/choose) for more cool login pages, which we will turn into React components.
 
 ## React Login Page
 
@@ -98,7 +98,7 @@ const Demo = () => {
 export default Demo;
 ```
 
-Change the control order by using `index`, Provide more flexible API encapsulation.
+Change the control order by using **`index`**, Provide more flexible API encapsulation.
 
 ```jsx mdx:preview
 import React from 'react';
@@ -109,14 +109,14 @@ const Demo = () => {
   return (
     <Login>
       <Render>
-        {({ blocks }, { fields, buttons }) => {
+        {({ blocks, extra }, { fields, buttons }) => {
           return (
             <div>
               <header>{blocks.logo} {blocks.title}</header>
               {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
                 return (
                   <div key={item.name + idx}>
-                    <label>{item.children}{item.children?.props?.extra}</label>
+                    <label>{item.children} {extra[item.name]}</label>
                   </div>
                 );
               })}
@@ -144,7 +144,9 @@ const Demo = () => {
         <option value="3">Three</option>
         <option value="4">Four</option>
       </Login.Select>
-      <Login.Input name="checkbox" type="checkbox" index={3} extra={<span> Remember me </span>} />
+      <Login.Input name="checkbox" type="checkbox" index={3}>
+        <span> Remember me </span>
+      </Login.Input>
       <Login.Input name="username" index={1} placeholder="Please input Username" />
       <Login.Input name="password" index={0} placeholder="please enter password" />
       <Login.Button name="submit" index={1} type="submit">Submit</Login.Button>
@@ -215,6 +217,40 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   index?: number;
 }
 export declare const Input: FC<PropsWithChildren<InputProps>>;
+```
+
+**`Input`** can display **extra** content
+
+```jsx
+<Login.Input name="checkbox" type="checkbox">
+  <span> Remember me </span>
+</Login.Input>
+```
+
+```jsx mdx:preview
+import React from 'react';
+import Login, { Render } from 'react-login-page';
+import Logo from 'react-login-page/logo-rect';
+
+const Demo = () => {
+  return (
+    <Login>
+      <Render>
+        {({ blocks, fields, extra }, data) => {
+          return (
+            <label>
+              {fields.checkbox} {extra.checkbox}
+            </label>
+          );
+        }}
+      </Render>
+      <Login.Input name="checkbox" type="checkbox">
+        <span> Remember me </span>
+      </Login.Input>
+    </Login>
+  );
+}
+export default Demo;
 ```
 
 ### `Login.Textarea`
@@ -297,7 +333,9 @@ export declare const Button: FC<PropsWithChildren<ButtonProps>>;
 import { Render } from 'react-login-page';
 
 <Render>
-  {({ fields, buttons, blocks }) => {
+  {({ fields, buttons, blocks, extra }, data) => {
+    // data.blocks => Array
+    // data.fields => Array
     return (
       <div>
         <header>{blocks.logo} {blocks.title}</header>
@@ -324,11 +362,11 @@ export type RenderChildren = {
 export declare const Render: FC<RenderChildren>;
 ```
 
-`index` refers to the use of indexes to control the order of controls
+**`index`** refers to the use of indexes to control the order of controls
 
 ```tsx
 <Render>
-  {({ blocks }, { fields, buttons }) => {
+  {({ blocks, extra }, { fields, buttons }) => {
     return (
       <div>
         <header>{blocks.logo} {blocks.title}</header>
@@ -358,7 +396,7 @@ import React from 'react';
 import Login, { Render, Provider, Container, useStore } from 'react-login-page';
 
 const RenderLoginPage = () => {
-  const { fields, buttons, blocks } = useStore();
+  const { fields, extra, buttons, blocks, data } = useStore();
   return (
     <Render>
       <header>{blocks.logo} {blocks.title}</header>
@@ -391,7 +429,7 @@ const Demo = () => {
 export default Demo;
 ```
 
-`index` refers to the use of indexes to control the order of controls
+**`index`** refers to the use of indexes to control the order of controls
 
 ```jsx mdx:preview
 import React, { isValidElement, cloneElement } from 'react';

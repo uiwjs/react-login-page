@@ -20,7 +20,7 @@ export * from './control/Logo';
 export * from './control/Footer';
 
 const RenderLogin = () => {
-  const { blocks = {}, data } = useStore();
+  const { blocks = {}, extra = {}, data } = useStore();
   const { fields, buttons } = data || { fields: [] };
   return (
     <Render>
@@ -30,7 +30,7 @@ const RenderLogin = () => {
         </header>
         {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
           if (!item.children) return null;
-          return <label key={item.name + idx}>{item.children}</label>
+          return <label key={item.name + idx}>{item.children}{extra[item.name as keyof typeof extra]}</label>
         })}
         <section>
           {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {

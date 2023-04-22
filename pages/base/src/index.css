@@ -51,7 +51,7 @@
 .login-page-base header {
   display: flex;
   justify-content: center;
-  gap: 0.6rem;
+  gap: var(--gap);
   font-weight: 700;
   padding-bottom: 0.5rem;
   font-size: 1.4rem;
@@ -78,6 +78,12 @@
   border-radius: 0.25rem;
   padding: 0.5rem 0.8rem;
   width: 100%;
+}
+
+.login-page-base-wrapper > label {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
 }
 
 .login-page-base input {

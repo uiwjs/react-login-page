@@ -10,10 +10,11 @@ export type Fields = React.ReactElement<HTMLInputElement & { index?: number; }>;
 export type Buttons = React.ReactElement<HTMLButtonElement & { index?: number; }>;
 export type Blocks<Tag extends BlockTagType = 'div'> =  React.ReactElement<Tag & { index?: number; }>;
 
-export interface RenderStateProps<Tag extends BlockTagType = 'div'> {
+export interface RenderStateProps<T extends BlockTagType = 'div'> {
   fields?: Record<string, Fields | null>;
   buttons?: Record<string, Buttons | null>;
-  blocks?: Record<string, Blocks<Tag> | null>;
+  blocks?: Record<string, Blocks<T> | null>;
+  extra?: Record<string, React.ReactNode>;
 }
 
 interface Control<T> {
@@ -34,6 +35,7 @@ export const initialState: InitialState = {
   fields: {},
   buttons: {},
   blocks: {},
+  extra: {},
   data: {
     fields: [],
     buttons: [],
@@ -51,6 +53,7 @@ export function reducer(state: InitialState, action: Partial<RenderStateProps>):
     fields: { ...state.fields, ...action.fields },
     buttons: { ...state.buttons, ...action.buttons },
     blocks: { ...state.blocks, ...action.blocks },
+    extra: { ...state.extra, ...action.extra },
   }
   const fieldsArray = Object.keys(result.fields).map((key, index) => ({
     name: key,

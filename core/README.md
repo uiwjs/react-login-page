@@ -334,8 +334,9 @@ import { Render } from 'react-login-page';
 
 <Render>
   {({ fields, buttons, blocks, extra }, data) => {
-    // data.blocks => Array
-    // data.fields => Array
+    // data.blocks  => Array
+    // data.buttons => Array
+    // data.fields  => Array
     return (
       <div>
         <header>{blocks.logo} {blocks.title}</header>
@@ -436,7 +437,7 @@ import React, { isValidElement, cloneElement } from 'react';
 import Login, { Render, Provider, Container, useStore } from 'react-login-page';
 
 const RenderLoginPage = () => {
-  const { blocks, data  } = useStore();
+  const { blocks, data, extra } = useStore();
   const { fields, buttons } = data;
   return (
     <Render>

@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useRef, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useRef, useEffect, memo } from 'react';
 import { useStore } from './store';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -11,7 +11,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   index?: number;
 }
 
-export const Input: FC<PropsWithChildren<InputProps>> = (props) => {
+export const Input: FC<PropsWithChildren<InputProps>> = memo((props) => {
   const ref = useRef<InputProps>();
   const { fields = {}, extra = {}, dispatch } = useStore();
   const { name, rename, visible = true, children, ...elmProps } = props;
@@ -32,6 +32,6 @@ export const Input: FC<PropsWithChildren<InputProps>> = (props) => {
   }, [props, name, ref]);
 
   return null;
-};
+});
 
 Input.displayName = 'Login.Input';

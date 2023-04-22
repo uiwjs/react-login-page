@@ -1,5 +1,5 @@
 import LoginBase from '@react-login-page/base';
-import LoginLogo from 'react-login-page/logo';
+import LoginLogo from 'react-login-page/logo-rect';
 import LoginPage1 from '@react-login-page/page1';
 import LoginPage2 from '@react-login-page/page2';
 import bannerImage from '@react-login-page/page2/banner-image';

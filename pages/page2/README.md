@@ -29,6 +29,9 @@ const Demo = () => (
     <Login.Banner>
       <img src={defaultBannerImage} />
     </Login.Banner>
+    <Login.Password>
+      <div>xx</div>
+    </Login.Password>
   </Login>
 );
 
@@ -107,7 +110,9 @@ const Demo = () => (
     </Logo>
     <Email index={3} type="text" placeholder="Username" />
     <Password index={2} />
-    <Input name="phone" index={1} placeholder="Phone number" />
+    <Input name="phone" index={1} placeholder="Phone number">
+      <div>xx</div>
+    </Input>
     <Banner>
       <img src={defaultBannerImage} />
     </Banner>
@@ -239,7 +244,9 @@ import { Button, Input } from 'react-login-page';
 <Password visible={false} />
 
 // Add input control
-<Input name="phone" index={1} placeholder="Phone number" />
+<Input name="phone" index={1} placeholder="Phone number">
+  <svg>...</svg>
+</Input>
 
 // Add content after the button
 <Login.ButtonAfter>

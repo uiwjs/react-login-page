@@ -22,7 +22,7 @@ export * from './control/Logo';
 export * from './control/Banner';
 
 const RenderLogin = () => {
-  const { blocks = {}, data } = useStore();
+  const { blocks = {}, extra = {}, data } = useStore();
   const { fields, buttons } = data || { fields: [] };
   return (
     <Render>
@@ -30,13 +30,13 @@ const RenderLogin = () => {
         <aside>
           {blocks.banner}
         </aside>
-        <article>
+        <main>
           <header>
             {blocks.logo} {blocks.title}
           </header>
           {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
             if (!item.children) return null;
-            return <label key={item.name + idx}>{item.children}</label>
+            return <label key={item.name + idx}>{extra[item.name]} {item.children}</label>
           })}
           <section>
             {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
@@ -49,7 +49,7 @@ const RenderLogin = () => {
             })}
           </section>
           {blocks.buttonAfter}
-        </article>
+        </main>
       </div>
     </Render>
   );

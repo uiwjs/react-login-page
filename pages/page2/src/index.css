@@ -2,7 +2,7 @@
   --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
-  --login-input: #57b846;
+  --login-input: #666;
   --login-input-bg: #e6e6e6;
   --login-input-placeholder: #999999;
   --login-btn: #fff;
@@ -15,7 +15,7 @@
   --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
-  --login-input: #57b846;
+  --login-input: #666;
   --login-input-bg: #e6e6e6;
   --login-input-placeholder: #999999;
   --login-btn: #fff;
@@ -155,15 +155,23 @@
 .login-page2-inner > main > label {
   display: flex;
   align-items: center;
-  color: var(--login-input);
 }
-.login-page2-inner > main > label :first-child:not(input) {
-  color: var(--login-input);
+
+.login-page2-inner > main > label > :last-child:not(input) {
   position: absolute;
-  width: 23px;
-  height: 23px;
-  left: 29px;
+  width: 18px;
+  height: 18px;
+  left: 31px;
+  transition: all .4s;
+  display: flex;
+  align-items: center;
 }
+
+.login-page2-inner > main > label input:focus + :last-child:not(input) {
+  color: var(--login-btn-bg);
+  left: 28px;
+}
+
 .login-page2-inner > main > label input {
   box-shadow: 0 0;
 }

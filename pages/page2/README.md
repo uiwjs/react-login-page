@@ -189,7 +189,7 @@ Custom CSS style overrides
   --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
-  --login-input: #57b846;
+  --login-input: #666;
   --login-input-bg: #e6e6e6;
   --login-input-placeholder: #999999;
   --login-btn: #fff;

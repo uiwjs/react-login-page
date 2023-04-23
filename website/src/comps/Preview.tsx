@@ -21,7 +21,7 @@ const Wrapper = styled.div<{ isShowExample?: boolean; }>`
   padding-left: 0.51rem;
   overflow: hidden;
   z-index: 1;
-  padding-top: ${({ isShowExample }) => isShowExample ?'56px' : '0'};
+  padding-top: ${({ isShowExample }) => isShowExample ? '0' : '0'};
   margin: 0 auto;
   width: 100%;
   ${mediaStyle}

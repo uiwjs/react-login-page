@@ -110,6 +110,26 @@ export const routes: MenuRouteObject = {
             }
           }
         },
+        {
+          path: 'page3',
+          lazy: async () => {
+            const Login = await import('@react-login-page/page3');
+            const bannerImage =  await import('@react-login-page/page3/banner-image');
+            const LoginExample = Login.default;
+            return {
+              element: (
+                <Preview disableNav path={() => import('@react-login-page/page3/README.md')}>
+                  <LoginExample>
+                    <LoginExample.Banner style={{ backgroundImage: `url(${bannerImage.default})` }} />
+                    <LoginExample.Logo>
+                      <Logo />
+                    </LoginExample.Logo>
+                  </LoginExample>
+                </Preview>
+              ),
+            }
+          }
+        },
       ],
     },
   ],

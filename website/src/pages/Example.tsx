@@ -3,6 +3,8 @@ import LoginLogo from 'react-login-page/logo-rect';
 import LoginPage1 from '@react-login-page/page1';
 import LoginPage2 from '@react-login-page/page2';
 import bannerImage from '@react-login-page/page2/banner-image';
+import LoginPage3 from '@react-login-page/page3';
+import bannerImage3 from '@react-login-page/page3/banner-image';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { mediaStyle } from '../comps/DocsLayout';
@@ -11,7 +13,7 @@ const Wrapper = styled.div`
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
-  gap: 0.753rem;
+  gap: 0.953rem;
   ${mediaStyle}
 `;
 
@@ -69,6 +71,14 @@ export const Example = () => {
             <LoginLogo />
           </LoginPage2.Logo>
         </LoginPage2>
+      </Inner>
+      <Inner to="/pages/page3">
+        <LoginPage3>
+          <LoginPage3.Banner style={{ backgroundImage: `url(${bannerImage3})` }} />
+          <LoginPage3.Logo>
+            <LoginLogo />
+          </LoginPage3.Logo>
+        </LoginPage3>
       </Inner>
     </Wrapper>
   )

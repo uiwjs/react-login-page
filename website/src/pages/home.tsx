@@ -33,10 +33,33 @@ const Logo = styled(LogoIcon)`
 
 const Nav = styled.nav`
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  gap: 0.845rem;
+  display: flex;
+  justify-content: center;
+  a {
+    padding: 0.63rem 1.1rem;
+    font-weight: 700;
+    background: var(--color-neutral-muted);
+    border-radius: 0.3rem;
+    transition: all 0.3s;
+    text-decoration: none;
+    &:hover {
+      background: var(--color-canvas-subtle);
+    }
+  }
 `;
 
 const Header = styled.div``;
+const VersionInfo = styled.sup`
+  text-align: center;
+  color: var(--color-fg-subtle);
+  position: absolute;
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 10px;
+  line-height: 12px;
+`;
 
 const version = VERSION;
 
@@ -47,10 +70,15 @@ export const Home = () => {
       <Header>
         <Logo height="4rem" />
       </Header>
-      <Title>React Login Page</Title>
+      <Title>
+        React Login Page
+        <VersionInfo>
+          v{version}
+        </VersionInfo>
+      </Title>
       <SubTitle>Install and use react login page components quickly and easily, with flexible APIs for modifying these components.</SubTitle>
       <Nav>
-        <Link to="/docs">Documentation</Link> · <a href="https://github.com/uiwjs/react-login-page" target="_blank" rel="noreferrer">Github</a> · v{version}
+        <Link to="/docs">Documentation</Link><a href="https://github.com/uiwjs/react-login-page" target="_blank" rel="noreferrer">Github</a>
       </Nav>
       <Example />
     </Wrapper>

@@ -1,12 +1,12 @@
-@react-login-page/page2
+@react-login-page/page3
 ===
 
-[![npm version](https://img.shields.io/npm/v/@react-login-page/page2.svg)](https://www.npmjs.com/package/@react-login-page/page2)
-[![Downloads](https://img.shields.io/npm/dm/@react-login-page/page2.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page2)
+[![npm version](https://img.shields.io/npm/v/@react-login-page/page3.svg)](https://www.npmjs.com/package/@react-login-page/page3)
+[![Downloads](https://img.shields.io/npm/dm/@react-login-page/page3.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page3)
 
 <!--rehype:ignore:start-->
 <a href="https://uiwjs.github.io/react-login-page">
-<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/233849699-37ef045c-083c-4ad9-b03c-ca98f79f9c54.png">
+<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/233847626-226728ee-58c8-4996-9448-b5e65d3fd89f.png">
 </a>
 
 <!--rehype:ignore:end-->
@@ -14,21 +14,19 @@
 ## Install
 
 ```bash
-$ npm install @react-login-page/page2 --save
+$ npm install @react-login-page/page3 --save
 ```
 
 ## Usage
 
 ```jsx mdx:preview
 import React from 'react';
-import Login from '@react-login-page/page2';
-import defaultBannerImage from '@react-login-page/page2/banner-image';
+import Login from '@react-login-page/page3';
+import defaultBannerImage from '@react-login-page/page3/banner-image';
 
 const Demo = () => (
   <Login style={{ height: 580 }}>
-    <Login.Banner>
-      <img src={defaultBannerImage} />
-    </Login.Banner>
+    <Login.Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
     <Login.Password>
       <div>xx</div>
     </Login.Password>
@@ -42,8 +40,8 @@ export default Demo;
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Email, Password, Submit, Title, Logo, Reset } from '@react-login-page/page2';
-import defaultBannerImage from '@react-login-page/page2/banner-image';
+import LoginPage, { Email, Password, Welcome, Banner, Submit, Title, Logo, Reset } from '@react-login-page/page3';
+import defaultBannerImage from '@react-login-page/page3/banner-image';
 import LoginLogo from 'react-login-page/logo';
 
 const styles= { height: 580 }
@@ -51,16 +49,15 @@ const styles= { height: 580 }
 const Demo = () => (
   <div style={styles}>
     <LoginPage>
-      <LoginPage.Banner>
-        <img src={defaultBannerImage} />
-      </LoginPage.Banner>
+      <Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
       <Email name="userUserName" />
       <Password placeholder="请输入密码" name="userPassword" />
       <Submit>提交</Submit>
       <Reset>重置</Reset>
+      <Welcome>欢迎回来！ 登录您的帐户以查看今天的客户：</Welcome>
       <Title visible={false} />
       <Logo>
-        <LoginLogo />
+        <LoginLogo height={21} width={55}/>
       </Logo>
     </LoginPage>
   </div>
@@ -75,9 +72,9 @@ Use `visible={false}` to hide controls.
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Reset, Title, Logo, Banner, Password } from '@react-login-page/page2';
+import LoginPage, { Reset, Title, Logo, Banner, Password } from '@react-login-page/page3';
 import LoginLogo from 'react-login-page/logo-rect';
-import defaultBannerImage from '@react-login-page/page2/banner-image';
+import defaultBannerImage from '@react-login-page/page3/banner-image';
 
 const Demo = () => (
   <LoginPage style={{ height: 580 }}>
@@ -86,9 +83,7 @@ const Demo = () => (
     </Logo>
     <Title />
     <Password visible={false} />
-    <Banner>
-      <img src={defaultBannerImage} />
-    </Banner>
+    <Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
   </LoginPage>
 );
 
@@ -99,9 +94,9 @@ export default Demo;
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Reset, Logo, Email, Banner, ButtonAfter, Password, Input } from '@react-login-page/page2';
+import LoginPage, { Reset, Logo, Email, Banner, ButtonAfter, Password, Input } from '@react-login-page/page3';
 import LoginLogo from 'react-login-page/logo-rect';
-import defaultBannerImage from '@react-login-page/page2/banner-image';
+import defaultBannerImage from '@react-login-page/page3/banner-image';
 
 const Demo = () => (
   <LoginPage style={{ height: 580 }}>
@@ -113,9 +108,7 @@ const Demo = () => (
     <Input name="phone" index={1} placeholder="Phone number">
       <div>xx</div>
     </Input>
-    <Banner>
-      <img src={defaultBannerImage} />
-    </Banner>
+    <Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
     <ButtonAfter>
       Forgot <a href="#">Username / Password?</a>
     </ButtonAfter>
@@ -129,20 +122,24 @@ export default Demo;
 
 ```jsx
 import React from 'react';
-import Login from '@react-login-page/page2';
+import Login from '@react-login-page/page3';
 
 const css = {
-  '--login-bg': 'linear-gradient(-135deg,#c850c0,#4158d0)',
+  '--login-bg': '#f3f2f2',
   '--login-color': '#333',
+  '--login-logo': '#fff',
   '--login-inner-bg': '#fff',
-  '--login-input': '#57b846',
-  '--login-input-bg': '#e6e6e6',
+  '--login-banner-bg': '#fbfbfb',
+  '--login-input': '#333',
+  '--login-input-icon': '#dddddd',
+  '--login-input-bg': 'transparent',
+  '--login-input-border': 'rgba(0, 0, 0, 0.13)',
   '--login-input-placeholder': '#999999',
   '--login-btn': '#fff',
-  '--login-btn-bg': '#57b846',
-  '--login-btn-bg-focus': '#57b846',
-  '--login-btn-bg-hover': '#333',
-  '--login-btn-bg-active': '#57b846',
+  '--login-btn-bg': '#b08bf8',
+  '--login-btn-bg-focus': '#b08bf8',
+  '--login-btn-bg-hover': '#b08bf8',
+  '--login-btn-bg-active': '#b08bf8',
 }
 
 const Demo = () => <Login style={{ height: 380, ...css }} />;
@@ -185,31 +182,39 @@ Custom CSS style overrides
 ## Light & Dark Theme
 
 ```css
-[data-color-mode*='dark'] .login-page2, .login-page2 {
-  --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
+[data-color-mode*='dark'] .login-page3, .login-page3 {
+  --login-bg: #f3f2f2;
   --login-color: #333;
+  --login-logo: #fff;
   --login-inner-bg: #fff;
-  --login-input: #666;
-  --login-input-bg: #e6e6e6;
+  --login-banner-bg: #fbfbfb;
+  --login-input: #333;
+  --login-input-icon: #dddddd;
+  --login-input-bg: transparent;
+  --login-input-border: rgba(0, 0, 0, 0.13);
   --login-input-placeholder: #999999;
   --login-btn: #fff;
-  --login-btn-bg: #57b846;
-  --login-btn-bg-focus: #57b846;
-  --login-btn-bg-hover: #333;
-  --login-btn-bg-active: #57b846;
+  --login-btn-bg: #b08bf8;
+  --login-btn-bg-focus: #b08bf8;
+  --login-btn-bg-hover: #b08bf8;
+  --login-btn-bg-active: #b08bf8;
 }
-[data-color-mode*='light'] .login-page2 {
-  --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
+[data-color-mode*='light'] .login-page3 {
+  --login-bg: #f3f2f2;
   --login-color: #333;
+  --login-logo: #fff;
   --login-inner-bg: #fff;
-  --login-input: #57b846;
-  --login-input-bg: #e6e6e6;
+  --login-banner-bg: #fbfbfb;
+  --login-input: #333;
+  --login-input-icon: #dddddd;
+  --login-input-bg: transparent;
+  --login-input-border: rgba(0, 0, 0, 0.13);
   --login-input-placeholder: #999999;
   --login-btn: #fff;
-  --login-btn-bg: #57b846;
-  --login-btn-bg-focus: #57b846;
-  --login-btn-bg-hover: #333;
-  --login-btn-bg-active: #57b846;
+  --login-btn-bg: #b08bf8;
+  --login-btn-bg-focus: #b08bf8;
+  --login-btn-bg-hover: #b08bf8;
+  --login-btn-bg-active: #b08bf8;
 }
 ```
 
@@ -218,18 +223,18 @@ Custom CSS style overrides
 Components be provided to modify control properties and perform other related functions.
 
 ```jsx
-import LoginPage from '@react-login-page/page2';
+import LoginPage from '@react-login-page/page3';
 // buttons
-import { Reset, Submit } from '@react-login-page/page2';
+import { Reset, Submit } from '@react-login-page/page3';
 // blocks
-import { Logo, Title, ButtonAfter } from '@react-login-page/page2';
+import { Logo, Title, Welcome, ButtonAfter } from '@react-login-page/page3';
 // fields
-import { Email, Password } from '@react-login-page/page2';
+import { Email, Password } from '@react-login-page/page3';
 
-import defaultBannerImage from '@react-login-page/page2/banner-image';
+import defaultBannerImage from '@react-login-page/page3/banner-image';
 
 // Basic Components
-import { Button, Input } from '@react-login-page/page2';
+import { Button, Input } from '@react-login-page/page3';
 // or
 import { Button, Input } from 'react-login-page';
 
@@ -253,6 +258,8 @@ import { Button, Input } from 'react-login-page';
   Forgot <a href="#">Username / Password?</a>
 </ButtonAfter>
 
+<Welcome>Welcome back! Log in to your account.</Welcome>
+
 // Modify logo image
 <Logo>⚛️</Logo>
 ```
@@ -260,7 +267,7 @@ import { Button, Input } from 'react-login-page';
 Use [dot notation](https://legacy.reactjs.org/docs/jsx-in-depth.html#using-dot-notation-for-jsx-type) components.
 
 ```jsx
-import Login from '@react-login-page/page2';
+import Login from '@react-login-page/page3';
 
 <Login>
   <Login.Password index={2} />

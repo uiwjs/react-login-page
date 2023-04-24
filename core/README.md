@@ -40,8 +40,7 @@
 
 <!--rehype:ignore:end-->
 
-Getting Started
-===
+# Getting Started
 
 Encapsulated login page components based on `react-login-page` basic components are provided for quick installation and use. These components help streamline the process of creating login pages and offer flexible APIs for modifying and packaging these components. Welcome to choose from our encapsulated [login pages](https://uiwjs.github.io/react-login-page). We also welcome [recommendations](https://github.com/uiwjs/react-login-page/issues/new/choose) for more cool login pages, which we will turn into React components.
 
@@ -66,10 +65,12 @@ const Demo = () => {
   return (
     <Login>
       <Render>
-        {({ fields, buttons, blocks }) => {
+        {({ fields, buttons, blocks, $$index }) => {
           return (
             <div>
-              <header>{blocks.logo} {blocks.title}</header>
+              <header>
+                {blocks.logo} {blocks.title}
+              </header>
               <div>
                 <label>{fields.username}</label>
               </div>
@@ -87,14 +88,20 @@ const Demo = () => {
       <Login.Block name="logo" tagName="span">
         <Logo />
       </Login.Block>
-      <Login.Block name="title" tagName="span">Login</Login.Block>
+      <Login.Block name="title" tagName="span">
+        Login
+      </Login.Block>
       <Login.Input name="username" placeholder="Please input Username" />
       <Login.Input name="password" placeholder="please enter password" />
-      <Login.Button name="submit" type="submit">Submit</Login.Button>
-      <Login.Button name="reset" type="reset">Reset</Login.Button>
+      <Login.Button name="submit" type="submit">
+        Submit
+      </Login.Button>
+      <Login.Button name="reset" type="reset">
+        Reset
+      </Login.Button>
     </Login>
   );
-}
+};
 export default Demo;
 ```
 
@@ -109,24 +116,32 @@ const Demo = () => {
   return (
     <Login>
       <Render>
-        {({ blocks, extra }, { fields, buttons }) => {
+        {({ blocks, extra, $$index }, { fields, buttons }) => {
           return (
             <div>
-              <header>{blocks.logo} {blocks.title}</header>
-              {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-                return (
-                  <div key={item.name + idx}>
-                    <label>{item.children} {extra[item.name]}</label>
-                  </div>
-                );
-              })}
-              <div>
-                {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
-                  return React.cloneElement(item.children, {
-                    ...item.props,
-                    key: item.name + idx,
-                  })
+              <header>
+                {blocks.logo} {blocks.title}
+              </header>
+              {fields
+                .sort((a, b) => a.index - b.index)
+                .map((item, idx) => {
+                  return (
+                    <div key={item.name + idx}>
+                      <label>
+                        {item.children} {extra[item.name]}
+                      </label>
+                    </div>
+                  );
                 })}
+              <div>
+                {buttons
+                  .sort((a, b) => a.index - b.index)
+                  .map((item, idx) => {
+                    return React.cloneElement(item.children, {
+                      ...item.props,
+                      key: item.name + idx,
+                    });
+                  })}
               </div>
             </div>
           );
@@ -135,9 +150,11 @@ const Demo = () => {
       <Login.Block name="logo" tagName="span">
         <Logo />
       </Login.Block>
-      <Login.Block name="title" tagName="span">Login</Login.Block>
+      <Login.Block name="title" tagName="span">
+        Login
+      </Login.Block>
       <Login.Textarea name="note"></Login.Textarea>
-      <Login.Select name="select" defaultValue="1" >
+      <Login.Select name="select" defaultValue="1">
         <option value="w">Choose an item...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -149,11 +166,15 @@ const Demo = () => {
       </Login.Input>
       <Login.Input name="username" index={1} placeholder="Please input Username" />
       <Login.Input name="password" index={0} placeholder="please enter password" />
-      <Login.Button name="submit" index={1} type="submit">Submit</Login.Button>
-      <Login.Button name="reset" index={0} type="reset">Reset</Login.Button>
+      <Login.Button name="submit" index={1} type="submit">
+        Submit
+      </Login.Button>
+      <Login.Button name="reset" index={0} type="reset">
+        Reset
+      </Login.Button>
     </Login>
   );
-}
+};
 export default Demo;
 ```
 
@@ -236,7 +257,7 @@ const Demo = () => {
   return (
     <Login>
       <Render>
-        {({ blocks, fields, extra }, data) => {
+        {({ blocks, fields, $$index, extra }, data) => {
           return (
             <label>
               {fields.checkbox} {extra.checkbox}
@@ -249,7 +270,7 @@ const Demo = () => {
       </Login.Input>
     </Login>
   );
-}
+};
 export default Demo;
 ```
 
@@ -333,13 +354,15 @@ export declare const Button: FC<PropsWithChildren<ButtonProps>>;
 import { Render } from 'react-login-page';
 
 <Render>
-  {({ fields, buttons, blocks, extra }, data) => {
+  {({ fields, buttons, blocks, extra, $$index }, data) => {
     // data.blocks  => Array
     // data.buttons => Array
     // data.fields  => Array
     return (
       <div>
-        <header>{blocks.logo} {blocks.title}</header>
+        <header>
+          {blocks.logo} {blocks.title}
+        </header>
         <label>{fields.username}</label>
         <label>{fields.password}</label>
         <div>
@@ -349,17 +372,19 @@ import { Render } from 'react-login-page';
       </div>
     );
   }}
-</Render>
+</Render>;
 ```
 
 ```tsx
 import { FC } from 'react';
 import { RenderStateProps, InitialState } from 'react-login-page';
-export type RenderChildren = {
-  children?: (props: Required<RenderStateProps>, data: InitialState['data']) => React.ReactNode;
-} | {
-  children?: React.ReactNode;
-};
+export type RenderChildren =
+  | {
+      children?: (props: Required<RenderStateProps>, data: InitialState['data']) => React.ReactNode;
+    }
+  | {
+      children?: React.ReactNode;
+    };
 export declare const Render: FC<RenderChildren>;
 ```
 
@@ -367,22 +392,28 @@ export declare const Render: FC<RenderChildren>;
 
 ```tsx
 <Render>
-  {({ blocks, extra }, { fields, buttons }) => {
+  {({ blocks, extra, $$index }, { fields, buttons }) => {
     return (
       <div>
-        <header>{blocks.logo} {blocks.title}</header>
-        {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-          return <label key={item.name + idx}>{item.children}</label>
-        })}
-        <div>
-          {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
-            const child = item.children;
-            if (!isValidElement(child)) return null;
-            return cloneElement(child, {
-              ...child.props,
-              key: item.name + idx,
-            })
+        <header>
+          {blocks.logo} {blocks.title}
+        </header>
+        {fields
+          .sort((a, b) => a.index - b.index)
+          .map((item, idx) => {
+            return <label key={item.name + idx}>{item.children}</label>;
           })}
+        <div>
+          {buttons
+            .sort((a, b) => a.index - b.index)
+            .map((item, idx) => {
+              const child = item.children;
+              if (!isValidElement(child)) return null;
+              return cloneElement(child, {
+                ...child.props,
+                key: item.name + idx,
+              });
+            })}
         </div>
       </div>
     );
@@ -397,10 +428,12 @@ import React from 'react';
 import Login, { Render, Provider, Container, useStore } from 'react-login-page';
 
 const RenderLoginPage = () => {
-  const { fields, extra, buttons, blocks, data } = useStore();
+  const { fields, extra, $$index, buttons, blocks, data } = useStore();
   return (
     <Render>
-      <header>{blocks.logo} {blocks.title}</header>
+      <header>
+        {blocks.logo} {blocks.title}
+      </header>
       <label>{fields.username}</label>
       <label>{fields.password}</label>
       <div>
@@ -409,7 +442,7 @@ const RenderLoginPage = () => {
       </div>
     </Render>
   );
-}
+};
 
 const Demo = () => {
   return (
@@ -417,15 +450,23 @@ const Demo = () => {
       <Container>
         <RenderLoginPage />
       </Container>
-      <Login.Block name="logo" tagName="span">⚛️</Login.Block>
-      <Login.Block name="title" tagName="span">Login</Login.Block>
+      <Login.Block name="logo" tagName="span">
+        ⚛️
+      </Login.Block>
+      <Login.Block name="title" tagName="span">
+        Login
+      </Login.Block>
       <Login.Input name="username" placeholder="Please input Username" />
       <Login.Input name="password" placeholder="please enter password" />
-      <Login.Button name="submit" type="submit">Submit</Login.Button>
-      <Login.Button name="reset" type="reset">Reset</Login.Button>
+      <Login.Button name="submit" type="submit">
+        Submit
+      </Login.Button>
+      <Login.Button name="reset" type="reset">
+        Reset
+      </Login.Button>
     </Provider>
   );
-}
+};
 
 export default Demo;
 ```
@@ -437,27 +478,33 @@ import React, { isValidElement, cloneElement } from 'react';
 import Login, { Render, Provider, Container, useStore } from 'react-login-page';
 
 const RenderLoginPage = () => {
-  const { blocks, data, extra } = useStore();
+  const { blocks, data, $$index, extra } = useStore();
   const { fields, buttons } = data;
   return (
     <Render>
-      <header>{blocks.logo} {blocks.title}</header>
-      {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-        return <label key={item.name + idx}>{item.children}</label>
-      })}
+      <header>
+        {blocks.logo} {blocks.title}
+      </header>
+      {fields
+        .sort((a, b) => a.index - b.index)
+        .map((item, idx) => {
+          return <label key={item.name + idx}>{item.children}</label>;
+        })}
       <div>
-        {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
+        {buttons
+          .sort((a, b) => a.index - b.index)
+          .map((item, idx) => {
             const child = item.children;
             if (!isValidElement(child)) return null;
             return cloneElement(child, {
               ...child.props,
               key: item.name + idx,
-            })
-        })}
+            });
+          })}
       </div>
     </Render>
   );
-}
+};
 
 const Demo = () => {
   return (
@@ -465,15 +512,23 @@ const Demo = () => {
       <Container>
         <RenderLoginPage />
       </Container>
-      <Login.Block name="logo" tagName="span">⚛️</Login.Block>
-      <Login.Block name="title" tagName="span">Login</Login.Block>
+      <Login.Block name="logo" tagName="span">
+        ⚛️
+      </Login.Block>
+      <Login.Block name="title" tagName="span">
+        Login
+      </Login.Block>
       <Login.Input name="username" index={1} placeholder="Please input Username" />
       <Login.Input name="password" placeholder="please enter password" />
-      <Login.Button name="submit" index={1} type="submit">Submit</Login.Button>
-      <Login.Button name="reset" type="reset">Reset</Login.Button>
+      <Login.Button name="submit" index={1} type="submit">
+        Submit
+      </Login.Button>
+      <Login.Button name="reset" type="reset">
+        Reset
+      </Login.Button>
     </Provider>
   );
-}
+};
 
 export default Demo;
 ```

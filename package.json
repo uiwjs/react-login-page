@@ -4,6 +4,7 @@
     "url": "https://github.com/uiwjs/react-login-page.git"
   },
   "scripts": {
+    "prepare": "husky install",
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "doc": "npm run-script build --workspace website",
     "start": "npm run-script start --workspace website",
@@ -26,7 +27,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+      "prettier --write --ignore-unknown"
     ],
     "*.ts?(x)": [
       "prettier --parser=typescript --write"

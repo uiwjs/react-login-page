@@ -15,6 +15,7 @@ export interface RenderStateProps<T extends BlockTagType = 'div'> {
   buttons?: Record<string, Buttons | null>;
   blocks?: Record<string, Blocks<T> | null>;
   extra?: Record<string, React.ReactNode>;
+  [keyname: string]: any;
 }
 
 interface Control<T> {

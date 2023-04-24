@@ -50,6 +50,7 @@ const Example = styled.div`
   right: 0;
   z-index: 9;
   height: 100vh;
+  overflow: auto;
 `;
 
 
@@ -76,13 +77,13 @@ const PageArrow = styled.div`
   height: 28px;
   background-color: rgb(255 255 255 / 57%);
   margin: 0px auto;
-  position: relative;
+  position: absolute;
   top: -3rem;
   border-radius: 0.51rem;
 `;
 
 export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
-  const { mdData } = useMdData(props.path);
+  const { mdData, loading } = useMdData(props.path);
   return (
     <Fragment>
       <ScrollRestoration />
@@ -90,14 +91,20 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
       {props.disableNav && (
         <Example>
           {props.children}
+        </Example>
+      )}
+      {props.disableNav && (
+        <NavMenu>
           <PageArrow>
             <Arrow />
           </PageArrow>
-        </Example>
+        </NavMenu>
       )}
-      {props.disableNav && <NavMenu />}
       <Wrapper isShowExample={props.disableNav}>
-        {mdData && (
+        {loading && (
+          <div>Loading...</div>
+        )}
+        {mdData && !loading && (
           <Markdown
             source={mdData.source}
             rehypeRewrite={(node: Root | RootContent, index: number, parent: Root | Element) => {

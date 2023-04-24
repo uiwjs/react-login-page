@@ -51,7 +51,7 @@ const Demo = () => (
     <LoginPage>
       <Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
       <Email name="userUserName" />
-      <Password placeholder="请输入密码" name="userPassword" />
+      <Password placeholder="请输入密码" label="密码" name="userPassword" />
       <Submit>提交</Submit>
       <Reset>重置</Reset>
       <Welcome>欢迎回来！ 登录您的帐户以查看今天的客户：</Welcome>
@@ -103,11 +103,11 @@ const Demo = () => (
     <Logo>
       <LoginLogo />
     </Logo>
-    <Email index={3} type="text" placeholder="Username" />
+    <Email index={3} type="text" placeholder="Email" />
     <Password index={2} />
-    <Input name="phone" index={1} placeholder="Phone number">
+    <Email rename="phone" label="Phone:" type="tel" index={1} placeholder="Phone number">
       <div>xx</div>
-    </Input>
+    </Email>
     <Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
     <ButtonAfter>
       Forgot <a href="#">Username / Password?</a>
@@ -223,7 +223,7 @@ Custom CSS style overrides
 Components be provided to modify control properties and perform other related functions.
 
 ```jsx
-import LoginPage from '@react-login-page/page3';
+import Login from '@react-login-page/page3';
 // buttons
 import { Reset, Submit } from '@react-login-page/page3';
 // blocks
@@ -234,13 +234,13 @@ import { Email, Password } from '@react-login-page/page3';
 import defaultBannerImage from '@react-login-page/page3/banner-image';
 
 // Basic Components
-import { Button, Input } from '@react-login-page/page3';
+import { Button } from '@react-login-page/page3';
 // or
-import { Button, Input } from 'react-login-page';
+import { Button } from 'react-login-page';
 
-<LoginPage>
+<Login>
   <Password index={2} />
-</LoginPage>
+</Login>
 
 // Define the order of `Password` controls
 <Password index={2} />
@@ -248,10 +248,10 @@ import { Button, Input } from 'react-login-page';
 // Hiding the `Password` control
 <Password visible={false} />
 
-// Add input control
-<Input name="phone" index={1} placeholder="Phone number">
-  <svg>...</svg>
-</Input>
+// Add new input control
+<Email rename="phone" label="Phone:" type="tel" index={1} placeholder="Phone number">
+  <div>xx</div>
+</Email>
 
 // Add content after the button
 <ButtonAfter>

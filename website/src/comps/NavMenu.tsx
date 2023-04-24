@@ -3,6 +3,7 @@ import { mediaStyle } from './DocsLayout';
 import { ReactComponent as LogoIcon } from '../svg/logo-large.svg';
 import { NavLink } from "react-router-dom";
 import { Nav } from "./Nav";
+import { FC, PropsWithChildren } from "react";
 
 const Header = styled.header`
   border-top: 1px solid var(--color-border-muted);
@@ -16,6 +17,9 @@ const Header = styled.header`
   top: 0;
   right: 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Inner = styled.div`
@@ -31,9 +35,10 @@ const Logo = styled(LogoIcon)`
   display: block;
 `;
 
-export const NavMenu = () =>{
+export const NavMenu: FC<PropsWithChildren> = ({ children }) =>{
   return (
   <Header>
+    {children}
     <Inner>
       <NavLink to="/">
         <Logo height={32} />

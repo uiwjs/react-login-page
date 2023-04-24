@@ -44,23 +44,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
 }
 
 .login-page3-inner {
   background: var(--login-inner-bg);
   border-radius: 10px;
-  overflow: hidden;
   --gap: 0.37rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.12);
 }
 
 .login-page3-inner > aside {
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
@@ -146,6 +145,23 @@
   margin-left: auto;
   width: calc(100% - 44px);
   outline: 0;
+}
+
+.login-page3-label {
+  position: absolute;
+  padding: 0 0 0 43px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  font-size: 14px;
+}
+
+.login-page3-inner label > input:not(:placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+.login-page3-inner label > input:not(:placeholder-shown) + .login-page3-label,
+.login-page3-inner label > input:-webkit-autofill:not(:placeholder-shown) + .login-page3-label {
+  transform: translateY(-12px);
+  opacity: 0.7;
 }
 
 .login-page3-inner input::placeholder {

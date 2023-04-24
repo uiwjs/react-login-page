@@ -24,7 +24,7 @@ export * from './control/Logo';
 export * from './control/Banner';
 
 const RenderLogin = () => {
-  const { blocks = {}, extra = {}, data } = useStore();
+  const { blocks = {}, extra = {}, data, ...label } = useStore();
   const { fields, buttons } = data || { fields: [] };
   return (
     <Render>
@@ -40,7 +40,14 @@ const RenderLogin = () => {
           </header>
           {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
             if (!item.children) return null;
-            return <label key={item.name + idx}>{item.children}{extra[item.name]}</label>
+            const labelElement = label[`$${item.name}`];
+            return (
+              <label key={item.name + idx}>
+                {item.children}
+                {labelElement && <span className={`login-page3-label`}>{labelElement}</span>}
+                {extra[item.name]}
+              </label>
+            )
           })}
           <section>
             {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {

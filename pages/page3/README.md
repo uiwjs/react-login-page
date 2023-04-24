@@ -1,5 +1,4 @@
-@react-login-page/page3
-===
+# @react-login-page/page3
 
 [![npm version](https://img.shields.io/npm/v/@react-login-page/page3.svg)](https://www.npmjs.com/package/@react-login-page/page3)
 [![Downloads](https://img.shields.io/npm/dm/@react-login-page/page3.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page3)
@@ -44,7 +43,7 @@ import LoginPage, { Email, Password, Welcome, Banner, Submit, Title, Logo, Reset
 import defaultBannerImage from '@react-login-page/page3/banner-image';
 import LoginLogo from 'react-login-page/logo';
 
-const styles= { height: 580 }
+const styles = { height: 580 };
 
 const Demo = () => (
   <div style={styles}>
@@ -57,7 +56,7 @@ const Demo = () => (
       <Welcome>欢迎回来！ 登录您的帐户以查看今天的客户：</Welcome>
       <Title visible={false} />
       <Logo>
-        <LoginLogo height={21} width={55}/>
+        <LoginLogo height={21} width={55} />
       </Logo>
     </LoginPage>
   </div>
@@ -140,7 +139,7 @@ const css = {
   '--login-btn-bg-focus': '#b08bf8',
   '--login-btn-bg-hover': '#b08bf8',
   '--login-btn-bg-active': '#b08bf8',
-}
+};
 
 const Demo = () => <Login style={{ height: 380, ...css }} />;
 
@@ -151,7 +150,7 @@ Use css variables to override default color values
 
 ```css
 .login-page2 {
-  --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
+  --login-bg: linear-gradient(-135deg, #c850c0, #4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
   --login-input: #57b846;
@@ -169,7 +168,7 @@ Custom CSS style overrides
 
 ```css
 .login-page2 section button:focus {
-  box-shadow: 0 0 0 2px rgba(0,142,240,.26);
+  box-shadow: 0 0 0 2px rgba(0, 142, 240, 0.26);
 }
 .login-page2 section button:hover {
   background-color: #0070bd;
@@ -182,12 +181,14 @@ Custom CSS style overrides
 ## Light & Dark Theme
 
 ```css
-[data-color-mode*='dark'] .login-page3, .login-page3 {
+[data-color-mode*='dark'] .login-page3,
+.login-page3 {
   --login-bg: #f3f2f2;
   --login-color: #333;
   --login-logo: #fff;
   --login-inner-bg: #fff;
   --login-banner-bg: #fbfbfb;
+  --login-valid: #e15549;
   --login-input: #333;
   --login-input-icon: #dddddd;
   --login-input-bg: transparent;
@@ -205,6 +206,7 @@ Custom CSS style overrides
   --login-logo: #fff;
   --login-inner-bg: #fff;
   --login-banner-bg: #fbfbfb;
+  --login-valid: #e15549;
   --login-input: #333;
   --login-input-icon: #dddddd;
   --login-input-bg: transparent;

@@ -3,7 +3,7 @@ import { Input, InputProps } from 'react-login-page';
 
 export const Password: FC<InputProps> = (props) => {
   const { name, rename, ...elmProps } = props;
-  const nameProps = { name: 'email', rename: name };
+  const nameProps = { name: 'password', rename: name };
   if (rename) {
     nameProps.name = rename;
   }

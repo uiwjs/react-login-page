@@ -6,5 +6,5 @@ export const Reset: FC<Omit<ButtonProps, 'name'>> = (props) => {
   if (!elmProps.children) {
     elmProps.children = 'Reset';
   }
-  return <Button {...elmProps} name="reset" />;
+  return <Button type="reset" name="reset" {...elmProps} />;
 };

@@ -182,13 +182,16 @@
   gap: var(--gap);
   justify-content: flex-end;
 }
+.login-page3-inner > main > section > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
 .login-page3-inner > main > section > button {
   appearance: none;
   width: auto;
-  min-width: 100px;
   border-radius: 24px;
   text-align: center;
-  padding: 15px 40px;
+  padding: 10px 21px;
   margin-top: 15px;
   background: var(--login-btn-bg);
   color: var(--login-btn);
@@ -201,12 +204,12 @@
   cursor: pointer;
 }
 
-.login-page3-inner > main > section > button:hover {
+.login-page3-inner > main > section > button:hover:not(:disabled) {
   background: var(--login-btn-bg-hover);
   transform: translateY(-3px);
   box-shadow: 0 2px 6px -1px rgba(182, 157, 230, 0.65);
 }
-.login-page3-inner > main > section > button:active {
+.login-page3-inner > main > section > button:active:not(:disabled) {
   background: var(--login-btn-bg-active);
   transform: scale(0.99);
 }

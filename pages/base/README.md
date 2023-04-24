@@ -43,7 +43,7 @@ const Demo = () => (
       <Username name="userUserName" />
       <Password placeholder="请输入密码" name="userPassword" />
       <Submit>提交</Submit>
-      <Reset>重置</Reset>
+      <Reset disabled={true}>重置</Reset>
       <Title />
       <Logo>
         <LoginLogo />

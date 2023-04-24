@@ -103,6 +103,10 @@
   box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
 }
 
+.login-page-1 section button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
 .login-page-1 section button {
   cursor: pointer;
   margin-top: 10px;
@@ -113,7 +117,7 @@
   display: flex;
   gap: 1.35rem;
 }
-.login-page-1 section button:active {
+.login-page-1 section button:active:not(:disabled) {
   background: rgba(255,255,255,0.2);
 }
 

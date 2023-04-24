@@ -124,13 +124,17 @@
   font-size: 0.923rem;
 }
 
-.login-page-base section button:focus {
+.login-page-base section button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.login-page-base section button:focus:not(:disabled) {
   box-shadow: 0 0 0 2px var(--login-btn-focus);
 }
-.login-page-base section button:hover {
+.login-page-base section button:hover:not(:disabled) {
   background-color: var(--login-btn-hover);
 }
-.login-page-base section button:active {
+.login-page-base section button:active:not(:disabled) {
   background-color: var(--login-btn-active);
 }
 .login-page-base footer {

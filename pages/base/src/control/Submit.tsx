@@ -6,5 +6,5 @@ export const Submit: FC<Omit<ButtonProps, 'name'>> = (props) => {
   if (!elmProps.children) {
     elmProps.children = 'Submit';
   }
-  return <Button type="submit" {...elmProps} name="submit" />;
+  return <Button type="submit" name="submit" {...elmProps} />;
 };

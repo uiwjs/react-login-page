@@ -53,7 +53,7 @@ const Demo = () => (
       <Email name="userUserName" />
       <Password placeholder="请输入密码" label="密码" name="userPassword" />
       <Submit>提交</Submit>
-      <Reset>重置</Reset>
+      <Reset disabled>重置</Reset>
       <Welcome>欢迎回来！ 登录您的帐户以查看今天的客户：</Welcome>
       <Title visible={false} />
       <Logo>

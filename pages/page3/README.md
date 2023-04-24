@@ -6,7 +6,7 @@
 
 <!--rehype:ignore:start-->
 <a href="https://uiwjs.github.io/react-login-page">
-<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/233847626-226728ee-58c8-4996-9448-b5e65d3fd89f.png">
+<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/233929466-66229192-529a-4c86-b0dc-b3bae387c3ec.png">
 </a>
 
 <!--rehype:ignore:end-->
@@ -103,7 +103,7 @@ const Demo = () => (
     <Logo>
       <LoginLogo />
     </Logo>
-    <Email index={3} type="text" placeholder="Email" />
+    <Email index={3} placeholder="Email" />
     <Password index={2} />
     <Email rename="phone" label="Phone:" type="tel" index={1} placeholder="Phone number">
       <div>xx</div>

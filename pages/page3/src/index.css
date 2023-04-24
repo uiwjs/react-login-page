@@ -4,6 +4,7 @@
   --login-logo: #fff;
   --login-inner-bg: #fff;
   --login-banner-bg: #fbfbfb;
+  --login-valid: #e15549;
   --login-input: #333;
   --login-input-icon: #dddddd;
   --login-input-bg: transparent;
@@ -21,6 +22,7 @@
   --login-logo: #fff;
   --login-inner-bg: #fff;
   --login-banner-bg: #fbfbfb;
+  --login-valid: #e15549;
   --login-input: #333;
   --login-input-icon: #dddddd;
   --login-input-bg: transparent;
@@ -153,6 +155,21 @@
   transition: all 0.3s ease;
   opacity: 0;
   font-size: 14px;
+}
+
+.login-page3-inner label > input:not(:valid):not(:focus) ~ :last-child:not(input) {
+  animation-name: shake-shake;
+  animation-duration: .3s;
+  color: var(--login-valid);
+}
+
+@keyframes shake-shake {
+  0% { transform: translateX(-3px); }
+  20% { transform: translateX(3px); }
+  40% { transform: translateX(-3px); }
+  60% { transform: translateX(3px); }
+  80% { transform: translateX(-3px); }
+  100% { transform: translateX(0px); }
 }
 
 .login-page3-inner label > input:not(:placeholder-shown) {

@@ -5,6 +5,7 @@ import LoginPage2 from '@react-login-page/page2';
 import bannerImage from '@react-login-page/page2/banner-image';
 import LoginPage3 from '@react-login-page/page3';
 import bannerImage3 from '@react-login-page/page3/banner-image';
+import LoginPage4 from '@react-login-page/page4';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { mediaStyle } from '../comps/DocsLayout';
@@ -79,6 +80,13 @@ export const Example = () => {
             <LoginLogo />
           </LoginPage3.Logo>
         </LoginPage3>
+      </Inner>
+      <Inner to="/pages/page4">
+        <LoginPage4>
+          <LoginPage4.Logo>
+            <LoginLogo />
+          </LoginPage4.Logo>
+        </LoginPage4>
       </Inner>
     </Wrapper>
   );

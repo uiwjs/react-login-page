@@ -1,0 +1,253 @@
+[data-color-mode*='dark'] .login-page4, .login-page4 {
+  --login-bg: #363e47;
+  --login-color: #333;
+  --login-inner-bg: #d9d9d9;
+  --login-logo: #333;
+  --login-btn-linear-gradient: -webkit-linear-gradient(right,#21d4fd,#b721ff,#21d4fd,#b721ff);
+  --login-input: #333;
+  --login-input-border: #adadad;
+  --login-input-placeholder: #5d5d5d;
+  --login-input-border-valid: red;
+  --login-input-linear-gradient: -webkit-linear-gradient(left,#21d4fd,#b721ff);
+  --login-input-border-bg: #6a7dfe;
+  --login-btn: #fff;
+}
+[data-color-mode*='light'] .login-page4 {
+  --login-bg: #f2f2f2;
+  --login-color: #333;
+  --login-inner-bg: #fff;
+  --login-logo: #333;
+  --login-btn-linear-gradient: -webkit-linear-gradient(right,#21d4fd,#b721ff,#21d4fd,#b721ff);
+  --login-input: #333;
+  --login-input-border: #adadad;
+  --login-input-placeholder: #5d5d5d;
+  --login-input-border-valid: red;
+  --login-input-linear-gradient: -webkit-linear-gradient(left,#21d4fd,#b721ff);
+  --login-input-border-bg: #6a7dfe;
+  --login-btn: #fff;
+}
+
+.login-page4 {
+  --login-line-height: 1.5;
+  line-height: var(--login-line-height);
+  background: var(--login-bg);
+  color: var(--login-color);
+  display: flex;
+  font-size: 16px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%;
+}
+
+.login-page4-inner {
+  background: var(--login-inner-bg);
+  border-radius: 10px;
+  --gap: 0.37rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.12);
+}
+
+.login-page4-inner > aside {
+  height: auto;
+  overflow: hidden;
+}
+
+.login-page4-inner > main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  position: relative;
+  padding: 77px 55px 33px;
+  padding-bottom: 45px;
+  width: 390px;
+  box-sizing: border-box;
+}
+.login-page4-inner > main > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  padding-bottom: 1rem;
+}
+
+.login-page4-inner > main > header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  text-align: center;
+  font-weight: inherit;
+}
+
+.login-page4-inner .login-page4-logo {
+  color: var(--login-logo);
+  width: auto;
+  margin: 20px;
+  font-size: 34px;
+}
+.login-page4-inner .login-page4-logo svg {
+  height: 54px;
+  min-width: 54px;
+}
+
+.login-page4-inner > main > header > section {
+  line-height: 155%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  opacity: 0.65;
+  font-weight: 400;
+  max-width: 200px;
+}
+
+.login-page4-inner > main > label {
+  display: flex;
+  align-items: center;
+  color: var(--login-input);
+  display: block;
+  position: relative;
+}
+.login-page4-inner > main > label input {
+  font-size: 16px;
+  padding: 20px 0px;
+  height: 56px;
+  border: none;
+  border-bottom: 2px solid var(--login-input-border);
+  background-color: transparent;
+  width: 280px;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+  color: var(--login-input);
+  font-weight: 400;
+  appearance: none;
+  margin-left: auto;
+  outline: 0;
+}
+.login-page4-inner > main > label > input:not(:placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+
+.login-page4-inner > main > footer {
+  padding-top: 65px;
+  text-align: center !important;
+  font-size: 14px;
+}
+.login-page4-inner > main > aside {
+  font-size: 14px;
+  padding-bottom: 4px;
+  margin-left: auto;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+}
+
+.login-page4-label {
+  transition: all 0.3s ease;
+  opacity: 0;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+}
+
+.login-page4-border {
+  height: 2px;
+  width: 0;
+  margin-top: -2px;
+  position: relative;
+  background: var(--login-input-border-bg);
+  background: var(--login-input-linear-gradient);
+  transition: all 0.3s;
+}
+
+.login-page4-inner > main > label input:focus ~ .login-page4-border {
+  width: 100%;
+}
+
+.login-page4-inner label > input:not(:valid):not(:focus) {
+  border-bottom: 2px solid var(--login-input-border-valid);
+}
+
+.login-page4-inner label > input:not(:placeholder-shown) + .login-page4-label,
+.login-page4-inner label > input:-webkit-autofill:not(:placeholder-shown) + .login-page4-label {
+  transform: translateY(2px);
+  opacity: 0.7;
+  color: var(--login-input-placeholder);
+}
+
+.login-page4-inner input::placeholder {
+  color: var(--login-input-placeholder);
+}
+.login-page4-inner > main > label input:focus {
+  border-color: var(--login-btn-bg);
+}
+
+.login-page4-inner > main > label input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px var(--login-inner-bg) inset;
+  color: var(--login-input);
+  -webkit-text-fill-color: #333 !important;
+}
+
+.login-page4-inner > main > section {
+  display: flex;
+  gap: var(--gap);
+  justify-content: flex-end;
+  margin-top: 43px;
+}
+.login-page4-inner > main > section > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.login-page4-inner > main > section > button {
+  font-size: 15px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  outline: none!important;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background: #a64bf4;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.login-page4-inner > main > section > button > :first-child {
+  color: var(--login-btn);
+  position: relative;
+  z-index: 1;
+}
+
+.login-page4-inner > main > section > button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--login-btn-linear-gradient);
+  height: 100%;
+  bottom: 0;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  transition: all 0.3s;
+}
+
+.login-page4-inner > main > section > button:hover:not(:disabled)::after {
+  left: -10%;
+}
+.login-page4-inner > main > section > button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+.login-page4-inner > main > section > button:active:not(:disabled)::after  {
+  left: -130%;
+}
+

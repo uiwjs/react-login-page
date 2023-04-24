@@ -130,6 +130,24 @@ export const routes: MenuRouteObject = {
             };
           },
         },
+        {
+          path: 'page4',
+          lazy: async () => {
+            const Login = await import('@react-login-page/page4');
+            const LoginExample = Login.default;
+            return {
+              element: (
+                <Preview disableNav path={() => import('@react-login-page/page4/README.md')}>
+                  <LoginExample>
+                    <LoginExample.Logo>
+                      <Logo />
+                    </LoginExample.Logo>
+                  </LoginExample>
+                </Preview>
+              ),
+            };
+          },
+        },
       ],
     },
   ],

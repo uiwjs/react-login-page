@@ -9,3 +9,5 @@ export const Username: FC<InputProps> = (props) => {
   }
   return <Input placeholder="Username" spellCheck={false} {...elmProps} {...nameProps} />;
 };
+
+Username.displayName = 'BaseLogin.Username';

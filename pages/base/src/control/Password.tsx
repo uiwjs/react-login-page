@@ -9,3 +9,5 @@ export const Password: FC<InputProps> = (props) => {
   }
   return <Input type="password" placeholder="Password" {...elmProps} {...nameProps} />;
 };
+
+Password.displayName = 'BaseLogin.Password';

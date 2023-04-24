@@ -98,6 +98,6 @@ Login.Reset = Reset;
 Login.Footer = Footer;
 Login.Logo = Logo;
 Login.Title = Title;
-Login.displayName = 'LoginPage';
+Login.displayName = 'BaseLoginPage';
 
 export default Login;

@@ -10,3 +10,5 @@ export const Reset: FC<Omit<ButtonProps, 'name'>> = (props) => {
   }
   return <Button type="reset" {...elmProps} name="reset" />;
 };
+
+Reset.displayName = 'Login.Reset';

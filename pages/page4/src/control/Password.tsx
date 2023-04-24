@@ -21,3 +21,5 @@ export const Password: FC<PasswordProps> = memo((props) => {
 
   return <Input type="password" placeholder="Password" {...elmProps} {...nameProps} />;
 });
+
+Password.displayName = 'Login.Password';

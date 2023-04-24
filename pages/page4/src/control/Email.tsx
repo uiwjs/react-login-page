@@ -21,3 +21,5 @@ export const Email: FC<EmailProps> = memo((props) => {
 
   return <Input type="email" placeholder="Email" spellCheck={false} {...elmProps} {...nameProps} />;
 });
+
+Email.displayName = 'Login.Email';

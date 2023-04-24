@@ -4,3 +4,5 @@ export const Footer = <Tag extends BlockTagType = 'footer'>(props: BlockProps<Ta
   const { name, ...elmProps } = props;
   return <Block {...elmProps} name="footer" tagName="footer" />;
 };
+
+Footer.displayName = 'Login.Footer';

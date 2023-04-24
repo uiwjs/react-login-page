@@ -10,3 +10,5 @@ export const Submit: FC<Omit<ButtonProps, 'name'>> = (props) => {
   }
   return <Button type="submit" {...elmProps} name="submit" />;
 };
+
+Submit.displayName = 'Login.Submit';

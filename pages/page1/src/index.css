@@ -17,7 +17,8 @@
   background-color: var(--login-bg);
   background: linear-gradient(45deg, var(--login-bg-from), var(--login-bg-to));
   color: var(--login-color);
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   width: 100%;
   display: flex;
   font-size: 16px;

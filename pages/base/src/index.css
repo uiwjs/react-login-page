@@ -30,7 +30,8 @@
   line-height: var(--login-line-height);
   background-color: var(--login-bg);
   color: var(--login-color);
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   display: flex;
   font-size: 16px;
   justify-content: center;

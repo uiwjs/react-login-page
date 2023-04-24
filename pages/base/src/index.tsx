@@ -28,20 +28,29 @@ const RenderLogin = () => {
         <header>
           {blocks.logo} {blocks.title}
         </header>
-        {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-          const extraLabel = extra[item.name as keyof typeof extra];
-          if (!item.children && extraLabel) return <div key={idx}>{extraLabel}</div>;
-          return <label key={item.name + idx}>{item.children}{extraLabel}</label>
-        })}
-        <section>
-          {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
-            const child = item.children;
-            if (!isValidElement(child)) return null;
-            return cloneElement(child, {
-              ...child.props,
-              key: item.name + idx,
-            })
+        {fields
+          .sort((a, b) => a.index - b.index)
+          .map((item, idx) => {
+            const extraLabel = extra[item.name as keyof typeof extra];
+            if (!item.children && extraLabel) return <div key={idx}>{extraLabel}</div>;
+            return (
+              <label key={item.name + idx}>
+                {item.children}
+                {extraLabel}
+              </label>
+            );
           })}
+        <section>
+          {buttons
+            .sort((a, b) => a.index - b.index)
+            .map((item, idx) => {
+              const child = item.children;
+              if (!isValidElement(child)) return null;
+              return cloneElement(child, {
+                ...child.props,
+                key: item.name + idx,
+              });
+            })}
         </section>
         {blocks.footer}
       </div>
@@ -79,15 +88,15 @@ type LoginComponent = FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
   Title: typeof Title;
 };
 
-const Login = LoginPage as LoginComponent
+const Login = LoginPage as LoginComponent;
 
-Login.Username =  Username;
-Login.Password =  Password;
-Login.Submit =  Submit;
-Login.Reset =  Reset;
-Login.Footer =  Footer;
-Login.Logo =  Logo;
-Login.Title =  Title;
+Login.Username = Username;
+Login.Password = Password;
+Login.Submit = Submit;
+Login.Reset = Reset;
+Login.Footer = Footer;
+Login.Logo = Logo;
+Login.Title = Title;
 Login.displayName = 'LoginPage';
 
 export default Login;

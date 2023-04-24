@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 import { mediaStyle } from './DocsLayout';
 import { ReactComponent as LogoIcon } from '../svg/logo-large.svg';
-import { NavLink } from "react-router-dom";
-import { Nav } from "./Nav";
-import { FC, PropsWithChildren } from "react";
+import { NavLink } from 'react-router-dom';
+import { Nav } from './Nav';
+import { FC, PropsWithChildren } from 'react';
 
 const Header = styled.header`
   border-top: 1px solid var(--color-border-muted);
@@ -35,16 +35,16 @@ const Logo = styled(LogoIcon)`
   display: block;
 `;
 
-export const NavMenu: FC<PropsWithChildren> = ({ children }) =>{
+export const NavMenu: FC<PropsWithChildren> = ({ children }) => {
   return (
-  <Header>
-    {children}
-    <Inner>
-      <NavLink to="/">
-        <Logo height={32} />
-      </NavLink>
-      <Nav />
-    </Inner>
-  </Header>
-  )
-}
+    <Header>
+      {children}
+      <Inner>
+        <NavLink to="/">
+          <Logo height={32} />
+        </NavLink>
+        <Nav />
+      </Inner>
+    </Header>
+  );
+};

@@ -15,13 +15,13 @@ const MarkdownCode = CodeLayout.Preview;
 const Code = CodeLayout.Code;
 const Toolbar = CodeLayout.Toolbar;
 
-const Wrapper = styled.div<{ isShowExample?: boolean; }>`
+const Wrapper = styled.div<{ isShowExample?: boolean }>`
   flex: 1;
   padding-right: 0.51rem;
   padding-left: 0.51rem;
   overflow: hidden;
   z-index: 1;
-  padding-top: ${({ isShowExample }) => isShowExample ? '0' : '0'};
+  padding-top: ${({ isShowExample }) => (isShowExample ? '0' : '0')};
   margin: 0 auto;
   width: 100%;
   ${mediaStyle}
@@ -52,7 +52,6 @@ const Example = styled.div`
   height: 100vh;
   overflow: auto;
 `;
-
 
 const startY = keyframes`
   0%,30% {
@@ -88,11 +87,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
     <Fragment>
       <ScrollRestoration />
       {!props.disableNav && <DocsNav />}
-      {props.disableNav && (
-        <Example>
-          {props.children}
-        </Example>
-      )}
+      {props.disableNav && <Example>{props.children}</Example>}
       {props.disableNav && (
         <NavMenu>
           <PageArrow>
@@ -101,9 +96,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
         </NavMenu>
       )}
       <Wrapper isShowExample={props.disableNav}>
-        {loading && (
-          <div>Loading...</div>
-        )}
+        {loading && <div>Loading...</div>}
         {mdData && !loading && (
           <Markdown
             source={mdData.source}

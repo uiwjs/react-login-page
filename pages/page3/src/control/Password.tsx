@@ -4,12 +4,12 @@ import { LockIcon } from '../icons/lock';
 
 export interface PasswordProps extends InputProps {
   label?: React.ReactNode;
-};
+}
 export const Password: FC<PasswordProps> = memo((props) => {
   const { name, rename, label = 'Password:', ...elmProps } = props;
   const { dispatch } = useStore();
   if (!elmProps.children) {
-    elmProps.children = LockIcon
+    elmProps.children = LockIcon;
   }
 
   const nameProps = { name: 'password', rename: name };

@@ -56,7 +56,7 @@ export const routes: MenuRouteObject = {
           path: 'base',
           lazy: async () => {
             const Login = await import('@react-login-page/base');
-            const LoginExample = Login.default
+            const LoginExample = Login.default;
             return {
               element: (
                 <Preview disableNav path={() => import('@react-login-page/base/README.md')}>
@@ -67,14 +67,14 @@ export const routes: MenuRouteObject = {
                   </LoginExample>
                 </Preview>
               ),
-            }
-          }
+            };
+          },
         },
         {
           path: 'page1',
           lazy: async () => {
             const Login = await import('@react-login-page/page1');
-            const LoginExample = Login.default
+            const LoginExample = Login.default;
             return {
               element: (
                 <Preview disableNav path={() => import('@react-login-page/page1/README.md')}>
@@ -85,14 +85,14 @@ export const routes: MenuRouteObject = {
                   </LoginExample>
                 </Preview>
               ),
-            }
-          }
+            };
+          },
         },
         {
           path: 'page2',
           lazy: async () => {
             const Login = await import('@react-login-page/page2');
-            const bannerImage =  await import('@react-login-page/page2/banner-image');
+            const bannerImage = await import('@react-login-page/page2/banner-image');
             const LoginExample = Login.default;
             return {
               element: (
@@ -107,14 +107,14 @@ export const routes: MenuRouteObject = {
                   </LoginExample>
                 </Preview>
               ),
-            }
-          }
+            };
+          },
         },
         {
           path: 'page3',
           lazy: async () => {
             const Login = await import('@react-login-page/page3');
-            const bannerImage =  await import('@react-login-page/page3/banner-image');
+            const bannerImage = await import('@react-login-page/page3/banner-image');
             const LoginExample = Login.default;
             return {
               element: (
@@ -127,8 +127,8 @@ export const routes: MenuRouteObject = {
                   </LoginExample>
                 </Preview>
               ),
-            }
-          }
+            };
+          },
         },
       ],
     },

@@ -72,13 +72,17 @@ export const Home = () => {
       </Header>
       <Title>
         React Login Page
-        <VersionInfo>
-          v{version}
-        </VersionInfo>
+        <VersionInfo>v{version}</VersionInfo>
       </Title>
-      <SubTitle>Install and use react login page components quickly and easily, with flexible APIs for modifying these components.</SubTitle>
+      <SubTitle>
+        Install and use react login page components quickly and easily, with flexible APIs for modifying these
+        components.
+      </SubTitle>
       <Nav>
-        <Link to="/docs">Documentation</Link><a href="https://github.com/uiwjs/react-login-page" target="_blank" rel="noreferrer">Github</a>
+        <Link to="/docs">Documentation</Link>
+        <a href="https://github.com/uiwjs/react-login-page" target="_blank" rel="noreferrer">
+          Github
+        </a>
       </Nav>
       <Example />
     </Wrapper>

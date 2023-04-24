@@ -81,5 +81,5 @@ export const Example = () => {
         </LoginPage3>
       </Inner>
     </Wrapper>
-  )
-}
+  );
+};

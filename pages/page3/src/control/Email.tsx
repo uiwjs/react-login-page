@@ -4,12 +4,12 @@ import { EmailIcon } from '../icons/email';
 
 export interface EmailProps extends InputProps {
   label?: React.ReactNode;
-};
+}
 export const Email: FC<EmailProps> = memo((props) => {
   const { name, rename, label = 'Email:', ...elmProps } = props;
   const { dispatch } = useStore();
   if (!elmProps.children) {
-    elmProps.children = EmailIcon
+    elmProps.children = EmailIcon;
   }
 
   const nameProps = { name: 'email', rename: name };

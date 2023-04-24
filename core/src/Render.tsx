@@ -1,5 +1,5 @@
 import { FC, Fragment, Children, cloneElement, isValidElement } from 'react';
-import { useStore, RenderStateProps , InitialState} from './store';
+import { useStore, RenderStateProps, InitialState } from './store';
 
 export type RenderChildren =
   | { children?: (props: Required<RenderStateProps>, data: InitialState['data']) => React.ReactNode }
@@ -10,14 +10,17 @@ export const Render: FC<RenderChildren> = ({ children }) => {
   const childs = typeof children === 'function' ? [] : Children.toArray(children);
   return (
     <Fragment>
-      {typeof children === 'function' && !isValidElement(children) && children({ fields, buttons, blocks, extra, $$index }, { ...data })}
-      {typeof children !== 'function' && childs.map((child, key) => {
-        if (!isValidElement(child)) return null;
-        return cloneElement(child, {
-          ...child.props,
-          key,
-        });
-      })}
+      {typeof children === 'function' &&
+        !isValidElement(children) &&
+        children({ fields, buttons, blocks, extra, $$index }, { ...data })}
+      {typeof children !== 'function' &&
+        childs.map((child, key) => {
+          if (!isValidElement(child)) return null;
+          return cloneElement(child, {
+            ...child.props,
+            key,
+          });
+        })}
     </Fragment>
   );
 };

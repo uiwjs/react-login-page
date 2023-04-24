@@ -1,6 +1,5 @@
-
-import styled from "styled-components"
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Menu = styled.nav`
   display: flex;
@@ -18,12 +17,14 @@ const Menu = styled.nav`
   }
 `;
 
-export const Nav = () =>{
+export const Nav = () => {
   return (
     <Menu>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/docs">Document</NavLink>
-      <a href="https://github.com/uiwjs/react-login-page" rel="noreferrer" target="_blank">Github</a>
+      <a href="https://github.com/uiwjs/react-login-page" rel="noreferrer" target="_blank">
+        Github
+      </a>
     </Menu>
-  )
-}
+  );
+};

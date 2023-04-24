@@ -27,26 +27,32 @@ const RenderLogin = () => {
   return (
     <Render>
       <div className="login-page2-inner">
-        <aside>
-          {blocks.banner}
-        </aside>
+        <aside>{blocks.banner}</aside>
         <main>
           <header>
             {blocks.logo} {blocks.title}
           </header>
-          {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-            if (!item.children) return null;
-            return <label key={item.name + idx}>{item.children} {extra[item.name]}</label>
-          })}
-          <section>
-            {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
-              const child = item.children;
-              if (!isValidElement(child)) return null;
-              return cloneElement(child, {
-                ...child.props,
-                key: item.name + idx,
-              })
+          {fields
+            .sort((a, b) => a.index - b.index)
+            .map((item, idx) => {
+              if (!item.children) return null;
+              return (
+                <label key={item.name + idx}>
+                  {item.children} {extra[item.name]}
+                </label>
+              );
             })}
+          <section>
+            {buttons
+              .sort((a, b) => a.index - b.index)
+              .map((item, idx) => {
+                const child = item.children;
+                if (!isValidElement(child)) return null;
+                return cloneElement(child, {
+                  ...child.props,
+                  key: item.name + idx,
+                });
+              })}
           </section>
           {blocks.buttonAfter}
         </main>
@@ -87,16 +93,16 @@ type LoginComponent = FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
   Title: typeof Title;
 };
 
-const Login = LoginPage as LoginComponent
+const Login = LoginPage as LoginComponent;
 
-Login.Email =  Email;
-Login.Password =  Password;
-Login.Submit =  Submit;
-Login.Reset =  Reset;
-Login.ButtonAfter =  ButtonAfter;
-Login.Logo =  Logo;
-Login.Banner =  Banner;
-Login.Title =  Title;
+Login.Email = Email;
+Login.Password = Password;
+Login.Submit = Submit;
+Login.Reset = Reset;
+Login.ButtonAfter = ButtonAfter;
+Login.Logo = Logo;
+Login.Banner = Banner;
+Login.Title = Title;
 Login.displayName = 'LoginPage';
 
 export default Login;

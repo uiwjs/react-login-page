@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "sourceMap": false,
     "moduleResolution": "node",
-    "noEmit": false,
+    "noEmit": false
     // "paths": {
     //   "react-login-page/*": ["./node_modules/react-login-page/*"]
     // }

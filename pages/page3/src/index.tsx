@@ -35,29 +35,33 @@ const RenderLogin = () => {
         </aside>
         <main>
           <header>
-           {blocks.title}
-           {blocks.welcome}
+            {blocks.title}
+            {blocks.welcome}
           </header>
-          {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-            if (!item.children) return null;
-            const labelElement = label[`$${item.name}`];
-            return (
-              <label key={item.name + idx}>
-                {item.children}
-                {labelElement && <span className={`login-page3-label`}>{labelElement}</span>}
-                {extra[item.name]}
-              </label>
-            )
-          })}
-          <section>
-            {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {
-              const child = item.children;
-              if (!isValidElement(child)) return null;
-              return cloneElement(child, {
-                ...child.props,
-                key: item.name + idx,
-              })
+          {fields
+            .sort((a, b) => a.index - b.index)
+            .map((item, idx) => {
+              if (!item.children) return null;
+              const labelElement = label[`$${item.name}`];
+              return (
+                <label key={item.name + idx}>
+                  {item.children}
+                  {labelElement && <span className={`login-page3-label`}>{labelElement}</span>}
+                  {extra[item.name]}
+                </label>
+              );
             })}
+          <section>
+            {buttons
+              .sort((a, b) => a.index - b.index)
+              .map((item, idx) => {
+                const child = item.children;
+                if (!isValidElement(child)) return null;
+                return cloneElement(child, {
+                  ...child.props,
+                  key: item.name + idx,
+                });
+              })}
           </section>
           {blocks.buttonAfter}
         </main>
@@ -101,7 +105,7 @@ type LoginComponent = FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>
   Title: typeof Title;
 };
 
-const Login = LoginPage as LoginComponent
+const Login = LoginPage as LoginComponent;
 
 Login.Email = Email;
 Login.Password = Password;

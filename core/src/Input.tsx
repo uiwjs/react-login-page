@@ -26,7 +26,7 @@ export const Input: FC<PropsWithChildren<InputProps>> = memo((props) => {
         },
         fields: {
           ...fields,
-          [name]: visible ? <input {...elmProps} name={rename || name} /> : null
+          [name]: visible ? <input {...elmProps} name={rename || name} /> : null,
         },
       });
     }

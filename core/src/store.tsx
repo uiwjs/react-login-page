@@ -7,9 +7,9 @@ export interface StoreContextValue<Tag extends BlockTagType> extends InitialStat
 export type BlockTagType = keyof JSX.IntrinsicElements;
 
 export type Index = Record<string, number>;
-export type Fields = React.ReactElement<HTMLInputElement & { index?: number; }>;
-export type Buttons = React.ReactElement<HTMLButtonElement & { index?: number; }>;
-export type Blocks<Tag extends BlockTagType = 'div'> =  React.ReactElement<Tag & { index?: number; }>;
+export type Fields = React.ReactElement<HTMLInputElement & { index?: number }>;
+export type Buttons = React.ReactElement<HTMLButtonElement & { index?: number }>;
+export type Blocks<Tag extends BlockTagType = 'div'> = React.ReactElement<Tag & { index?: number }>;
 
 export interface RenderStateProps<T extends BlockTagType = 'div'> {
   $$index?: Record<string, number>;
@@ -31,7 +31,7 @@ export interface InitialState<Tag extends BlockTagType = 'div'> extends RenderSt
     fields: Control<Fields>[];
     buttons: Control<Buttons>[];
     blocks: Control<Blocks<Tag>>[];
-  }
+  };
 }
 
 export const initialState: InitialState = {
@@ -59,7 +59,7 @@ export function reducer(state: InitialState, action: Partial<RenderStateProps>):
     buttons: { ...state.buttons, ...action.buttons },
     blocks: { ...state.blocks, ...action.blocks },
     extra: { ...state.extra, ...action.extra },
-  }
+  };
   const fieldsArray = Object.keys(result.fields).map((key) => ({
     name: key,
     index: result.fields[key]?.props?.index || (result.$$index || {})[key] || 0,
@@ -75,7 +75,7 @@ export function reducer(state: InitialState, action: Partial<RenderStateProps>):
     index: result.blocks[key]?.props?.index || (result.$$index || {})[key] || 0,
     children: result.blocks[key],
   }));
-  return { ...result, data: { ...result.data, fields: fieldsArray, buttons: buttonsArray, blocks: blocksArray }};
+  return { ...result, data: { ...result.data, fields: fieldsArray, buttons: buttonsArray, blocks: blocksArray } };
 }
 
 export const useStore = () => {

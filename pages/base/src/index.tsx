@@ -32,6 +32,7 @@ const RenderLogin = () => {
           .sort((a, b) => a.index - b.index)
           .map((item, idx) => {
             const extraLabel = extra[item.name as keyof typeof extra];
+            if (!item.children && !extraLabel) return null;
             if (!item.children && extraLabel) return <div key={idx}>{extraLabel}</div>;
             return (
               <label key={item.name + idx}>

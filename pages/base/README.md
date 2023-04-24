@@ -93,7 +93,13 @@ const Demo = () => (
     <Logo>
       <LoginLogo />
     </Logo>
+    <Username rename="subtitle" visible={false} index={0}>
+      欢迎登录页面
+    </Username>
     <Username index={3} />
+    <Username rename="username_rule" visible={false} index={4}>
+      用户名规则
+    </Username>
     <Password index={1} />
     <Input name="phone" index={2} placeholder="Phone number">
       <img src={imgSrc} height={38} />

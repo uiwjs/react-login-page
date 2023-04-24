@@ -29,8 +29,9 @@ const RenderLogin = () => {
           {blocks.logo} {blocks.title}
         </header>
         {fields.sort((a, b) => a.index - b.index).map((item, idx) => {
-          if (!item.children) return null;
-          return <label key={item.name + idx}>{item.children}{extra[item.name as keyof typeof extra]}</label>
+          const extraLabel = extra[item.name as keyof typeof extra];
+          if (!item.children && extraLabel) return <div key={idx}>{extraLabel}</div>;
+          return <label key={item.name + idx}>{item.children}{extraLabel}</label>
         })}
         <section>
           {buttons.sort((a, b) => a.index - b.index).map((item, idx) => {

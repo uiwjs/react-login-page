@@ -13,19 +13,20 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 
 export const Input: FC<PropsWithChildren<InputProps>> = memo((props) => {
   const ref = useRef<InputProps>();
-  const { fields = {}, extra = {}, dispatch } = useStore();
+  const { fields = {}, extra = {}, $$index = {}, dispatch } = useStore();
   const { name, rename, visible = true, children, ...elmProps } = props;
   useEffect(() => {
     if (ref.current !== props && name) {
       ref.current = { ...props };
       dispatch({
+        $$index: { ...$$index, [name]: elmProps.index || 0 },
         extra: {
           ...extra,
           [name]: children || null,
         },
         fields: {
           ...fields,
-          [name]: visible ? <input  {...elmProps} name={rename || name} /> : null
+          [name]: visible ? <input {...elmProps} name={rename || name} /> : null
         },
       });
     }

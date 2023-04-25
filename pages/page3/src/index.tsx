@@ -29,7 +29,7 @@ const RenderLogin = () => {
   return (
     <Render>
       <div className="login-page3-inner">
-        <aside>
+        <aside className="login-page3-banner">
           {blocks.logo}
           {blocks.banner}
         </aside>

@@ -18,7 +18,7 @@ export const Block = <Tag extends BlockTagType = 'div'>(props: PropsWithChildren
     const { name, visible = true, tagName = 'div', ...elmProps } = props;
     if (ref.current !== elmProps && name) {
       ref.current = { ...elmProps };
-      const div = visible && elmProps.children ? createElement(tagName, { ...elmProps }, elmProps.children) : null;
+      const div = visible ? createElement(tagName, { ...elmProps }, elmProps.children) : null;
       dispatch({
         blocks: { ...blocks, [name]: div as unknown as Blocks<'div'> },
       });

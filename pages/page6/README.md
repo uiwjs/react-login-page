@@ -5,7 +5,7 @@
 
 <!--rehype:ignore:start-->
 <a href="https://uiwjs.github.io/react-login-page">
-<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/234231103-0bdceee8-2407-43b3-a2fe-017d344d5764.png">
+<img width="571" alt="login-page" src="https://user-images.githubusercontent.com/1680273/234334810-9c38bec1-e41e-4cf7-9ead-a3df682e646e.png">
 </a>
 
 <!--rehype:ignore:end-->

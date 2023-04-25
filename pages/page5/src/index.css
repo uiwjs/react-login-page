@@ -11,6 +11,7 @@
   --login-btn-focus: #f24353;
   --login-btn-hover: #f24353;
   --login-btn-active: #d82a3b;
+  --login-footer: #ffffff99;
 }
 [data-color-mode*='light'] .login-page5 {
   --login-bg: #f45b69;
@@ -25,6 +26,7 @@
   --login-btn-focus: #f24353;
   --login-btn-hover: #f24353;
   --login-btn-active: #d82a3b;
+  --login-footer: #ffffff99;
 }
 
 .login-page5 {
@@ -163,9 +165,10 @@
   box-shadow: 0 0 3px 0 var(--login-btn-focus);
 }
 .login-page5 > footer a {
-  color: rgba(255, 255, 255, 0.6);
+  --login-footer: #ffffff99;
+  color: var(--login-footer);
 }
 .login-page5 > footer {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--login-footer);
   padding-top: 2rem;
 }

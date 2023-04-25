@@ -151,6 +151,7 @@ const css = {
   '--login-btn-focus': '#3648c6',
   '--login-btn-hover': '#3648c6',
   '--login-btn-active': '#5b6ef4',
+  '--login-footer': '#ffffff99',
 };
 
 const Demo = () => <Login style={{ height: 380, ...css }} />;
@@ -174,6 +175,7 @@ Use css variables to override default color values
   --login-btn-focus: #f24353;
   --login-btn-hover: #f24353;
   --login-btn-active: #d82a3b;
+  --login-footer: #ffffff99;
 }
 ```
 
@@ -208,6 +210,7 @@ Custom CSS style overrides
   --login-btn-focus: #f24353;
   --login-btn-hover: #f24353;
   --login-btn-active: #d82a3b;
+  --login-footer: #ffffff99;
 }
 [data-color-mode*='light'] .login-page5 {
   --login-bg: #f45b69;
@@ -222,6 +225,7 @@ Custom CSS style overrides
   --login-btn-focus: #f24353;
   --login-btn-hover: #f24353;
   --login-btn-active: #d82a3b;
+  --login-footer: #ffffff99;
 }
 ```
 

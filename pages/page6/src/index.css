@@ -1,0 +1,195 @@
+[data-color-mode*='dark'] .login-page6, .login-page6 {
+  --login-bg: #2c3338;
+  --login-inner-bg: white;
+  --login-color: #fff;
+  --login-input: #fff;
+  --login-input-bg: rgb(55 55 62);
+  --login-inner-before: linear-gradient(#1845ad, #23a2f6);
+  --login-inner-after: linear-gradient(to right, #ff512f, #f09819);
+  --login-btn: #333;
+  --login-btn-bg: #fff;
+  --login-btn-focus: transition;
+  --login-btn-hover: #1845ad;
+  --login-btn-active: #f09819;
+  --login-footer: #ffffff99;
+}
+[data-color-mode*='light'] .login-page6 {
+  --login-bg: #080710;
+  --login-inner-bg: white;
+  --login-color: #fff;
+  --login-input: #fff;
+  --login-input-bg: rgb(55 55 62);
+  --login-inner-before: linear-gradient(#1845ad, #23a2f6);
+  --login-inner-after: linear-gradient(to right, #ff512f, #f09819);
+  --login-btn: #333;
+  --login-btn-bg: #fff;
+  --login-btn-focus: transition;
+  --login-btn-hover: #1845ad;
+  --login-btn-active: #f09819;
+  --login-footer: #ffffff99;
+}
+
+.login-page6 {
+  --gap: 15px;
+  --login-line-height: 1.5;
+  line-height: var(--login-line-height);
+  background-color: var(--login-bg);
+  color: var(--login-color);
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-page6-inner::before {
+  background: var(--login-inner-before);
+  left: -80px;
+  top: -80px;
+}
+.login-page6-inner::after {
+  background: var(--login-inner-after);
+  right: -30px;
+  bottom: -80px;
+}
+.login-page6-inner::before,
+.login-page6-inner::after {
+  content: '';
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
+
+.login-page6 header {
+  display: flex;
+  gap: var(--gap);
+  padding-bottom: 2rem;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  justify-content: center;
+}
+.login-page6 header > div {
+  display: flex;
+  align-items: center;
+}
+.login-page6 header > div > * {
+  display: block;
+}
+
+.login-page6-inner {
+  width: 400px;
+  position: relative;
+}
+
+
+.login-page6-label {
+  margin-bottom: 6px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.login-page6-label + input, .login-page6-label + input + * {
+  margin-top: 32px !important;
+}
+
+.login-page6-inner > article  {
+  background-color: rgba(255,255,255,0.13);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 50px 35px;
+  margin: 2rem 0;
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+}
+.login-page6-inner > article > label {
+  gap: var(--gap);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.login-page6-inner > article > label > input {
+  background: var(--login-input-bg);
+  color: var(--login-input);
+  border: 0;
+  z-index: 1;
+  position: relative;
+  outline: 0;
+  display: block;
+  height: 46px;
+  width: 100%;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.login-page6-inner > article > label > div + input {
+  margin-top: 5px;
+}
+.login-page6-inner > article > label > div > * {
+  display: block;
+}
+
+.login-page6-inner > article > label > input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px var(--login-input-bg) inset;
+  color: var(--login-color);
+  border-radius: 5px;
+  outline: 0;
+  -webkit-text-fill-color: var(--login-input) !important;
+}
+
+.login-page6-inner > article > section {
+  gap: var(--gap);
+  display: flex;
+}
+
+.login-page6-inner > article > section > button {
+  cursor: pointer;
+  min-width: 80px;
+  text-transform: uppercase;
+  border: 0;
+  transition: background-color 300ms;
+  position: relative;
+  z-index: 1;
+  margin-top: 30px;
+  width: 100%;
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn);
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.login-page6-inner > article > section > button:hover:not(:disabled) {
+  background-color: var(--login-btn-hover);
+  color: var(--login-color);
+}
+.login-page6-inner > article > section > button:active:not(:disabled) {
+  background-color: var(--login-btn-active);
+  color: var(--login-color);
+}
+.login-page6-inner > article > section > button:focus:not(:disabled) {
+  box-shadow: 0 0 3px 0 var(--login-btn-focus);
+}
+.login-page6 > footer a {
+  color: var(--login-footer);
+}
+.login-page6 > footer {
+  color: var(--login-footer);
+  padding-bottom: 1rem;
+  position: relative;
+}

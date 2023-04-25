@@ -7,6 +7,7 @@ import LoginPage3 from '@react-login-page/page3';
 import bannerImage3 from '@react-login-page/page3/banner-image';
 import LoginPage4 from '@react-login-page/page4';
 import Login5 from '@react-login-page/page5';
+import Login6 from '@react-login-page/page6';
 
 interface Example {
   magnify?: number;
@@ -78,5 +79,16 @@ export const page5: Example = {
         <LoginLogo />
       </Login5.Logo>
     </Login5>
+  ),
+};
+
+export const page6: Example = {
+  magnify: 2.1,
+  children: (
+    <Login6>
+      <Login6.Logo>
+        <LoginLogo />
+      </Login6.Logo>
+    </Login6>
   ),
 };

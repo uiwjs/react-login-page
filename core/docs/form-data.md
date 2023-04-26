@@ -42,13 +42,6 @@ import Login from '@react-login-page/base';
 import { Form } from 'react-router-dom';
 
 const Demo = () => {
-  const [data, setData] = React.useState({});
-  const handle = (even) => {
-    even.preventDefault();
-    const formData = new FormData(even.target);
-    const data = Object.fromEntries(formData);
-    setData({ ...data });
-  };
   return (
     <Form method="post" action="/events">
       <Login style={{ minHeight: 380 }} />
@@ -62,13 +55,25 @@ export default Demo;
 `useFetcher`
 
 ```jsx
+import React, { useEffect } from 'react';
 import { useFetcher } from 'react-router-dom';
 import Login, { Password, Username, Submit, Reset } from '@react-login-page/base';
 
 function Demo() {
   const fetcher = useFetcher();
+  const handle = (even) => {
+    even.preventDefault();
+    fetcher.submit(even.currentTarget);
+  };
+
+  useEffect(() => {
+    if (fetcher.data?.code !== 1 && fetcher.data?.message) {
+      // ....
+    }
+  }, [fetcher.data]);
+
   return (
-    <fetcher.Form method="post" action="/some/route">
+    <fetcher.Form method="post" onSubmit={handle}>
       <Login>
         <Username name="userUserName" />
         <Password placeholder="请输入密码" name="userPassword" />

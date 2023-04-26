@@ -5,9 +5,10 @@ import LoginPage2 from '@react-login-page/page2';
 import bannerImage from '@react-login-page/page2/banner-image';
 import LoginPage3 from '@react-login-page/page3';
 import bannerImage3 from '@react-login-page/page3/banner-image';
-import LoginPage4 from '@react-login-page/page4';
+import Login4 from '@react-login-page/page4';
 import Login5 from '@react-login-page/page5';
 import Login6 from '@react-login-page/page6';
+import Login7 from '@react-login-page/page7';
 
 interface Example {
   magnify?: number;
@@ -63,11 +64,11 @@ export const page3: Example = {
 export const page4: Example = {
   magnify: 2.3,
   children: (
-    <LoginPage4>
-      <LoginPage4.Logo>
+    <Login4>
+      <Login4.Logo>
         <LoginLogo />
-      </LoginPage4.Logo>
-    </LoginPage4>
+      </Login4.Logo>
+    </Login4>
   ),
 };
 
@@ -90,5 +91,16 @@ export const page6: Example = {
         <LoginLogo />
       </Login6.Logo>
     </Login6>
+  ),
+};
+
+export const page7: Example = {
+  magnify: 1.2,
+  children: (
+    <Login7>
+      <Login7.Logo>
+        <LoginLogo />
+      </Login7.Logo>
+    </Login7>
   ),
 };

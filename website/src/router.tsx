@@ -41,6 +41,11 @@ export const routes: MenuRouteObject = {
           label: 'Getting Started',
           element: <Preview path={() => import('react-login-page/README.md')} />,
         },
+        {
+          path: 'form-data',
+          label: 'Working With FormData',
+          element: <Preview path={() => import('react-login-page/form-data.md')} />,
+        },
       ],
     },
     {
@@ -104,6 +109,14 @@ export const routes: MenuRouteObject = {
           element: (
             <Preview disableNav path={() => import('@react-login-page/page6/README.md')}>
               {datas.page6.children}
+            </Preview>
+          ),
+        },
+        {
+          path: 'page7',
+          element: (
+            <Preview disableNav path={() => import('@react-login-page/page7/README.md')}>
+              {datas.page7.children}
             </Preview>
           ),
         },

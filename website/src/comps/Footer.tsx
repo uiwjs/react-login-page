@@ -4,6 +4,7 @@ const Wrappre = styled.footer`
   padding-top: 6rem;
   padding-bottom: 8rem;
   text-align: center;
+  position: relative;
 `;
 
 export const Footer = () => {

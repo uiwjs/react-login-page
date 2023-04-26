@@ -11,6 +11,20 @@ const Wrapper = styled.div`
   ${mediaStyle}
 `;
 
+const Title = styled.div`
+  width: auto !important;
+  height: auto !important;
+  position: absolute;
+  transform: scale(1) !important;
+  background-color: rgba(var(--color-rgb) / 39%);
+  color: var(--color-canvas-default);
+  border-radius: 5px;
+  padding: 1px 4px 3px 4px;
+  top: -25px;
+  left: 10px;
+  transition: all 0.3s;
+`;
+
 const Inner = styled(Link)<{ magnify?: number }>`
   overflow: hidden;
   display: block;
@@ -19,6 +33,9 @@ const Inner = styled(Link)<{ magnify?: number }>`
   height: 265px;
   border-radius: 0.571rem;
   text-decoration: none;
+  box-shadow: 0 0px 3px transparent;
+  border: 1px solid transparent;
+  transition: all 0.3s;
   &::before {
     content: '';
     display: block;
@@ -27,6 +44,13 @@ const Inner = styled(Link)<{ magnify?: number }>`
     transition: all 0.3s;
     z-index: 2;
     inset: 0;
+  }
+  &:hover {
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
+    border-color: rgb(0 0 0 / 11%);
+  }
+  &:hover ${Title} {
+    top: 10px;
   }
   &:hover::before {
     background-color: var(--color-neutral-muted);
@@ -49,6 +73,7 @@ export const Example = () => {
         return (
           <Inner key={key} to={`/pages/${path}`} magnify={comps.magnify}>
             {comps.children}
+            <Title>{path}</Title>
           </Inner>
         );
       })}

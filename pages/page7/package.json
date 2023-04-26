@@ -1,5 +1,5 @@
 {
-  "name": "react-login-page",
+  "name": "@react-login-page/page7",
   "version": "0.4.2",
   "description": "Some `react` login pages, which can be used quickly after installation.",
   "homepage": "https://uiwjs.github.io/react-login-page",
@@ -7,24 +7,6 @@
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
-  "exports": {
-    ".": {
-      "import": "./esm/index.js",
-      "require": "./cjs/index.js",
-      "types": "./cjs/index.d.ts"
-    },
-    "./logo": {
-      "import": "./esm/logo/Logo.js",
-      "require": "./cjs/logo/Logo.js"
-    },
-    "./logo-rect": {
-      "import": "./esm/logo/LogoRect.js",
-      "require": "./cjs/logo/LogoRect.js"
-    },
-    "./README.md": "./README.md",
-    "./form-data.md": "./docs/form-data.md",
-    "./package.json": "./package.json"
-  },
   "scripts": {
     "watch": "tsbb watch src/*.tsx --use-babel",
     "build": "tsbb build src/*.tsx --use-babel",
@@ -36,9 +18,7 @@
     "url": "https://github.com/uiwjs/react-login-page.git"
   },
   "files": [
-    "docs/*",
     "README.md",
-    "*.d.ts",
     "src",
     "esm",
     "cjs"
@@ -47,6 +27,9 @@
     "@babel/runtime": ">=7.11.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "react-login-page": "0.4.2"
   },
   "keywords": [
     "react",

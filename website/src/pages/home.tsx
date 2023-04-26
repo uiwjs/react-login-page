@@ -10,7 +10,8 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: 900;
   line-height: 2.5rem;
   text-align: center;
   margin-top: 3rem;

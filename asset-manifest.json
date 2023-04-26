@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.27a3e5f7.css",
-    "main.js": "/static/js/main.64298328.js",
+    "main.js": "/static/js/main.bae1a463.js",
     "static/js/586.5b8240da.chunk.js": "/static/js/586.5b8240da.chunk.js",
     "static/js/524.a4b469f7.chunk.js": "/static/js/524.a4b469f7.chunk.js",
     "static/js/96.7ff9874a.chunk.js": "/static/js/96.7ff9874a.chunk.js",
     "static/js/284.81b51987.chunk.js": "/static/js/284.81b51987.chunk.js",
     "static/js/164.f36aa9e8.chunk.js": "/static/js/164.f36aa9e8.chunk.js",
     "static/js/566.0638c85b.chunk.js": "/static/js/566.0638c85b.chunk.js",
-    "static/js/488.a882a9a5.chunk.js": "/static/js/488.a882a9a5.chunk.js",
+    "static/js/488.810ae855.chunk.js": "/static/js/488.810ae855.chunk.js",
     "static/js/131.d865544c.chunk.js": "/static/js/131.d865544c.chunk.js",
     "static/js/461.267d6dd3.chunk.js": "/static/js/461.267d6dd3.chunk.js",
     "static/js/884.1c4eebb1.chunk.js": "/static/js/884.1c4eebb1.chunk.js",
@@ -19,14 +19,14 @@
     "index.html": "/index.html",
     "static/media/arrow.svg": "/static/media/arrow.c4532e8bf2b97be87c34837cd1413579.svg",
     "main.27a3e5f7.css.map": "/static/css/main.27a3e5f7.css.map",
-    "main.64298328.js.map": "/static/js/main.64298328.js.map",
+    "main.bae1a463.js.map": "/static/js/main.bae1a463.js.map",
     "586.5b8240da.chunk.js.map": "/static/js/586.5b8240da.chunk.js.map",
     "524.a4b469f7.chunk.js.map": "/static/js/524.a4b469f7.chunk.js.map",
     "96.7ff9874a.chunk.js.map": "/static/js/96.7ff9874a.chunk.js.map",
     "284.81b51987.chunk.js.map": "/static/js/284.81b51987.chunk.js.map",
     "164.f36aa9e8.chunk.js.map": "/static/js/164.f36aa9e8.chunk.js.map",
     "566.0638c85b.chunk.js.map": "/static/js/566.0638c85b.chunk.js.map",
-    "488.a882a9a5.chunk.js.map": "/static/js/488.a882a9a5.chunk.js.map",
+    "488.810ae855.chunk.js.map": "/static/js/488.810ae855.chunk.js.map",
     "131.d865544c.chunk.js.map": "/static/js/131.d865544c.chunk.js.map",
     "461.267d6dd3.chunk.js.map": "/static/js/461.267d6dd3.chunk.js.map",
     "884.1c4eebb1.chunk.js.map": "/static/js/884.1c4eebb1.chunk.js.map",
@@ -38,6 +38,6 @@
     "static/js/refractor-vendor.0b026c6b.js",
     "static/js/react-vendor.d5601d71.js",
     "static/css/main.27a3e5f7.css",
-    "static/js/main.64298328.js"
+    "static/js/main.bae1a463.js"
   ]
 }

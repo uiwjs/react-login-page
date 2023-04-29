@@ -1,0 +1,380 @@
+[data-color-mode*='dark'] .login-page8, .login-page8 {
+  --login-bg: #3b4465;
+  --login-color: #fff;
+  --login-label: #a1b4b4;
+  --login-tab: #999;
+  --login-input: #3b4465;
+  --login-input-bg: #eef9fe;
+  --login-input-placeholder: #cecece;
+  --login-input-placeholder-active: #53e3a6;
+  --login-input-border: #cddbef;
+  --login-input-bg-hover: rgba(255, 255, 255, 0.4);
+  --login-btn: #fff;
+  --login-btn-bg: #a7e245;
+  --login-btn-focus: white;
+  --login-btn-hover: #53e3a6;
+  --login-btn-active: #1aa97d;
+  --login-footer: #ffffff99;
+  --login-animation-start: #d7e7f1;
+  --login-animation-end: #fff;
+}
+[data-color-mode*='light'] .login-page8 {
+  --login-bg: #3b4465;
+  --login-color: #fff;
+  --login-label: #a1b4b4;
+  --login-tab: #999;
+  --login-input: #3b4465;
+  --login-input-bg: #eef9fe;
+  --login-input-placeholder: #cecece;
+  --login-input-placeholder-active: #53e3a6;
+  --login-input-border: #cddbef;
+  --login-input-bg-hover: rgba(255, 255, 255, 0.4);
+  --login-btn: #fff;
+  --login-btn-bg: #a7e245;
+  --login-btn-focus: white;
+  --login-btn-hover: #53e3a6;
+  --login-btn-active: #1aa97d;
+  --login-footer: #ffffff99;
+  --login-animation-start: #d7e7f1;
+  --login-animation-end: #fff;
+}
+
+.login-page8 {
+  --gap: 15px;
+  --login-line-height: 1.2;
+  line-height: var(--login-line-height);
+  color: var(--login-color);
+  background-color: var(--login-bg);
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+}
+.login-page8 header {
+  display: flex;
+  gap: var(--gap);
+  padding-bottom: 1rem;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  justify-content: center;
+}
+.login-page8 header > div {
+  display: flex;
+  align-items: center;
+}
+.login-page8 header > div > * {
+  display: block;
+}
+
+.login-page8-inner > main {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.login-page8-inner main > article.active > button {
+  color: var(--login-btn);
+  transform: translateX(-90px);
+}
+.login-page8-inner main > article.active:first-child > button {
+  transform: translateX(90px);
+}
+.login-page8-inner main > article > button {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: .5px;
+  color: var(--login-tab);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transform: translateX(0);
+  transition: all .3s ease-out;
+}
+
+.login-page8-inner main > article {
+  color: var(--login-input);
+  animation: hideLayer .3s ease-out forwards;
+}
+
+.login-page8-inner main > article.active {
+  animation: showLayer .3s ease-in forwards;
+}
+
+@keyframes showLayer {
+  50% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+@keyframes hideLayer {
+  0% {
+    z-index: 1;
+  }
+  49.999% {
+    z-index: 1;
+  }
+}
+
+.login-page8-inner main > article .login-page8-fields {
+  overflow: hidden;
+  min-width: 260px;
+  margin-top: 50px;
+  padding: 30px 25px;
+  border-radius: 5px;
+  transform-origin: top;
+}
+
+.login-page8-login {
+  animation: hideLogin .3s ease-out forwards;
+}
+
+.login-page8-inner main > article.active .login-page8-login {
+  animation: showLogin .3s ease-in forwards;
+}
+
+.login-page8-signup {
+  animation: hideSignup .3s ease-out forwards;
+}
+
+.login-page8-inner main > article.active .login-page8-signup {
+  animation: showSignup .3s ease-in forwards;
+}
+
+
+@keyframes showLogin {
+  0% {
+    background: var(--login-animation-start);
+    transform: translate(40%, 10px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background-color: var(--login-animation-end);
+    transform: translate(35%, -20px);
+  }
+}
+
+@keyframes hideLogin {
+  0% {
+    background-color: var(--login-animation-end);
+    transform: translate(35%, -20px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background: var(--login-animation-start);
+    transform: translate(40%, 10px);
+  }
+}
+
+@keyframes showSignup {
+	0% {
+		background: var(--login-animation-start);
+		transform: translate(-40%, 10px) scaleY(.8);
+	}
+	50% {
+		transform: translate(0, 0) scaleY(.8);
+	}
+	100% {
+		background-color: var(--login-animation-end);
+		transform: translate(-35%, -20px) scaleY(1);
+	}
+}
+
+@keyframes hideSignup {
+	0% {
+		background-color: var(--login-animation-end);
+		transform: translate(-35%, -20px) scaleY(1);
+	}
+	50% {
+		transform: translate(0, 0) scaleY(.8);
+	}
+	100% {
+		background: var(--login-animation-start);
+		transform: translate(-40%, 10px) scaleY(.8);
+	}
+}
+
+@keyframes showLogin {
+  0% {
+    background: var(--login-animation-start);
+    transform: translate(40%, 10px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background-color: var(--login-animation-end);
+    transform: translate(35%, -20px);
+  }
+}
+
+@keyframes hideLogin {
+  0% {
+    background-color: var(--login-animation-end);
+    transform: translate(35%, -20px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    background: var(--login-animation-start);
+    transform: translate(40%, 10px);
+  }
+}
+
+.login-page8-inner > main > article:not(.active) .login-page8-fields > * {
+  opacity: 0;
+}
+
+.login-page8-label {
+  margin-bottom: 6px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--login-label);
+}
+
+.login-page8-label + input, .login-page8-label + input + * {
+  margin-top: 24px !important;
+}
+
+@keyframes showLayer {
+	50% {
+		z-index: 1;
+	}
+	100% {
+		z-index: 1;
+	}
+}
+
+@keyframes hideLayer {
+	0% {
+		z-index: 1;
+	}
+	49.999% {
+		z-index: 1;
+	}
+}
+
+.login-page8-fields  {
+  border-radius: 10px;
+  margin: 2rem 0;
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+}
+.login-page8-fields > label {
+  gap: var(--gap);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.login-page8-fields > label > input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 40px;
+  color: var(--login-input) !important;
+  background: var(--login-input-bg);
+  border: 1px solid var(--login-input-border);
+  border-radius: 2px;
+}
+.login-page8-fields > label > input:focus {
+  background-color: var(--login-btn-focus);
+  color: var(--login-btn);
+  width: 100%;
+}
+.login-page8-fields > label > input:not(:focus):hover {
+  background-color: var(--login-input-bg-hover);
+}
+.login-page8-fields > label > input::placeholder {
+  color: var(--login-input-placeholder);
+}
+.login-page8-fields > label > input::placeholder:active {
+  color: var(--login-input-placeholder-active);
+}
+
+.login-page8-fields > label > div + input {
+  margin-top: 5px;
+}
+.login-page8-fields > label > div > * {
+  display: block;
+}
+
+.login-page8-fields > label > input:-webkit-autofill
+.login-page8-fields > label > input:-webkit-autofill:hover,
+.login-page8-fields > label > input:-webkit-autofill:focus
+{
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.login-page8-button {
+  gap: var(--gap);
+  display: flex;
+}
+
+.login-page8-button > button {
+  cursor: pointer;
+  min-width: 80px;
+  text-transform: uppercase;
+  border: 0;
+  transition: background-color 300ms;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn);
+  padding: 7px 0;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.login-page8-button > button:hover:not(:disabled) {
+  background-color: var(--login-btn-hover);
+}
+.login-page8-button > button:active:not(:disabled) {
+  background-color: var(--login-btn-active);
+}
+.login-page8-button > button:focus:not(:disabled) {
+  box-shadow: 0 0 3px 0 var(--login-btn-focus);
+}
+.login-page8-inner > footer a {
+  color: var(--login-footer);
+}
+.login-page8-inner > footer {
+  color: var(--login-footer);
+  padding-bottom: 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+

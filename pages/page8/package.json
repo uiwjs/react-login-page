@@ -1,0 +1,52 @@
+{
+  "name": "@react-login-page/page8",
+  "version": "0.4.5",
+  "description": "Some `react` login pages, which can be used quickly after installation.",
+  "homepage": "https://uiwjs.github.io/react-login-page",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch src/*.tsx --use-babel",
+    "build": "tsbb build src/*.tsx --use-babel",
+    "test": "tsbb test --env=jsdom",
+    "coverage": "tsbb test --env=jsdom --coverage --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-login-page.git"
+  },
+  "files": [
+    "README.md",
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "@babel/runtime": ">=7.11.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "react-login-page": "0.4.5"
+  },
+  "keywords": [
+    "react",
+    "login",
+    "login-page",
+    "login-pages",
+    "react-login",
+    "react-login-page",
+    "editor",
+    "syntax",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}

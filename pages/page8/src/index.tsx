@@ -31,7 +31,6 @@ const RenderLogin = () => {
   const loginFields = fields.filter((m) => m.name.indexOf(`$$login`) > -1).sort((a, b) => a.index - b.index);
   const signupButtons = buttons.filter((m) => m.name.indexOf(`$$signup`) > -1).sort((a, b) => a.index - b.index);
   const signupFields = fields.filter((m) => m.name.indexOf(`$$signup`) > -1).sort((a, b) => a.index - b.index);
-  console.log('loginFields', loginFields, label);
   return (
     <Render>
       <div className="login-page8-inner">

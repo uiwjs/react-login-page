@@ -48,7 +48,7 @@ Encapsulated login page components based on `react-login-page` basic components 
 
 <p align="center">
   <a href="https://uiwjs.github.io/react-login-page">
-    <img alt="react-codemirror logo" src="https://user-images.githubusercontent.com/1680273/234234489-e4ebd508-7efe-41ae-9b61-09a56b803b97.png">
+    <img alt="react-codemirror logo" src="https://user-images.githubusercontent.com/1680273/235319135-9f138e34-5d5d-48ce-914d-f242b31fdc09.png">
   </a>
 </p>
 

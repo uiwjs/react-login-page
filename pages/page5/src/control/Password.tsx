@@ -2,12 +2,9 @@ import { FC } from 'react';
 import { Input, InputProps } from 'react-login-page';
 
 export const Password: FC<InputProps> = (props) => {
-  const { name, rename, ...elmProps } = props;
-  const nameProps = { name: 'password', rename: name };
-  if (rename) {
-    nameProps.name = rename;
-  }
-  return <Input type="password" placeholder="Password" {...elmProps} {...nameProps} />;
+  const { keyname = 'password', name, rename, ...elmProps } = props;
+  const key = (keyname || name) as string;
+  return <Input type="password" placeholder="Password" {...elmProps} name={name || rename || keyname} keyname={key} />;
 };
 
 Password.displayName = 'BaseLogin.Password';

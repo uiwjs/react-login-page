@@ -93,19 +93,21 @@ const Demo = () => (
     <Logo>
       <LoginLogo />
     </Logo>
-    <Username rename="subtitle" visible={false} index={0}>
+    <Username keyname="subtitle" visible={false} index={0}>
       欢迎登录页面
     </Username>
     {/* hide default username field */}
     <Username visible={false} />
-    <Username rename="user" index={3} placeholder="修改了 name 字段" />
-    <Username rename="checkbox" type="checkbox" index={3} placeholder="修改了 name 字段" style={{ width: 'auto' }}>
+    <Username keyname="user" index={3} placeholder="修改了 name 字段" />
+    <Username keyname="checkbox" type="checkbox" index={3} placeholder="修改了 name 字段" style={{ width: 'auto' }}>
       <div style={{ fontSize: 14, display: 'flex', justifyContent: 'space-between', flex: 1 }}>
         <div>Remember Me</div>
-        <a href="javascript:void(0)">Forgot Password</a>
+        <a href="#" onClick={(event) => event.preventDefault()}>
+          Forgot Password
+        </a>
       </div>
     </Username>
-    <Username rename="username_rule" visible={false} index={4}>
+    <Username keyname="username_rule" visible={false} index={4}>
       用户名规则
     </Username>
     <Password index={1} />
@@ -134,7 +136,7 @@ Modify the string that specifies the **`name`** of the input control by default
 2. add `name=user` controls
 
 ```jsx
-<Username rename="user" index={3} placeholder="修改了 name 字段" />
+<Username keyname="user" index={3} placeholder="修改了 name 字段" />
 ```
 
 ## Modify Color Style

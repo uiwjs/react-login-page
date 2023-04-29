@@ -1,25 +1,18 @@
 import { FC, memo, useEffect } from 'react';
 import { Input, InputProps, useStore } from 'react-login-page';
-import { LockIcon } from '../icons/lock';
 
 export interface PasswordProps extends InputProps {
   label?: React.ReactNode;
 }
 export const Password: FC<PasswordProps> = memo((props) => {
-  const { name, rename, label = 'Password:', ...elmProps } = props;
+  const { keyname = 'password', name, rename, label = 'Password:', ...elmProps } = props;
   const { dispatch } = useStore();
-  if (!elmProps.children) {
-    elmProps.children = LockIcon;
-  }
 
-  const nameProps = { name: 'password', rename: name };
-  if (rename) {
-    nameProps.name = rename;
-  }
+  const key = (keyname || name) as string;
 
-  useEffect(() => dispatch({ [`$${nameProps.name}`]: label }), [label]);
+  useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return <Input type="password" placeholder="Password" {...elmProps} {...nameProps} />;
+  return <Input type="password" placeholder="Password" {...elmProps} name={name || rename || keyname} keyname={key} />;
 });
 
 Password.displayName = 'Login.Password';

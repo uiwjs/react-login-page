@@ -34,13 +34,18 @@ const RenderLogin = () => {
           {fields
             .sort((a, b) => a.index - b.index)
             .map((item, idx) => {
-              if (!item.children) return null;
+              const extraLabel = extra[item.name as keyof typeof extra];
+              if (!item.children && !extraLabel) return null;
+              if (!item.children && extraLabel) return <div key={idx}>{extraLabel}</div>;
               const labelElement = label[`$${item.name}`];
               return (
                 <label key={item.name + idx}>
-                  {item.children}
-                  {labelElement && <span className="login-page4-label">{labelElement}</span>}
-                  <div className="login-page4-border"></div>
+                  <article>
+                    {item.children}
+                    {labelElement && <span className="login-page4-label">{labelElement}</span>}
+                    <div className="login-page4-border"></div>
+                  </article>
+                  {extraLabel}
                 </label>
               );
             })}

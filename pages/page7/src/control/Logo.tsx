@@ -2,11 +2,11 @@ import { PropsWithChildren } from 'react';
 import { Block, BlockProps, BlockTagType } from 'react-login-page';
 
 export const Logo = <T extends BlockTagType = 'div'>(props: PropsWithChildren<Partial<BlockProps<T>>>) => {
-  const { name, ...elmProps } = props;
+  const { keyname = 'logo', name, ...elmProps } = props;
   if (!elmProps.children) {
     elmProps.children = '⚛️';
   }
-  return <Block {...elmProps} name="logo" />;
+  return <Block {...elmProps} keyname={name || keyname} className={`login-page4-logo ${elmProps.className || ''}`} />;
 };
 
-Logo.displayName = 'BaseLogin.Logo';
+Logo.displayName = 'Login.Logo';

@@ -97,18 +97,18 @@ const Demo = () => {
           );
         }}
       </Render>
-      <Login.Block name="logo" tagName="span">
+      <Login.Block keyname="logo" tagName="span">
         <Logo />
       </Login.Block>
-      <Login.Block name="title" tagName="span">
+      <Login.Block keyname="title" tagName="span">
         Login
       </Login.Block>
-      <Login.Input name="username" placeholder="Please input Username" />
-      <Login.Input name="password" placeholder="please enter password" />
-      <Login.Button name="submit" type="submit">
+      <Login.Input keyname="username" placeholder="Please input Username" />
+      <Login.Input keyname="password" placeholder="please enter password" />
+      <Login.Button keyname="submit" type="submit">
         Submit
       </Login.Button>
-      <Login.Button name="reset" type="reset">
+      <Login.Button keyname="reset" type="reset">
         Reset
       </Login.Button>
     </Login>
@@ -159,10 +159,10 @@ const Demo = () => {
           );
         }}
       </Render>
-      <Login.Block name="logo" tagName="span">
+      <Login.Block keyname="logo" tagName="span">
         <Logo />
       </Login.Block>
-      <Login.Block name="title" tagName="span">
+      <Login.Block keyname="title" tagName="span">
         Login
       </Login.Block>
       <Login.Textarea name="note"></Login.Textarea>
@@ -178,10 +178,10 @@ const Demo = () => {
       </Login.Input>
       <Login.Input name="username" index={1} placeholder="Please input Username" />
       <Login.Input name="password" index={0} placeholder="please enter password" />
-      <Login.Button name="submit" index={1} type="submit">
+      <Login.Button keyname="submit" index={1} type="submit">
         Submit
       </Login.Button>
-      <Login.Button name="reset" index={0} type="reset">
+      <Login.Button keyname="reset" index={0} type="reset">
         Reset
       </Login.Button>
     </Login>
@@ -201,13 +201,45 @@ import Logo from 'react-login-page/logo-rect';
 
 ⚠️ If you don't use them, they won't be packaged.
 
+```jsx mdx:preview
+import React from 'react';
+import Logo from 'react-login-page/logo';
+import LogoRect from 'react-login-page/logo-rect';
+
+const Demo = () => {
+  return (
+    <div>
+      <Logo />
+      <br />
+      <LogoRect />
+    </div>
+  );
+};
+export default Demo;
+```
+
 ### `Login.Block`
 
 ```jsx
 import Login, { Block } from 'react-login-page';
 
-<Login.Block name="title">Login</Login.Block>
-<Block name="title">Login</Block>
+<Login.Block keyname="title">Login</Login.Block>
+<Block keyname="title">Login</Block>
+```
+
+```jsx mdx:preview
+import React from 'react';
+import Login, { Render } from 'react-login-page';
+
+const Demo = () => {
+  return (
+    <Login>
+      <Render>{({ blocks, fields, $$index, extra }, data) => <label>{blocks.title}</label>}</Render>
+      <Login.Block keyname="title">Login</Login.Block>
+    </Login>
+  );
+};
+export default Demo;
 ```
 
 ```jsx
@@ -215,13 +247,17 @@ import { PropsWithChildren, AllHTMLAttributes } from 'react';
 import { BlockTagType } from 'react-login-page';
 
 export interface BlockProps<Tag extends BlockTagType> extends AllHTMLAttributes<Tag> {
+  keyname?: string;
+  /**
+   * @deprecated use `keyname`
+   */
   name?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
   /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
   index?: number;
   /** custom created element */
-  tagName?: Tag;
+  tagName?: T;
 }
 export declare const Block: {
   <Tag extends keyof JSX.IntrinsicElements = "div">(props: PropsWithChildren<Partial<BlockProps<Tag>>>): null;
@@ -234,15 +270,41 @@ export declare const Block: {
 ```jsx
 import Login, { Input } from 'react-login-page';
 
-<Login.Input type="password" placeholder="Password" />
-<Input type="password" placeholder="Password" />
+<Login.Input name="password" type="password" placeholder="Password" />
+<Input name="password" type="password" placeholder="Password" />
+```
+
+```jsx mdx:preview
+import React from 'react';
+import Login, { Render } from 'react-login-page';
+
+const Demo = () => {
+  return (
+    <Login>
+      <Render>
+        {({ blocks, fields, $$index, extra }, data) => (
+          <label>
+            {fields.password} {extra.password}
+          </label>
+        )}
+      </Render>
+      <Login.Input name="password" type="password" placeholder="Password">
+        <span> extra content </span>
+      </Login.Input>
+    </Login>
+  );
+};
+export default Demo;
 ```
 
 ```tsx
 import React, { FC, PropsWithChildren } from 'react';
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  name?: string;
-  /** Used to define the name of form controls */
+  keyname?: string;
+  /**
+   * Used to define the name of form controls
+   * @deprecated use `name`
+   */
   rename?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
@@ -277,7 +339,7 @@ const Demo = () => {
           );
         }}
       </Render>
-      <Login.Input name="checkbox" type="checkbox">
+      <Login.Input keyname="checkbox" type="checkbox">
         <span> Remember me </span>
       </Login.Input>
     </Login>
@@ -295,11 +357,37 @@ import Login, { Textarea } from 'react-login-page';
 <Textarea name="note" />
 ```
 
+```jsx mdx:preview
+import React from 'react';
+import Login, { Render } from 'react-login-page';
+
+const Demo = () => {
+  return (
+    <Login>
+      <Render>
+        {({ blocks, fields, $$index, extra }, data) => (
+          <label>
+            {fields.textarea} {extra.textarea}
+          </label>
+        )}
+      </Render>
+      <Login.Textarea keyname="textarea" defaultValue="default">
+        extra content
+      </Login.Textarea>
+    </Login>
+  );
+};
+export default Demo;
+```
+
 ```ts
 import React, { FC, PropsWithChildren } from 'react';
 export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
-  name?: string;
-  /** Used to define the name of form controls */
+  keyname?: string;
+  /**
+   * Used to define the name of form controls
+   * @deprecated use `name`
+   */
   rename?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
@@ -325,11 +413,32 @@ import Login, { Select } from 'react-login-page';
 </Select>
 ```
 
+```jsx mdx:preview
+import React from 'react';
+import Login, { Render } from 'react-login-page';
+
+const Demo = () => {
+  return (
+    <Login>
+      <Render>{({ blocks, fields, $$index, extra }, data) => <label>{fields.selectname}</label>}</Render>
+      <Login.Select name="selectname">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+      </Login.Select>
+    </Login>
+  );
+};
+export default Demo;
+```
+
 ```ts
 import React, { FC, PropsWithChildren } from 'react';
 export interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
-  name?: string;
-  /** Used to define the name of form controls */
+  keyname?: string;
+  /**
+   * Used to define the name of form controls
+   * @deprecated use `name`
+   */
   rename?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
@@ -344,14 +453,31 @@ export declare const Select: FC<PropsWithChildren<SelectProps>>;
 ```jsx
 import Login, { Button } from 'react-login-page';
 
-<Login.Button name="submit" type="submit" />
-<Button name="submit" type="submit" />
+<Login.Button keyname="submit" type="submit">Login</Login.Button>
+<Button keyname="submit" type="submit" />Login</Button>
+```
+
+```jsx mdx:preview
+import React from 'react';
+import Login, { Render } from 'react-login-page';
+
+const Demo = () => {
+  return (
+    <Login>
+      <Render>{({ blocks, buttons, fields, $$index, extra }, data) => <label>{buttons.submit}</label>}</Render>
+      <Login.Button keyname="submit" type="submit">
+        Login
+      </Login.Button>
+    </Login>
+  );
+};
+export default Demo;
 ```
 
 ```jsx
 import { FC, PropsWithChildren } from 'react';
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  name?: string;
+  keyname?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
   /** "index" refers to the use of indexes to control the order of controls, which can provide more flexible API encapsulation. */
@@ -462,18 +588,18 @@ const Demo = () => {
       <Container>
         <RenderLoginPage />
       </Container>
-      <Login.Block name="logo" tagName="span">
+      <Login.Block keyname="logo" tagName="span">
         ⚛️
       </Login.Block>
-      <Login.Block name="title" tagName="span">
+      <Login.Block keyname="title" tagName="span">
         Login
       </Login.Block>
       <Login.Input name="username" placeholder="Please input Username" />
       <Login.Input name="password" placeholder="please enter password" />
-      <Login.Button name="submit" type="submit">
+      <Login.Button keyname="submit" type="submit">
         Submit
       </Login.Button>
-      <Login.Button name="reset" type="reset">
+      <Login.Button keyname="reset" type="reset">
         Reset
       </Login.Button>
     </Provider>
@@ -524,18 +650,18 @@ const Demo = () => {
       <Container>
         <RenderLoginPage />
       </Container>
-      <Login.Block name="logo" tagName="span">
+      <Login.Block keyname="logo" tagName="span">
         ⚛️
       </Login.Block>
-      <Login.Block name="title" tagName="span">
+      <Login.Block keyname="title" tagName="span">
         Login
       </Login.Block>
       <Login.Input name="username" index={1} placeholder="Please input Username" />
       <Login.Input name="password" placeholder="please enter password" />
-      <Login.Button name="submit" index={1} type="submit">
+      <Login.Button keyname="submit" index={1} type="submit">
         Submit
       </Login.Button>
-      <Login.Button name="reset" type="reset">
+      <Login.Button keyname="reset" type="reset">
         Reset
       </Login.Button>
     </Provider>

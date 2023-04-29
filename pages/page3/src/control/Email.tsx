@@ -6,18 +6,26 @@ export interface EmailProps extends InputProps {
   label?: React.ReactNode;
 }
 export const Email: FC<EmailProps> = memo((props) => {
-  const { name, rename, label = 'Email:', ...elmProps } = props;
+  const { keyname = 'email', name, rename, label = 'Email:', ...elmProps } = props;
   const { dispatch } = useStore();
   if (!elmProps.children) {
     elmProps.children = EmailIcon;
   }
 
-  const nameProps = { name: 'email', rename: name };
-  if (rename) {
-    nameProps.name = rename;
-  }
+  const key = (keyname || name) as string;
 
-  useEffect(() => dispatch({ [`$${nameProps.name}`]: label }), [label]);
+  useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return <Input type="email" placeholder="Email" spellCheck={false} {...elmProps} {...nameProps} />;
+  return (
+    <Input
+      type="email"
+      placeholder="Email"
+      spellCheck={false}
+      {...elmProps}
+      name={name || rename || keyname}
+      keyname={key}
+    />
+  );
 });
+
+Email.displayName = 'Login.Email';

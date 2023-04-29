@@ -104,11 +104,14 @@
   max-width: 200px;
 }
 
+.login-page4-inner > main > label article {
+  display: flex;
+  flex: 1;
+}
 .login-page4-inner > main > label {
   display: flex;
   align-items: center;
   color: var(--login-input);
-  display: block;
   position: relative;
 }
 .login-page4-inner > main > label input {
@@ -118,13 +121,13 @@
   border: none;
   border-bottom: 2px solid var(--login-input-border);
   background-color: transparent;
-  width: 280px;
   box-sizing: border-box;
   transition: all 0.3s linear;
   color: var(--login-input);
   font-weight: 400;
   appearance: none;
   margin-left: auto;
+  width: 100%;
   outline: 0;
 }
 .login-page4-inner > main > label > input:not(:placeholder-shown) {
@@ -163,16 +166,16 @@
   transition: all 0.3s;
 }
 
-.login-page4-inner > main > label input:focus ~ .login-page4-border {
+.login-page4-inner > main > label > article input:focus ~ .login-page4-border {
   width: 100%;
 }
 
-.login-page4-inner label > input:not(:valid):not(:focus) {
+.login-page4-inner > main > label > article > input:not(:valid):not(:focus) {
   border-bottom: 2px solid var(--login-input-border-valid);
 }
 
-.login-page4-inner label > input:not(:placeholder-shown) + .login-page4-label,
-.login-page4-inner label > input:-webkit-autofill:not(:placeholder-shown) + .login-page4-label {
+.login-page4-inner > main > label > article > input:not(:placeholder-shown) + .login-page4-label,
+.login-page4-inner > main > label > article > input:-webkit-autofill:not(:placeholder-shown) + .login-page4-label {
   transform: translateY(2px);
   opacity: 0.7;
   color: var(--login-input-placeholder);

@@ -1,9 +1,12 @@
-import React, { FC, PropsWithChildren, useRef, useEffect } from 'react';
+import React, { FC, memo, PropsWithChildren, useRef, useEffect } from 'react';
 import { useStore } from './store';
 
 export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
-  name?: string;
-  /** Used to define the name of form controls */
+  keyname?: string;
+  /**
+   * Used to define the name of form controls
+   * @deprecated use `name`
+   */
   rename?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
@@ -11,20 +14,26 @@ export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaEle
   index?: number;
 }
 
-export const Textarea: FC<PropsWithChildren<TextareaProps>> = (props) => {
+export const Textarea: FC<PropsWithChildren<TextareaProps>> = memo((props) => {
   const ref = useRef<TextareaProps>();
-  const { fields = {}, dispatch } = useStore();
-  const { name, rename, visible = true, ...elmProps } = props;
+  const { fields = {}, extra = {}, $$index = {}, dispatch } = useStore();
   useEffect(() => {
-    if (ref.current !== props && name) {
+    const { rename, keyname, visible = true, children, ...elmProps } = props;
+    if (ref.current !== props && (keyname || elmProps.name)) {
+      const key = (keyname || elmProps.name) as string;
       ref.current = { ...props };
       dispatch({
-        fields: { ...fields, [name]: visible ? <textarea {...elmProps} name={rename || name} /> : null },
+        $$index: { ...$$index, [key]: elmProps.index || 0 },
+        extra: {
+          ...extra,
+          [key]: children || null,
+        },
+        fields: { ...fields, [key]: visible ? <textarea {...elmProps} name={rename || elmProps.name} /> : null },
       });
     }
-  }, [props, name, ref]);
+  }, [props, ref]);
 
   return null;
-};
+});
 
 Textarea.displayName = 'Login.Textarea';

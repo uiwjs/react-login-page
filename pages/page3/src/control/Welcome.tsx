@@ -2,9 +2,9 @@ import { PropsWithChildren } from 'react';
 import { Block, BlockProps, BlockTagType } from 'react-login-page';
 
 export const Welcome = <T extends BlockTagType>(props: PropsWithChildren<Partial<BlockProps<T>>>) => {
-  const { name, tagName = 'section', ...elmProps } = props;
+  const { keyname, name = 'title', tagName = 'section', ...elmProps } = props;
   if (!elmProps.children) {
     elmProps.children = 'Welcome back! Log in to your account.';
   }
-  return <Block tagName={tagName} {...elmProps} name="welcome" />;
+  return <Block tagName={tagName} {...elmProps} keyname={keyname || name} />;
 };

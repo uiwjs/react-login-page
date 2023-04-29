@@ -5,17 +5,16 @@ export interface UsernameProps extends InputProps {
   label?: React.ReactNode;
 }
 export const Username: FC<UsernameProps> = memo((props) => {
-  const { name, rename, label = 'Username:', ...elmProps } = props;
+  const { keyname = 'username', name, rename, label = 'Username:', ...elmProps } = props;
   const { dispatch } = useStore();
 
-  const nameProps = { name: 'username', rename: name };
-  if (rename) {
-    nameProps.name = rename;
-  }
+  const key = (keyname || name) as string;
 
-  useEffect(() => dispatch({ [`$${nameProps.name}`]: label }), [label]);
+  useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return <Input placeholder="Username" spellCheck={false} {...elmProps} {...nameProps} />;
+  return (
+    <Input placeholder="Username" spellCheck={false} {...elmProps} name={name || rename || keyname} keyname={key} />
+  );
 });
 
 Username.displayName = 'BaseLogin.Username';

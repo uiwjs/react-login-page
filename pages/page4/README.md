@@ -95,8 +95,11 @@ const Demo = () => (
     </Logo>
     <Email index={3} placeholder="Email" />
     <Password index={2} />
-    <Email rename="phone" label="Phone:" type="tel" index={1} placeholder="Phone number">
+    <Email keyname="phone" label="Phone:" type="tel" index={1} placeholder="Phone number">
       <div>xx</div>
+    </Email>
+    <Email keyname="xx" visible={false} index={1}>
+      <div>xx2</div>
     </Email>
     <Footer>
       Forgot <a href="#">Username / Password?</a>

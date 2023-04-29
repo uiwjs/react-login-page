@@ -2,8 +2,11 @@ import React, { FC, PropsWithChildren, useRef, useEffect, memo } from 'react';
 import { useStore } from './store';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  name?: string;
-  /** Used to define the name of form controls */
+  keyname?: string;
+  /**
+   * Used to define the name of form controls
+   * @deprecated use `name`
+   */
   rename?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
@@ -14,23 +17,24 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 export const Input: FC<PropsWithChildren<InputProps>> = memo((props) => {
   const ref = useRef<InputProps>();
   const { fields = {}, extra = {}, $$index = {}, dispatch } = useStore();
-  const { name, rename, visible = true, children, ...elmProps } = props;
+  const { rename, keyname, visible = true, children, ...elmProps } = props;
   useEffect(() => {
-    if (ref.current !== props && name) {
+    if (ref.current !== props && (keyname || elmProps.name)) {
+      const key = (keyname || elmProps.name) as string;
       ref.current = { ...props };
       dispatch({
-        $$index: { ...$$index, [name]: elmProps.index || 0 },
+        $$index: { ...$$index, [key]: elmProps.index || 0 },
         extra: {
           ...extra,
-          [name]: children || null,
+          [key]: children || null,
         },
         fields: {
           ...fields,
-          [name]: visible ? <input {...elmProps} name={rename || name} /> : null,
+          [key]: visible ? <input {...elmProps} name={rename || elmProps.name} /> : null,
         },
       });
     }
-  }, [props, name, ref]);
+  }, [props, ref]);
 
   return null;
 });

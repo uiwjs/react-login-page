@@ -42,7 +42,7 @@ const Demo = () => (
       <Username name="userUserName" />
       <Password placeholder="请输入密码" name="userPassword" />
       <Submit>提交</Submit>
-      <Submit type="reset" name="reset">
+      <Submit type="reset" keyname="reset">
         重置
       </Submit>
       <Title />
@@ -95,13 +95,13 @@ const Demo = () => (
     <Logo>
       <LoginLogo />
     </Logo>
-    <Username rename="subtitle" visible={false} index={0}>
+    <Username keyname="subtitle" visible={false} index={0}>
       欢迎登录页面
     </Username>
     {/* hide default username field */}
     <Username visible={false} />
-    <Username rename="user" index={3} placeholder="修改了 name 字段" />
-    <Username rename="username_rule" visible={false} index={4}>
+    <Username keyname="user" index={3} placeholder="修改了 name 字段" />
+    <Username keyname="username_rule" visible={false} index={4}>
       用户名规则
     </Username>
     <Password index={1} />
@@ -130,7 +130,7 @@ Modify the string that specifies the **`name`** of the input control by default
 2. add `name=user` controls
 
 ```jsx
-<Username rename="user" index={3} placeholder="修改了 name 字段" />
+<Username keyname="user" index={3} placeholder="修改了 name 字段" />
 ```
 
 ## Modify Color Style

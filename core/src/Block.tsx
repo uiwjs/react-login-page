@@ -2,6 +2,10 @@ import { PropsWithChildren, useRef, useEffect, createElement, AllHTMLAttributes 
 import { useStore, BlockTagType, Blocks } from './store';
 
 export interface BlockProps<T extends BlockTagType> extends AllHTMLAttributes<T> {
+  keyname?: string;
+  /**
+   * @deprecated use `keyname`
+   */
   name?: string;
   /** Can be shown or hidden with controls */
   visible?: boolean;
@@ -15,12 +19,13 @@ export const Block = <Tag extends BlockTagType = 'div'>(props: PropsWithChildren
   const ref = useRef<Partial<BlockProps<Tag>>>();
   const { blocks = {}, dispatch } = useStore();
   useEffect(() => {
-    const { name, visible = true, tagName = 'div', ...elmProps } = props;
-    if (ref.current !== elmProps && name) {
+    const { name, keyname, visible = true, tagName = 'div', ...elmProps } = props;
+    if (ref.current !== elmProps && (name || keyname)) {
+      const key = (keyname || name) as string;
       ref.current = { ...elmProps };
       const div = visible ? createElement(tagName, { ...elmProps }, elmProps.children) : null;
       dispatch({
-        blocks: { ...blocks, [name]: div as unknown as Blocks<'div'> },
+        blocks: { ...blocks, [key]: div as unknown as Blocks<'div'> },
       });
     }
   }, [props, ref]);

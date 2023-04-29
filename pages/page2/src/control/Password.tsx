@@ -4,9 +4,11 @@ import { LockIcon } from '../icons/lock';
 
 export interface PasswordProps extends InputProps {}
 export const Password: FC<PasswordProps> = (props) => {
-  const { name, ...elmProps } = props;
+  const { keyname = 'password', name, rename, ...elmProps } = props;
   if (!elmProps.children) {
     elmProps.children = LockIcon;
   }
-  return <Input type="password" placeholder="Password" {...elmProps} name="password" rename={name} />;
+  return (
+    <Input type="password" placeholder="Password" {...elmProps} name={name || rename || keyname} keyname={keyname} />
+  );
 };

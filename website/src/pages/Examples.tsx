@@ -10,6 +10,8 @@ import Login5 from '@react-login-page/page5';
 import Login6 from '@react-login-page/page6';
 import Login7 from '@react-login-page/page7';
 import Login8 from '@react-login-page/page8';
+import Login9 from '@react-login-page/page9';
+import Login9Bg from '@react-login-page/page9/bg.jpg';
 
 interface Example {
   magnify?: number;
@@ -114,5 +116,16 @@ export const page8: Example = {
         <LoginLogo />
       </Login8.Logo>
     </Login8>
+  ),
+};
+
+export const page9: Example = {
+  magnify: 2.2,
+  children: (
+    <Login9 style={{ backgroundImage: `url(${Login9Bg})` }}>
+      <Login9.Logo>
+        <LoginLogo />
+      </Login9.Logo>
+    </Login9>
   ),
 };

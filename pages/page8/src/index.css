@@ -280,7 +280,7 @@
 
 .login-page8-fields  {
   border-radius: 10px;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   gap: var(--gap);
   display: flex;
   flex-direction: column;

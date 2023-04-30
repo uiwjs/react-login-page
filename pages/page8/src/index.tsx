@@ -15,8 +15,6 @@ export * from 'react-login-page';
 export * from './control/login/Username';
 export * from './control/login/Password';
 export * from './control/login/Submit';
-export * from './control/signup/Submit';
-export * from './control/signup/Password';
 export * from './control/Title';
 export * from './control/TitleLogin';
 export * from './control/TitleSignup';

@@ -31,7 +31,7 @@ export default Demo;
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Username, Password, Submit, Title, Logo } from '@react-login-page/page8';
+import LoginPage, { Username, Password, TitleSignup, TitleLogin, Submit, Title, Logo } from '@react-login-page/page8';
 import LoginLogo from 'react-login-page/logo';
 
 const styles = { height: 690 };
@@ -40,6 +40,8 @@ const Demo = () => (
   <div style={styles}>
     <LoginPage>
       <Title />
+      <TitleSignup>注册</TitleSignup>
+      <TitleLogin>登录</TitleLogin>
       <Logo>
         <LoginLogo />
       </Logo>

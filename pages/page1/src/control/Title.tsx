@@ -8,3 +8,5 @@ export const Title = <T extends BlockTagType>(props: PropsWithChildren<Partial<B
   }
   return <Block {...elmProps} keyname={keyname || name} />;
 };
+
+Title.displayName = 'Login.Title';

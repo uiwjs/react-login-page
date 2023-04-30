@@ -8,3 +8,5 @@ export const Logo = <T extends BlockTagType = 'div'>(props: PropsWithChildren<Pa
   }
   return <Block {...elmProps} keyname={keyname || name} className={`login-page3-logo ${elmProps.className || ''}`} />;
 };
+
+Logo.displayName = 'Login.Logo';

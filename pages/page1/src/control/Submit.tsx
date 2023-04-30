@@ -8,3 +8,5 @@ export const Submit: FC<ButtonProps> = (props) => {
   }
   return <Button type="submit" keyname={keyname} {...elmProps} />;
 };
+
+Submit.displayName = 'Login.Submit';

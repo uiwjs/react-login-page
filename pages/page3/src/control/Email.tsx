@@ -12,20 +12,12 @@ export const Email: FC<EmailProps> = memo((props) => {
     elmProps.children = EmailIcon;
   }
 
+  const nameBase = name || rename || keyname;
   const key = (keyname || name) as string;
 
   useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return (
-    <Input
-      type="email"
-      placeholder="Email"
-      spellCheck={false}
-      {...elmProps}
-      name={name || rename || keyname}
-      keyname={key}
-    />
-  );
+  return <Input type="email" placeholder="Email" spellCheck={false} {...elmProps} name={nameBase} keyname={key} />;
 });
 
 Email.displayName = 'Login.Email';

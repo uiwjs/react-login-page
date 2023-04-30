@@ -73,8 +73,8 @@ const LoginPage: FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>> = (
       <Submit />
       <Container {...divProps} className={`login-page-base ${className || ''}`}>
         <RenderLogin />
+        {children}
       </Container>
-      {children}
     </Provider>
   );
 };

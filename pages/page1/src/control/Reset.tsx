@@ -8,3 +8,5 @@ export const Reset: FC<ButtonProps> = (props) => {
   }
   return <Button type="reset" {...elmProps} keyname={keyname} />;
 };
+
+Reset.displayName = 'Login.Reset';

@@ -3,7 +3,9 @@ import { Input, InputProps } from 'react-login-page';
 
 export const Username: FC<InputProps> = (props) => {
   const { keyname = 'username', name, rename, ...elmProps } = props;
-  return (
-    <Input placeholder="Username" spellCheck={false} {...elmProps} name={name || rename || keyname} keyname={keyname} />
-  );
+  const nameBase = name || rename || keyname;
+  const key = (keyname || name) as string;
+  return <Input type="password" placeholder="Password" {...elmProps} name={nameBase} keyname={key} />;
 };
+
+Username.displayName = 'Login.Username';

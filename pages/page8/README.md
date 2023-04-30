@@ -95,7 +95,7 @@ export default Demo;
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Reset, Logo, Footer, Username, Password, Input } from '@react-login-page/page8';
+import LoginPage, { Reset, Submit, Logo, Footer, Username, Password, Input } from '@react-login-page/page8';
 import LoginLogo from 'react-login-page/logo-rect';
 
 const imgSrc =
@@ -134,6 +134,14 @@ const Demo = () => {
         <Footer>
           Not a member? <a href="#">Sign up now</a>
         </Footer>
+        <Submit>登录</Submit>
+
+        <Username panel="signup" label="邮箱" type="email" placeholder="请输入邮箱" keyname="e-mail" />
+        <Password panel="signup" label="密码" placeholder="请输出密码" keyname="password" />
+        <Password panel="signup" label="确认密码" placeholder="请确认密码" keyname="confirm-password" />
+        <Submit keyname="signup-submit" panel="signup">
+          注册
+        </Submit>
       </LoginPage>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </form>

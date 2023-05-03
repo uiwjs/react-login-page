@@ -12,7 +12,16 @@ export const Password: FC<PasswordProps> = memo((props) => {
 
   useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return <Input type="password" placeholder="Password" {...elmProps} name={name || rename || keyname} keyname={key} />;
+  return (
+    <Input
+      type="password"
+      placeholder="Password"
+      autoComplete="on"
+      {...elmProps}
+      name={name || rename || keyname}
+      keyname={key}
+    />
+  );
 });
 
 Password.displayName = 'Login.Password';

@@ -16,7 +16,14 @@ export const Password: FC<PasswordProps> = memo((props) => {
   const nameBase = name || rename || keyname;
 
   return (
-    <Input type="password" placeholder="Password" {...elmProps} name={nameBase} keyname={`$$${panelName}${key}`} />
+    <Input
+      type="password"
+      placeholder="Password"
+      autoComplete="on"
+      {...elmProps}
+      name={nameBase}
+      keyname={`$$${panelName}${key}`}
+    />
   );
 });
 

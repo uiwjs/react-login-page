@@ -21,7 +21,7 @@ $ npm install @react-login-page/page3 --save
 ```jsx mdx:preview
 import React from 'react';
 import Login from '@react-login-page/page3';
-import defaultBannerImage from '@react-login-page/page3/banner-image';
+import defaultBannerImage from '@react-login-page/page3/bg.jpeg';
 
 const Demo = () => (
   <Login style={{ height: 580 }}>
@@ -40,7 +40,7 @@ export default Demo;
 ```jsx mdx:preview
 import React from 'react';
 import LoginPage, { Email, Password, Welcome, Banner, Submit, Title, Logo, Reset } from '@react-login-page/page3';
-import defaultBannerImage from '@react-login-page/page3/banner-image';
+import defaultBannerImage from '@react-login-page/page3/bg.jpeg';
 import LoginLogo from 'react-login-page/logo';
 
 const styles = { height: 580 };
@@ -73,7 +73,7 @@ Use `visible={false}` to hide controls.
 import React from 'react';
 import LoginPage, { Reset, Title, Logo, Banner, Password } from '@react-login-page/page3';
 import LoginLogo from 'react-login-page/logo-rect';
-import defaultBannerImage from '@react-login-page/page3/banner-image';
+import defaultBannerImage from '@react-login-page/page3/bg.jpeg';
 
 const Demo = () => (
   <LoginPage style={{ height: 580 }}>
@@ -95,7 +95,7 @@ export default Demo;
 import React from 'react';
 import LoginPage, { Reset, Logo, Email, Banner, ButtonAfter, Password, Input } from '@react-login-page/page3';
 import LoginLogo from 'react-login-page/logo-rect';
-import defaultBannerImage from '@react-login-page/page3/banner-image';
+import defaultBannerImage from '@react-login-page/page3/bg.jpeg';
 
 const Demo = () => (
   <LoginPage style={{ height: 580 }}>
@@ -119,9 +119,10 @@ export default Demo;
 
 ## Modify Color Style
 
-```jsx
+```jsx mdx:preview
 import React from 'react';
-import Login from '@react-login-page/page3';
+import Login, { Banner } from '@react-login-page/page3';
+import defaultBannerImage from '@react-login-page/page3/bg.jpeg';
 
 const css = {
   '--login-bg': '#f3f2f2',
@@ -141,7 +142,11 @@ const css = {
   '--login-btn-bg-active': '#b08bf8',
 };
 
-const Demo = () => <Login style={{ height: 380, ...css }} />;
+const Demo = () => (
+  <Login style={{ height: 480, ...css }}>
+    <Banner style={{ backgroundImage: `url(${defaultBannerImage})` }} />
+  </Login>
+);
 
 export default Demo;
 ```
@@ -233,7 +238,7 @@ import { Logo, Title, Welcome, ButtonAfter } from '@react-login-page/page3';
 // fields
 import { Email, Password } from '@react-login-page/page3';
 
-import defaultBannerImage from '@react-login-page/page3/banner-image';
+import defaultBannerImage from '@react-login-page/page3/bg.jpeg';
 
 // Basic Components
 import { Button } from '@react-login-page/page3';

@@ -16,6 +16,7 @@
       "import": "./esm/control/banner-image.js",
       "require": "./cjs/control/banner-image.js"
     },
+    "./bg.jpeg": "./esm/assets/bg.jpeg",
     "./README.md": "./README.md",
     "./package.json": "./package.json"
   },

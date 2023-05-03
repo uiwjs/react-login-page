@@ -1,4 +1,4 @@
-import { PropsWithChildren, useRef, useEffect, createElement, AllHTMLAttributes } from 'react';
+import { PropsWithChildren, useEffect, createElement, AllHTMLAttributes, memo } from 'react';
 import { useStore, BlockTagType, Blocks } from './store';
 
 export interface BlockProps<T extends BlockTagType> extends AllHTMLAttributes<T> {
@@ -15,22 +15,21 @@ export interface BlockProps<T extends BlockTagType> extends AllHTMLAttributes<T>
   tagName?: T;
 }
 
-export const Block = <Tag extends BlockTagType = 'div'>(props: PropsWithChildren<Partial<BlockProps<Tag>>>) => {
-  const ref = useRef<Partial<BlockProps<Tag>>>();
+export const Block = memo(<Tag extends BlockTagType = 'div'>(props: PropsWithChildren<Partial<BlockProps<Tag>>>) => {
   const { blocks = {}, dispatch } = useStore();
+  const { name, keyname, visible = true, tagName = 'div', ...elmProps } = props;
   useEffect(() => {
-    const { name, keyname, visible = true, tagName = 'div', ...elmProps } = props;
-    if (ref.current !== elmProps && (name || keyname)) {
+    if (name || keyname) {
       const key = (keyname || name) as string;
-      ref.current = { ...elmProps };
       const div = visible ? createElement(tagName, { ...elmProps }, elmProps.children) : null;
+      delete blocks[key];
       dispatch({
         blocks: { ...blocks, [key]: div as unknown as Blocks<'div'> },
       });
     }
-  }, [props, ref]);
+  }, [props]);
 
   return null;
-};
+});
 
 Block.displayName = 'Login.Block';

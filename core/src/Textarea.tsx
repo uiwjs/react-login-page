@@ -1,4 +1,4 @@
-import React, { FC, memo, PropsWithChildren, useRef, useEffect } from 'react';
+import React, { FC, memo, PropsWithChildren, useEffect } from 'react';
 import { useStore } from './store';
 
 export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
@@ -15,13 +15,14 @@ export interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaEle
 }
 
 export const Textarea: FC<PropsWithChildren<TextareaProps>> = memo((props) => {
-  const ref = useRef<TextareaProps>();
   const { fields = {}, extra = {}, $$index = {}, dispatch } = useStore();
   useEffect(() => {
     const { rename, keyname, visible = true, children, ...elmProps } = props;
-    if (ref.current !== props && (keyname || elmProps.name)) {
+    if (keyname || elmProps.name) {
       const key = (keyname || elmProps.name) as string;
-      ref.current = { ...props };
+      delete fields[key];
+      delete extra[key];
+      delete $$index[key];
       dispatch({
         $$index: { ...$$index, [key]: elmProps.index || 0 },
         extra: {
@@ -31,7 +32,7 @@ export const Textarea: FC<PropsWithChildren<TextareaProps>> = memo((props) => {
         fields: { ...fields, [key]: visible ? <textarea {...elmProps} name={rename || elmProps.name} /> : null },
       });
     }
-  }, [props, ref]);
+  }, [props]);
 
   return null;
 });

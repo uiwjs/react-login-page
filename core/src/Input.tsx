@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useRef, useEffect, memo } from 'react';
+import React, { FC, PropsWithChildren, useEffect, memo } from 'react';
 import { useStore } from './store';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -15,13 +15,14 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 }
 
 export const Input: FC<PropsWithChildren<InputProps>> = memo((props) => {
-  const ref = useRef<InputProps>();
   const { fields = {}, extra = {}, $$index = {}, dispatch } = useStore();
   const { rename, keyname, visible = true, children, ...elmProps } = props;
   useEffect(() => {
-    if (ref.current !== props && (keyname || elmProps.name)) {
+    if (keyname || elmProps.name) {
       const key = (keyname || elmProps.name) as string;
-      ref.current = { ...props };
+      delete $$index[key];
+      delete fields[key];
+      delete extra[key];
       dispatch({
         $$index: { ...$$index, [key]: elmProps.index || 0 },
         extra: {
@@ -34,7 +35,7 @@ export const Input: FC<PropsWithChildren<InputProps>> = memo((props) => {
         },
       });
     }
-  }, [props, ref]);
+  }, [props]);
 
   return null;
 });

@@ -232,10 +232,13 @@ import React from 'react';
 import Login, { Render } from 'react-login-page';
 
 const Demo = () => {
+  const [name, setName] = React.useState(1);
+  console.log('name:', name);
   return (
     <Login>
       <Render>{({ blocks, fields, $$index, extra }, data) => <label>{blocks.title}</label>}</Render>
-      <Login.Block keyname="title">Login</Login.Block>
+      <Login.Block keyname="title">{name} Login</Login.Block>
+      <button onClick={() => setName(name + 1)}>++</button>
     </Login>
   );
 };

@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useRef, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useEffect, memo } from 'react';
 import { useStore } from './store';
 
 export interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
@@ -14,21 +14,20 @@ export interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement
   index?: number;
 }
 
-export const Select: FC<PropsWithChildren<SelectProps>> = (props) => {
-  const ref = useRef<SelectProps>();
+export const Select: FC<PropsWithChildren<SelectProps>> = memo((props) => {
   const { fields = {}, dispatch } = useStore();
   const { rename, keyname, visible = true, ...elmProps } = props;
   useEffect(() => {
-    if (ref.current !== props && (keyname || props.name)) {
+    if (keyname || props.name) {
       const key = (keyname || props.name) as string;
-      ref.current = { ...props };
+      delete fields[key];
       dispatch({
         fields: { ...fields, [key]: visible ? <select {...elmProps} name={rename || props.name} /> : null },
       });
     }
-  }, [props, ref]);
+  }, [props]);
 
   return null;
-};
+});
 
 Select.displayName = 'Login.Select';

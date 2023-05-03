@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useRef, useEffect } from 'react';
+import { FC, PropsWithChildren, useEffect, memo } from 'react';
 import { useStore } from './store';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -9,21 +9,20 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   index?: number;
 }
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
-  const ref = useRef<ButtonProps>();
+export const Button: FC<PropsWithChildren<ButtonProps>> = memo((props) => {
   const { buttons = {}, dispatch } = useStore();
   useEffect(() => {
     const { keyname, visible = true, ...elmProps } = props;
-    if (ref.current !== elmProps && (keyname || elmProps.name)) {
-      ref.current = { ...elmProps };
+    if (keyname || elmProps.name) {
       const key = (keyname || elmProps.name) as string;
+      delete buttons[key];
       dispatch({
         buttons: { ...buttons, [key]: visible ? <button type="submit" {...elmProps} /> : null },
       });
     }
-  }, [props, ref]);
+  }, [props]);
 
   return null;
-};
+});
 
 Button.displayName = 'Login.Button';

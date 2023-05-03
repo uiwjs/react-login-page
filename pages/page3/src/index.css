@@ -111,7 +111,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .login-page3-inner > main > header h1 {

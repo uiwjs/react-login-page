@@ -191,9 +191,9 @@
 }
 
 .login-page3-inner > main > label input:-webkit-autofill {
-  box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px var(--login-inner-bg) inset;
   color: var(--login-input);
-  -webkit-text-fill-color: #333 !important;
+  -webkit-text-fill-color: var(--login-input) !important;
 }
 
 .login-page3-inner > main > section {

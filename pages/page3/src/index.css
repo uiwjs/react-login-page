@@ -1,14 +1,14 @@
 [data-color-mode*='dark'] .login-page3, .login-page3 {
   --login-bg: #2c3338;
-  --login-color: #333;
+  --login-color: #fff;
   --login-logo: #fff;
-  --login-inner-bg: #fff;
-  --login-banner-bg: #fbfbfb;
+  --login-inner-bg: #414b54;
+  --login-banner-bg: #5a646c;
   --login-valid: #e15549;
-  --login-input: #333;
+  --login-input: #fff;
   --login-input-icon: #dddddd;
   --login-input-bg: transparent;
-  --login-input-border: rgba(0, 0, 0, 0.13);
+  --login-input-border: rgba(255, 255, 255, 0.10);
   --login-input-placeholder: #999999;
   --login-btn: #fff;
   --login-btn-bg: #b08bf8;
@@ -51,7 +51,6 @@
 }
 
 .login-page3-inner {
-  background: var(--login-inner-bg);
   border-radius: 10px;
   --gap: 0.37rem;
   display: flex;
@@ -86,6 +85,9 @@
 }
 
 .login-page3-inner > main {
+  background: var(--login-inner-bg);
+  color: var(--login-color);
+  border-radius: 0 10px 10px 0;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -100,7 +102,6 @@
   line-height: 155%;
   margin-bottom: 5px;
   font-size: 14px;
-  color: #000;
   opacity: 0.65;
   font-weight: 400;
   max-width: 200px;
@@ -251,4 +252,30 @@
 
 .login-page3-inner > main > label input:focus + :last-child:not(input) {
   color: var(--login-btn-bg);
+}
+
+@media(max-width: 992px) {
+  .login-page2-inner {
+    width: 50%;
+    padding: 33px 95px 33px 95px;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 768px) {
+  .login-page3-inner > main {
+    border-radius: 10px;
+  }
+  .login-page3-banner {
+    display: none;
+  }
+}
+
+@media(max-width: 576px) {
+  .login-page3-inner > main {
+    border-radius: 10px;
+  }
+  .login-page3-banner {
+    display: none;
+  }
 }

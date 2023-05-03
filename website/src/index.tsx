@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createHashRouter, RouteObject } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import '@wcj/dark-mode';
 import { Fallback } from './comps/Fallback';
 import { routes } from './router';
 
@@ -46,6 +47,7 @@ const root = createRoot(container!);
 root.render(
   <Fragment>
     <GlobalStyle />
+    <dark-mode permanent style={{ zIndex: 999, position: 'fixed', display: 'none' }}></dark-mode>
     <RouterProvider router={createHashRouter([routes] as RouteObject[])} fallbackElement={<Fallback />} />
   </Fragment>,
 );

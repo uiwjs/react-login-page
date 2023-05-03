@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.953rem;
   ${mediaStyle}
 `;

@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import '@wcj/dark-mode';
 import { Footer } from './Footer';
 
 const Wrapper = styled.div`

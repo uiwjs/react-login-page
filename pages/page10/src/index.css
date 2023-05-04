@@ -1,0 +1,322 @@
+[data-color-mode*='dark'] .login-page10, .login-page10 {
+  --login-bg: #1f2029;
+  --login-color: #c4c3ca;
+  --login-inner-height: 460px;
+  --login-inner-bg: #2a2b38;
+  --login-input: #c4c3ca;
+  --login-input-bg: #1f2029;
+  --login-input-placeholder: #49475d;
+  --login-input-placeholder-active: #53e3a6;
+  --login-input-bg-hover: #191821;
+  --login-input-bg-focus: #23222e;
+  --login-input-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  --login-btn: #fff;
+  --login-btn-bg: #a7e245;
+  --login-btn-focus: white;
+  --login-btn-hover: #53e3a6;
+  --login-btn-active: #1aa97d;
+  --login-footer: #ffffff99;
+  --login-icon-color: #ffeba7;
+  --login-icon-toggle-color: #102770;
+}
+[data-color-mode*='light'] .login-page10 {
+  --login-bg: #1f2029;
+  --login-color: #c4c3ca;
+  --login-inner-height: 460px;
+  --login-inner-bg: #2a2b38;
+  --login-input: #c4c3ca;
+  --login-input-bg: #1f2029;
+  --login-input-placeholder: #49475d;
+  --login-input-placeholder-active: #53e3a6;
+  --login-input-bg-hover: #191821;
+  --login-input-bg-focus: #23222e;
+  --login-input-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  --login-btn: #fff;
+  --login-btn-bg: #a7e245;
+  --login-btn-focus: white;
+  --login-btn-hover: #53e3a6;
+  --login-btn-active: #1aa97d;
+  --login-footer: #ffffff99;
+  --login-icon-color: #ffeba7;
+  --login-icon-toggle-color: #102770;
+}
+
+.login-page10 {
+  --gap: 15px;
+  --login-line-height: 1.2;
+  line-height: var(--login-line-height);
+  color: var(--login-color);
+  background-color: var(--login-bg);
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.login-page10-toggle.active-login svg {
+  transform: translateX(-8px) rotate(-90deg);
+}
+.login-page10-toggle.active-signup svg {
+  transform: translateX(32px) rotate(360deg);
+}
+.login-page10-toggle label svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+  position: relative;
+  top: -11px;
+  transition: all 0.5s ease;
+}
+.login-page10-toggle label {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: var(--login-icon-color);
+  color: var(--login-icon-toggle-color);
+}
+.login-page10-toggle h6 div {
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1rem;
+}
+.login-page10-toggle h6 {
+  display: flex;
+  gap: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+.login-page10-toggle {
+  padding-bottom: 2rem;
+}
+.login-page10 header {
+  display: flex;
+  gap: var(--gap);
+  padding-bottom: 1rem;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  justify-content: center;
+}
+.login-page10 header > div {
+  display: flex;
+  align-items: center;
+}
+.login-page10 header > div > * {
+  display: block;
+}
+
+.login-page10-inner {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: var(--login-inner-height);
+}
+.login-page10-inner > main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out;
+}
+.login-page10-inner main > article {
+  width: 100%;
+  height: 100%;
+  background-color: var(--login-inner-bg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-image: var(--login-inner-image);
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: all 600ms ease-out;
+  display: flex;
+  align-items: center;
+}
+
+.login-page10-inner main > article:last-child {
+  transform: rotateY(180deg);
+}
+
+.login-page10-inner main.active-signup {
+  transform: rotateY(180deg);
+}
+
+.login-page10-inner main > article > section > h4 {
+  padding-bottom: 1rem!important;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 0.53rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.login-page10-inner main > article .login-page10-fields {
+  overflow: hidden;
+  min-width: 260px;
+  padding: 30px 35px 30px 35px;
+  border-radius: 5px;
+  transform: translate3d(0, 0, 35px) perspective(100px);
+}
+
+.login-page10-label {
+  margin-top: 8px;
+}
+.login-page10-label * > {
+  display: block;
+}
+
+.login-page10-fields  {
+  border-radius: 10px;
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.login-page10-fields > label {
+  gap: var(--gap);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.login-page10-fields > label > input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 20px;
+  color: var(--login-input) !important;
+  background: var(--login-input-bg);
+  border: 0;
+  outline: none;
+  box-shadow: var(--login-input-shadow);
+  
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  padding-left: 46px;
+}
+
+.login-page10-fields > label > input:last-child {
+  padding-left: 13px;
+}
+
+.login-page10-fields > label > input + div {
+  position: absolute;
+  left: 14px;
+  top: 21px;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  color: var(--login-icon-color);
+}
+
+.login-page10-fields > label > input + div > * {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.login-page10-fields > label > input:focus {
+  background-color: var(--login-input-bg-focus);
+  color: var(--login-color);
+  width: 100%;
+}
+.login-page10-fields > label > input:not(:focus):hover {
+  background-color: var(--login-input-bg-hover);
+}
+.login-page10-fields > label > input::placeholder {
+  color: var(--login-input-placeholder);
+  transition: all 200ms linear;
+  opacity: 1;
+}
+.login-page10-fields > label > input::placeholder:active {
+  color: var(--login-input-placeholder-active);
+}
+.login-page10-fields > label > input:focus::placeholder {
+  opacity: 0;
+}
+
+.login-page10-fields > label > div + input {
+  margin-top: 5px;
+}
+.login-page10-fields > label > div > * {
+  display: block;
+}
+
+.login-page10-fields > label > input:-webkit-autofill
+.login-page10-fields > label > input:-webkit-autofill:hover,
+.login-page10-fields > label > input:-webkit-autofill:focus
+{
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.login-page10-button {
+  gap: var(--gap);
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem!important;
+}
+
+.login-page10-button > button {
+  cursor: pointer;
+  min-width: 80px;
+  text-transform: uppercase;
+  border: 0;
+  transition: background-color 300ms;
+  position: relative;
+  z-index: 1;
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn);
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+}
+
+.login-page10-button > button:hover:not(:disabled) {
+  background-color: var(--login-btn-hover);
+}
+.login-page10-button > button:active:not(:disabled) {
+  background-color: var(--login-btn-active);
+}
+
+.login-page10-fields > footer {
+  color: var(--login-footer);
+  padding-top: 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+

@@ -12,6 +12,10 @@ import Login7 from '@react-login-page/page7';
 import Login8 from '@react-login-page/page8';
 import Login9 from '@react-login-page/page9';
 import Login9Bg from '@react-login-page/page9/bg.jpg';
+import Login10 from '@react-login-page/page10';
+import Login10Img from '@react-login-page/page10/bg.png';
+import Login10InnerBgImg from '@react-login-page/page10/inner-bg.jpg';
+import { CSSProperties } from 'styled-components';
 
 interface Example {
   magnify?: number;
@@ -128,4 +132,13 @@ export const page9: Example = {
       </Login9.Logo>
     </Login9>
   ),
+};
+
+const page10Style = {
+  backgroundImage: `url(${Login10Img})`,
+  '--login-inner-image': `url(${Login10InnerBgImg})`,
+} as CSSProperties;
+export const page10: Example = {
+  magnify: 2.5,
+  children: <Login10 style={page10Style} />,
 };

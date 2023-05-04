@@ -52,6 +52,7 @@ const Inner = styled(Link)<{ magnify?: number }>`
   }
   &:hover ${Title} {
     top: 10px;
+    z-index: 1;
   }
   &:hover::before {
     background-color: var(--color-neutral-muted);
@@ -67,9 +68,17 @@ const Inner = styled(Link)<{ magnify?: number }>`
 `;
 
 export const Example = () => {
+  const data = Object.keys(datas);
+
+  data.sort((a, b) => {
+    const numA = parseInt(a.match(/\d+/)?.[0] || '0');
+    const numB = parseInt(b.match(/\d+/)?.[0] || '0');
+    return numA - numB;
+  });
+
   return (
     <Wrapper>
-      {Object.keys(datas).map((path, key) => {
+      {data.map((path, key) => {
         const comps = datas[path as keyof typeof datas];
         return (
           <Inner key={key} to={`/pages/${path}`} magnify={comps.magnify}>

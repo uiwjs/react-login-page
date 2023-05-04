@@ -278,6 +278,7 @@ import { Username, Password } from '@react-login-page/page9';
 import { Button, Input } from '@react-login-page/page9';
 // or
 import { Button, Input } from 'react-login-page';
+import LoginBgImg from '@react-login-page/page9/bg.jpg';
 
 <LoginPage>
   <Password index={2} />

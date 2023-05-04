@@ -136,7 +136,7 @@ export const page9: Example = {
 
 const page10Style = {
   backgroundImage: `url(${Login10Img})`,
-  '--login-inner-image': `url(${Login10InnerBgImg})`,
+  '--login-inner-image': `url("${Login10InnerBgImg}")`,
 } as CSSProperties;
 export const page10: Example = {
   magnify: 2.5,

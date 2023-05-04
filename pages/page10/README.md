@@ -26,7 +26,7 @@ import LoginInnerBgImg from '@react-login-page/page10/inner-bg.jpg';
 
 const Demo = () => (
   <Login
-    style={{ height: 690, backgroundImage: `url(${LoginImg})`, '--login-inner-image': `url(${LoginInnerBgImg})` }}
+    style={{ height: 690, backgroundImage: `url(${LoginImg})`, '--login-inner-image': `url("${LoginInnerBgImg}")` }}
   />
 );
 
@@ -44,7 +44,7 @@ import LoginInnerBgImg from '@react-login-page/page10/inner-bg.jpg';
 
 const Demo = () => (
   <LoginPage
-    style={{ height: 690, backgroundImage: `url(${LoginImg})`, '--login-inner-image': `url(${LoginInnerBgImg})` }}
+    style={{ height: 690, backgroundImage: `url(${LoginImg})`, '--login-inner-image': `url("${LoginInnerBgImg}")` }}
   >
     <Title />
     <TitleSignup>注册</TitleSignup>

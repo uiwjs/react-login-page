@@ -145,7 +145,6 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 300%;
-  background-image: var(--login-inner-image);
   position: absolute;
   border-radius: 6px;
   left: 0;

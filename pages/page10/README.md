@@ -25,9 +25,10 @@ import LoginImg from '@react-login-page/page10/bg.png';
 import LoginInnerBgImg from '@react-login-page/page10/inner-bg.jpg';
 
 const Demo = () => (
-  <Login
-    style={{ height: 690, backgroundImage: `url(${LoginImg})`, '--login-inner-image': `url("${LoginInnerBgImg}")` }}
-  />
+  <Login style={{ height: 690, backgroundImage: `url(${LoginImg})` }}>
+    <Login.InnerBox style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
+    <Login.InnerBox panel="signup" style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
+  </Login>
 );
 
 export default Demo;
@@ -37,7 +38,16 @@ export default Demo;
 
 ```jsx mdx:preview
 import React from 'react';
-import LoginPage, { Email, Password, TitleSignup, TitleLogin, Submit, Title, Logo } from '@react-login-page/page10';
+import LoginPage, {
+  Email,
+  Password,
+  InnerBox,
+  TitleSignup,
+  TitleLogin,
+  Submit,
+  Title,
+  Logo,
+} from '@react-login-page/page10';
 import LoginLogo from 'react-login-page/logo';
 import LoginImg from '@react-login-page/page10/bg.png';
 import LoginInnerBgImg from '@react-login-page/page10/inner-bg.jpg';
@@ -46,6 +56,8 @@ const Demo = () => (
   <LoginPage
     style={{ height: 690, backgroundImage: `url(${LoginImg})`, '--login-inner-image': `url("${LoginInnerBgImg}")` }}
   >
+    <InnerBox style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
+    <InnerBox panel="signup" style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
     <Title />
     <TitleSignup>注册</TitleSignup>
     <TitleLogin>登录</TitleLogin>
@@ -306,7 +318,7 @@ import LoginPage from '@react-login-page/page10';
 // buttons
 import { Reset, Submit } from '@react-login-page/page10';
 // blocks
-import { Logo, Title, TitleLogin, TitleSignup, Footer } from '@react-login-page/page10';
+import { Logo, InnerBox, Title, TitleLogin, TitleSignup, Footer } from '@react-login-page/page10';
 // fields
 import { Email, Password } from '@react-login-page/page10';
 
@@ -331,6 +343,9 @@ import LoginInnerBgImg from '@react-login-page/page9/inner-bg.jpg';
 // Modify logo image
 <Logo>⚛️</Logo>
 
+<InnerBox style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
+<InnerBox panel="signup" style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
+
 // Signup Fields
 <Email panel="signup" keyname="e-mail" />
 <Password panel="signup" placeholder="Your Password" keyname="password" />
@@ -351,6 +366,9 @@ import Login from '@react-login-page/page10';
 
 // Define the order of `Password` controls
 <Login.Password index={2} />
+
+<Login.InnerBox style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
+<Login.InnerBox panel="signup" style={{ backgroundImage: `url(${LoginInnerBgImg})` }} />
 
 // Hiding the `Password` control
 <Login.Password visible={false} />

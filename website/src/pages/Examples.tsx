@@ -140,5 +140,10 @@ const page10Style = {
 } as CSSProperties;
 export const page10: Example = {
   magnify: 2.5,
-  children: <Login10 style={page10Style} />,
+  children: (
+    <Login10 style={page10Style}>
+      <Login10.InnerBox style={{ backgroundImage: `url(${Login10InnerBgImg})` }} />
+      <Login10.InnerBox panel="signup" style={{ backgroundImage: `url(${Login10InnerBgImg})` }} />
+    </Login10>
+  ),
 };

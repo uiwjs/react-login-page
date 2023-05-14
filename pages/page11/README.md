@@ -21,8 +21,15 @@ $ npm install @react-login-page/page11 --save
 ```jsx
 import React from 'react';
 import Login from '@react-login-page/page11';
+import LoginBannerBgImg from '@react-login-page/page11/banner.jpg';
 
-const Demo = () => <Login style={{ height: 380 }} />;
+const Demo = () => (
+  <Login style={{ height: 380 }}>
+    <Login.Banner>
+      <img src={LoginBannerBgImg} alt="banner" />
+    </Login.Banner>
+  </Login>
+);
 
 export default Demo;
 ```

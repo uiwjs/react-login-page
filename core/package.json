@@ -23,6 +23,7 @@
     },
     "./README.md": "./README.md",
     "./form-data.md": "./docs/form-data.md",
+    "./create-login-page.md": "./docs/create-login-page.md",
     "./package.json": "./package.json"
   },
   "scripts": {

@@ -46,6 +46,11 @@ export const routes: MenuRouteObject = {
           label: 'Working With FormData',
           element: <Preview path={() => import('react-login-page/form-data.md')} />,
         },
+        {
+          path: 'create-login-page',
+          label: 'Create Login Page',
+          element: <Preview path={() => import('react-login-page/create-login-page.md')} />,
+        },
       ],
     },
     {

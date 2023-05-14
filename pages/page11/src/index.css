@@ -1,0 +1,169 @@
+[data-color-mode*='dark'] .login-page11, .login-page11 {
+  --login-bg: #2c3338;
+  --login-color: #fff;
+  --login-input: #fff;
+  --login-input-border: #4d5d69;
+  --login-input-hover: #434a52;
+  --login-input-focus: rgba(0,142,240,.46);
+  --login-input-placeholder: #838383;
+  --login-btn: var(--login-color);
+  --login-btn-bg: #008ef0;
+  --login-btn-focus: rgba(0,142,240,.26);
+  --login-btn-hover: #0070bd;
+  --login-btn-active: #00528a;
+}
+[data-color-mode*='light'] .login-page11 {
+  --login-bg: #edeff3;
+  --login-color: #3b4148;
+  --login-input: #525D68;
+  --login-input-border: #e2e8f0;
+  --login-input-bg: #d7dee5;
+  --login-input-hover: #b6c3d1;
+  --login-input-focus: rgba(0,142,240,.26);
+  --login-input-placeholder: #8e98a2;
+  --login-btn: #fff;
+  --login-btn-bg: #008ef0;
+  --login-btn-focus: rgba(0,142,240,.26);
+  --login-btn-hover: #0070bd;
+  --login-btn-active: #00528a;
+}
+
+.login-page11 {
+  --login-line-height: 1.5;
+  line-height: var(--login-line-height);
+  background-color: var(--login-bg);
+  color: var(--login-color);
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  --login-border-radius: 0.45rem;
+}
+
+.login-page11 > main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --gap: 0.87rem;
+  gap: var(--gap);
+}
+.login-page11 > aside {
+  flex: 1;
+}
+.login-page11 > aside img,
+.login-page11 > aside video {
+  max-width: 100%;
+  object-fit: cover;
+  height: auto;
+  min-height: 100%;
+  display: block;
+}
+
+.login-page11 > main > header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  font-size: 23px;
+  font-weight: 900;
+  padding-bottom: 2rem;
+}
+
+.login-page11 > main > header svg, .login-page11 > main > header img {
+  display: block;
+}
+
+.login-page11 > main > label .login-page11-label {
+  padding-bottom: 0.34rem;
+  display: block;
+}
+.login-page11 > main > label > article > div {
+  display: flex;
+  align-items: center;
+}
+.login-page11 > main > label > article > div > img {
+  max-width: 100%;
+  display: block;
+}
+.login-page11 > main > label > article {
+  display: flex;
+  gap: var(--gap);
+}
+.login-page11 > main > label, .login-page11 > main > div {
+  min-width: 320px;
+}
+.login-page11 > main > label input:not([type='checkbox'], [type='radio']) {
+  outline: transparent solid 2px;
+  width: 100%;
+  height: 40px;
+  border-radius: var(--login-border-radius);
+  border: 1px solid var(--login-input-border);
+  padding: 0 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+.login-page11 > main > label input:focus-visible {
+  outline-color: var(--login-input-focus);
+  border-color: transparent;
+}
+
+.login-page11 > main > label > input:-webkit-autofill
+.login-page11 > main > label > input:-webkit-autofill:hover,
+.login-page11 > main > label > input:-webkit-autofill:focus
+{
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: transparent !important;
+}
+
+
+.login-page11 section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap);
+  min-width: 320px;
+  padding-top: 0.75rem;
+}
+
+.login-page11 section button {
+  background-image: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  border-radius: var(--login-border-radius);
+  padding: 0.4rem 0.8rem;
+  width: 100%;
+}
+
+.login-page11 section button {
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn);
+  font-weight: 700;
+  text-transform: uppercase;
+  flex: 1;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+  font-size: 0.923rem;
+}
+
+.login-page11 section button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.login-page11 section button:focus:not(:disabled) {
+  box-shadow: 0 0 0 2px var(--login-btn-focus);
+}
+.login-page11 section button:hover:not(:disabled) {
+  background-color: var(--login-btn-hover);
+}
+.login-page11 section button:active:not(:disabled) {
+  background-color: var(--login-btn-active);
+}

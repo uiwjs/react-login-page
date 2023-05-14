@@ -1,3 +1,4 @@
+import { CSSProperties } from 'styled-components';
 import LoginBase from '@react-login-page/base';
 import LoginLogo from 'react-login-page/logo-rect';
 import LoginPage1 from '@react-login-page/page1';
@@ -15,7 +16,8 @@ import Login9Bg from '@react-login-page/page9/bg.jpg';
 import Login10 from '@react-login-page/page10';
 import Login10Img from '@react-login-page/page10/bg.png';
 import Login10InnerBgImg from '@react-login-page/page10/inner-bg.jpg';
-import { CSSProperties } from 'styled-components';
+import Login11 from '@react-login-page/page11';
+import Login11BannerBgImg from '@react-login-page/page11/banner.jpg';
 
 interface Example {
   magnify?: number;
@@ -145,5 +147,19 @@ export const page10: Example = {
       <Login10.InnerBox style={{ backgroundImage: `url(${Login10InnerBgImg})` }} />
       <Login10.InnerBox panel="signup" style={{ backgroundImage: `url(${Login10InnerBgImg})` }} />
     </Login10>
+  ),
+};
+
+export const page11: Example = {
+  magnify: 3.2,
+  children: (
+    <Login11>
+      <Login11.Logo>
+        <LoginLogo />
+      </Login11.Logo>
+      <Login11.Banner>
+        <img src={Login11BannerBgImg} alt="banner" />
+      </Login11.Banner>
+    </Login11>
   ),
 };

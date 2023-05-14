@@ -149,6 +149,14 @@ export const routes: MenuRouteObject = {
             </Preview>
           ),
         },
+        {
+          path: 'page11',
+          element: (
+            <Preview disableNav path={() => import('@react-login-page/page11/README.md')}>
+              {datas.page11.children}
+            </Preview>
+          ),
+        },
       ],
     },
   ],

@@ -106,6 +106,7 @@
 
 .login-page4-inner > main > label article {
   display: flex;
+  flex-direction: column;
   flex: 1;
 }
 .login-page4-inner > main > label {
@@ -116,7 +117,7 @@
 }
 .login-page4-inner > main > label input {
   font-size: 16px;
-  padding: 20px 0px;
+  padding: 30px 0px 10px 0px;
   height: 56px;
   border: none;
   border-bottom: 2px solid var(--login-input-border);

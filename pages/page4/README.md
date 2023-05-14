@@ -89,7 +89,7 @@ import LoginPage, { Reset, Logo, Email, Footer, Password, Input } from '@react-l
 import LoginLogo from 'react-login-page/logo-rect';
 
 const Demo = () => (
-  <LoginPage style={{ height: 680 }}>
+  <LoginPage style={{ height: 750 }}>
     <Logo>
       <LoginLogo />
     </Logo>

@@ -194,6 +194,6 @@ Login.InnerBox = InnerBox;
 Login.Title = Title;
 Login.TitleLogin = TitleLogin;
 Login.TitleSignup = TitleSignup;
-Login.displayName = 'BaseLoginPage';
+Login.displayName = 'LoginPage';
 
 export default Login;

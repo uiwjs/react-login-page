@@ -1,5 +1,5 @@
-import { FC, Fragment, PropsWithChildren, cloneElement, isValidElement, useState } from 'react';
-import { Render, Provider, Container, useStore } from 'react-login-page';
+import { FC, PropsWithChildren, cloneElement, forwardRef, isValidElement, useState } from 'react';
+import { Render, Provider, Container, useStore, ContainerProps } from 'react-login-page';
 import { Email } from './control/login/Email';
 import { Password } from './control/login/Password';
 import { Submit } from './control/login/Submit';
@@ -139,11 +139,8 @@ const RenderLogin = () => {
   );
 };
 
-const LoginPage: FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>> = ({
-  children,
-  className,
-  ...divProps
-}) => {
+const LoginPage = forwardRef<HTMLDivElement, ContainerProps>((props, ref) => {
+  const { children, className, ...divProps } = props;
   return (
     <Provider>
       <InnerBox />
@@ -163,15 +160,15 @@ const LoginPage: FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>> = (
         Signup
       </Submit>
 
-      <Container {...divProps} className={`login-page10 ${className || ''}`}>
+      <Container {...divProps} ref={ref} className={`login-page10 ${className || ''}`}>
         <RenderLogin />
         {children}
       </Container>
     </Provider>
   );
-};
+});
 
-type LoginComponent = FC<PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>> & {
+type LoginComponent = typeof LoginPage & {
   Email: typeof Email;
   Password: typeof Password;
   Submit: typeof Submit;

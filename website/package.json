@@ -45,7 +45,7 @@
     "react-dom": "^18.2.0",
     "react-login-page": "0.4.16",
     "react-router-dom": "^6.10.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^6.0.0"
   },
   "eslintConfig": {
     "extends": [

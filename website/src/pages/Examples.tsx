@@ -1,4 +1,4 @@
-import { CSSProperties } from 'styled-components';
+import { CSSProperties } from 'react';
 import LoginBase from '@react-login-page/base';
 import LoginLogo from 'react-login-page/logo-rect';
 import LoginPage1 from '@react-login-page/page1';

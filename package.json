@@ -10,6 +10,8 @@
     "start": "npm run-script start --workspace website",
     "build": "lerna exec --scope @react-login-page/* --scope react-login-page -- npm run build",
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
+    "test": "lerna exec --scope react-login-page -- tsbb test",
+    "coverage": "lerna exec --scope react-login-page -- tsbb test --coverage --bail",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
     "hoist": "lerna bootstrap --hoist",

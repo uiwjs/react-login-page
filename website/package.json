@@ -17,6 +17,7 @@
     "@types/katex": "^0.16.0",
     "@types/react": "~18.2.0",
     "@types/react-dom": "~18.2.0",
+    "@types/react-test-renderer": "^18.0.2",
     "kkt": "^7.4.9",
     "source-map-explorer": "~2.5.2"
   },
@@ -42,6 +43,7 @@
     "react": "^18.2.0",
     "react-code-preview-layout": "^3.0.0",
     "react-dom": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
     "react-login-page": "1.0.0",
     "react-router-dom": "^6.10.0",
     "styled-components": "^6.0.7"

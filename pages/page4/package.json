@@ -1,6 +1,6 @@
 {
   "name": "@react-login-page/page4",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Some `react` login pages, which can be used quickly after installation.",
   "homepage": "https://uiwjs.github.io/react-login-page",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -37,7 +37,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "react-login-page": "1.0.0"
+    "react-login-page": "1.0.1"
   },
   "keywords": [
     "react",

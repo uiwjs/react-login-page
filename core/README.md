@@ -26,6 +26,9 @@
   <a href="https://github.com/uiwjs/react-login-page/actions/workflows/main.yml" target="__blank">
     <img alt="Build & Deploy" src="https://github.com/uiwjs/react-login-page/actions/workflows/main.yml/badge.svg" />
   </a>
+  <a href="https://uiwjs.github.io/react-login-page/lcov-report/" target="__blank">
+    <img alt="Coverage Status" src="https://uiwjs.github.io/react-login-page/badges.svg" />
+  </a>
   <a href="https://uiwjs.github.io/npm-unpkg/#/pkg/react-login-page/file/README.md" target="__blank">
     <img src="https://img.shields.io/badge/Open%20in-unpkg-blue" alt="Open in unpkg">
   </a>

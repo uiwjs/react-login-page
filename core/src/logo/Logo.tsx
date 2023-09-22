@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-export default function Logo(props: FC<React.SVGProps<SVGSVGElement>>) {
+export default function Logo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg width="93" height="35" viewBox="0 0 249 95" {...props}>
       <path

@@ -7,11 +7,14 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm install
@@ -74,91 +77,91 @@ jobs:
           path: core/package.json
           unset: scripts,jest
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 react-login-page publish to NPM
         continue-on-error: true
         working-directory: core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/base publish to NPM
         continue-on-error: true
         working-directory: pages/base
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page1 publish to NPM
         continue-on-error: true
         working-directory: pages/page1
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page2 publish to NPM
         continue-on-error: true
         working-directory: pages/page2
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page3 publish to NPM
         continue-on-error: true
         working-directory: pages/page3
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page4 publish to NPM
         continue-on-error: true
         working-directory: pages/page4
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page5 publish to NPM
         continue-on-error: true
         working-directory: pages/page5
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page6 publish to NPM
         continue-on-error: true
         working-directory: pages/page6
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page7 publish to NPM
         continue-on-error: true
         working-directory: pages/page7
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page8 publish to NPM
         continue-on-error: true
         working-directory: pages/page8
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page9 publish to NPM
         continue-on-error: true
         working-directory: pages/page9
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page10 publish to NPM
         continue-on-error: true
         working-directory: pages/page10
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - run: npm publish --access public
+      - run: npm publish --access public --provenance
         name: 📦 @react-login-page/page11 publish to NPM
         continue-on-error: true
         working-directory: pages/page11

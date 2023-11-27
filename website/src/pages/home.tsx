@@ -84,6 +84,9 @@ export const Home = () => {
         <a href="https://github.com/uiwjs/react-login-page" target="_blank" rel="noreferrer">
           Github
         </a>
+        <a href="https://jaywcjlove.github.io/#/sponsor" target="_blank" rel="noreferrer">
+          Sponsor
+        </a>
       </Nav>
       <Example />
     </Wrapper>

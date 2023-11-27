@@ -20,6 +20,9 @@ const Menu = styled.nav`
 export const Nav = () => {
   return (
     <Menu>
+      <a href="https://jaywcjlove.github.io/#/sponsor" target="_blank" rel="noreferrer">
+        Sponsor
+      </a>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/docs">Document</NavLink>
       <a href="https://github.com/uiwjs/react-login-page" rel="noreferrer" target="_blank">

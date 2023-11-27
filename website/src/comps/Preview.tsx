@@ -15,13 +15,13 @@ const MarkdownCode = CodeLayout.Preview;
 const Code = CodeLayout.Code;
 const Toolbar = CodeLayout.Toolbar;
 
-const Wrapper = styled.div<{ isShowExample?: boolean }>`
+const Wrapper = styled.div<{ $isShowExample?: boolean }>`
   flex: 1;
   padding-right: 0.51rem;
   padding-left: 0.51rem;
   overflow: hidden;
   z-index: 1;
-  padding-top: ${({ isShowExample }) => (isShowExample ? '0' : '0')};
+  padding-top: ${({ $isShowExample }) => ($isShowExample ? '0' : '0')};
   margin: 0 auto;
   width: 100%;
   ${mediaStyle}
@@ -95,52 +95,34 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
           </PageArrow>
         </NavMenu>
       )}
-      <Wrapper isShowExample={props.disableNav}>
+      <Wrapper $isShowExample={props.disableNav}>
         {loading && <div>Loading...</div>}
         {mdData && !loading && (
           <Markdown
             source={mdData.source}
             rehypeRewrite={(node: Root | RootContent, index: number, parent: Root | Element) => {
               if (node.type === 'element' && parent && parent.type === 'root') {
-                const menu = parent.children[1] as Element | undefined;
-                let childLength = [...parent.children].filter((item) => item.type !== 'raw').length;
-                const lastChild = parent.children[parent.children.length - 1];
-                if (lastChild?.type === 'raw') {
-                  childLength = parent.children.length - 2;
-                }
-                if (
-                  (index + 1 === childLength || index - 1 === childLength || index === childLength) &&
-                  menu?.properties?.class !== 'menu-toc'
-                ) {
-                  const child = [...parent.children].map((item) => {
-                    if (item.type === 'element' && item.tagName === 'pre') {
-                      const meta = item.children[0]?.data?.meta as string;
-                      if (isMeta(meta)) {
-                        item.tagName = 'div';
-                        item.properties = {
-                          ...item.properties,
-                          'data-md': meta,
-                          'data-meta': 'preview',
-                        };
-                        return { ...item };
-                      }
+                [...parent.children].map((item) => {
+                  if (item.type === 'element' && item.tagName === 'pre') {
+                    const meta = (item.children[0]?.data as any)?.meta as string;
+                    if (isMeta(meta)) {
+                      item.tagName = 'div';
+                      item.properties = {
+                        ...item.properties,
+                        'data-md': meta,
+                        'data-meta': 'preview',
+                      };
+                      return { ...item };
                     }
-                    return item;
-                  });
-                  parent.children = [
-                    {
-                      type: 'element',
-                      tagName: 'div',
-                      children: child as Element[],
-                    },
-                  ];
-                }
+                  }
+                  return item;
+                });
               }
             }}
             components={{
               div: ({ node, ...props }) => {
                 const { 'data-meta': meta, 'data-md': metaData, ...rest } = props as any;
-                const line = node.position?.start.line;
+                const line = node?.position?.start.line;
                 const metaId = getMetaId(metaData) || String(line);
                 const Child = mdData.components[metaId];
                 if (meta !== 'preview' || !metaId || typeof Child !== 'function') return <div {...props} />;

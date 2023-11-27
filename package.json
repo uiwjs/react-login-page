@@ -36,10 +36,9 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "husky": "^8.0.0",
-    "lerna": "^7.1.5",
-    "lint-staged": "^14.0.1",
+    "lerna": "^8.0.0",
+    "lint-staged": "^15.1.0",
     "prettier": "^3.0.2",
     "tsbb": "^4.1.5"
   }

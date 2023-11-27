@@ -1,5 +1,6 @@
 # @react-login-page/page8
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@react-login-page/page8.svg)](https://www.npmjs.com/package/@react-login-page/page8)
 [![Downloads](https://img.shields.io/npm/dm/@react-login-page/page8.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page8)
 

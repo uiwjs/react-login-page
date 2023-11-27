@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.1",
   "description": "Website",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "scripts": {

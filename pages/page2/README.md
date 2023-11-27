@@ -1,6 +1,6 @@
-@react-login-page/page2
-===
+# @react-login-page/page2
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@react-login-page/page2.svg)](https://www.npmjs.com/package/@react-login-page/page2)
 [![Downloads](https://img.shields.io/npm/dm/@react-login-page/page2.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page2)
 
@@ -46,7 +46,7 @@ import LoginPage, { Email, Password, Submit, Title, Logo, Reset } from '@react-l
 import defaultBannerImage from '@react-login-page/page2/banner-image';
 import LoginLogo from 'react-login-page/logo';
 
-const styles= { height: 580 }
+const styles = { height: 580 };
 
 const Demo = () => (
   <div style={styles}>
@@ -143,7 +143,7 @@ const css = {
   '--login-btn-bg-focus': '#57b846',
   '--login-btn-bg-hover': '#333',
   '--login-btn-bg-active': '#57b846',
-}
+};
 
 const Demo = () => <Login style={{ height: 380, ...css }} />;
 
@@ -154,7 +154,7 @@ Use css variables to override default color values
 
 ```css
 .login-page2 {
-  --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
+  --login-bg: linear-gradient(-135deg, #c850c0, #4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
   --login-input: #57b846;
@@ -172,7 +172,7 @@ Custom CSS style overrides
 
 ```css
 .login-page2 section button:focus {
-  box-shadow: 0 0 0 2px rgba(0,142,240,.26);
+  box-shadow: 0 0 0 2px rgba(0, 142, 240, 0.26);
 }
 .login-page2 section button:hover {
   background-color: #0070bd;
@@ -185,8 +185,9 @@ Custom CSS style overrides
 ## Light & Dark Theme
 
 ```css
-[data-color-mode*='dark'] .login-page2, .login-page2 {
-  --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
+[data-color-mode*='dark'] .login-page2,
+.login-page2 {
+  --login-bg: linear-gradient(-135deg, #c850c0, #4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
   --login-input: #666;
@@ -199,7 +200,7 @@ Custom CSS style overrides
   --login-btn-bg-active: #57b846;
 }
 [data-color-mode*='light'] .login-page2 {
-  --login-bg: linear-gradient(-135deg,#c850c0,#4158d0);
+  --login-bg: linear-gradient(-135deg, #c850c0, #4158d0);
   --login-color: #333;
   --login-inner-bg: #fff;
   --login-input: #57b846;

@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Some `react` login pages, which can be used quickly after installation.",
   "homepage": "https://uiwjs.github.io/react-login-page",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",

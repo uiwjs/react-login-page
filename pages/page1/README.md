@@ -1,6 +1,6 @@
-@react-login-page/page1
-===
+# @react-login-page/page1
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@react-login-page/page1.svg)](https://www.npmjs.com/package/@react-login-page/page1)
 [![Downloads](https://img.shields.io/npm/dm/@react-login-page/page1.svg?style=flat)](https://www.npmjs.com/package/@react-login-page/page1)
 
@@ -35,7 +35,7 @@ import React from 'react';
 import LoginPage, { Username, Password, Submit, Title, Logo, Reset } from '@react-login-page/page1';
 import LoginLogo from 'react-login-page/logo';
 
-const styles= { height: 620 }
+const styles = { height: 620 };
 
 const Demo = () => (
   <div style={styles}>
@@ -107,7 +107,7 @@ const css = {
   '--login-bg': '#edeff3',
   '--login-bg-from': '#46acfc',
   '--login-bg-to': '#3ffbd8',
-}
+};
 
 const Demo = () => <Login style={{ height: 620, ...css }} />;
 
@@ -128,7 +128,7 @@ Custom CSS style overrides
 
 ```css
 .login-page-1 section button:focus {
-  box-shadow: 0 0 0 2px rgba(0,142,240,.26);
+  box-shadow: 0 0 0 2px rgba(0, 142, 240, 0.26);
 }
 .login-page-1 section button:hover {
   background-color: #0070bd;
@@ -141,17 +141,18 @@ Custom CSS style overrides
 ## Light & Dark Theme
 
 ```css
-[data-color-mode*='dark'] .login-page-1, .login-page-1 {
+[data-color-mode*='dark'] .login-page-1,
+.login-page-1 {
   --login-bg: #2c3338;
   --login-color: #fff;
-  --login-bg-from: #FC466B;
-  --login-bg-to: #3F5EFB;
+  --login-bg-from: #fc466b;
+  --login-bg-to: #3f5efb;
 }
 [data-color-mode*='light'] .login-page-1 {
   --login-bg: #edeff3;
   --login-color: #3b4148;
-  --login-bg-from: #FC466B;
-  --login-bg-to: #3F5EFB;
+  --login-bg-from: #fc466b;
+  --login-bg-to: #3f5efb;
 }
 ```
 

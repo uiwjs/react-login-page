@@ -4,7 +4,7 @@
     "url": "https://github.com/uiwjs/react-login-page.git"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "doc": "npm run-script build --workspace website",
     "start": "npm run-script start --workspace website",

@@ -1,6 +1,6 @@
 {
   "name": "@react-login-page/page2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Some `react` login pages, which can be used quickly after installation.",
   "homepage": "https://uiwjs.github.io/react-login-page",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -42,7 +42,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "react-login-page": "1.0.3"
+    "react-login-page": "1.0.4"
   },
   "keywords": [
     "react",

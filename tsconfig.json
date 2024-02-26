@@ -15,7 +15,6 @@
     "declaration": true,
     "baseUrl": ".",
     "jsx": "react-jsx",
-    "noFallthroughCasesInSwitch": true,
-    "noEmit": true
+    "noFallthroughCasesInSwitch": true
   }
 }

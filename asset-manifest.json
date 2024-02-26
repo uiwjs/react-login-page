@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6051c60c.css",
-    "main.js": "/static/js/main.541c4f48.js",
+    "main.js": "/static/js/main.60a958b7.js",
     "static/js/772.5c817944.chunk.js": "/static/js/772.5c817944.chunk.js",
     "static/js/231.3eae77d2.chunk.js": "/static/js/231.3eae77d2.chunk.js",
     "static/js/286.0162501a.chunk.js": "/static/js/286.0162501a.chunk.js",
@@ -29,7 +29,7 @@
     "index.html": "/index.html",
     "static/media/arrow.svg": "/static/media/arrow.c4532e8bf2b97be87c34837cd1413579.svg",
     "main.6051c60c.css.map": "/static/css/main.6051c60c.css.map",
-    "main.541c4f48.js.map": "/static/js/main.541c4f48.js.map",
+    "main.60a958b7.js.map": "/static/js/main.60a958b7.js.map",
     "772.5c817944.chunk.js.map": "/static/js/772.5c817944.chunk.js.map",
     "231.3eae77d2.chunk.js.map": "/static/js/231.3eae77d2.chunk.js.map",
     "286.0162501a.chunk.js.map": "/static/js/286.0162501a.chunk.js.map",
@@ -53,6 +53,6 @@
     "static/js/refractor-vendor.15b35729.js",
     "static/js/react-vendor.7038eeb0.js",
     "static/css/main.6051c60c.css",
-    "static/js/main.541c4f48.js"
+    "static/js/main.60a958b7.js"
   ]
 }

@@ -37,7 +37,7 @@ const RenderLogin = () => {
             .map((item, idx) => {
               if (!item.children) return null;
               return (
-                <label key={item.name + idx}>
+                <label className={`rlp-${item.name}`} key={item.name + idx}>
                   {item.children} {extra[item.name]}
                 </label>
               );

@@ -49,7 +49,7 @@ const RenderLogin = () => {
                 const htmlFor = item.name.replace('$$login', '');
                 const { name, ...props } = item.children.props;
                 return (
-                  <label htmlFor={htmlFor} key={item.name + idx}>
+                  <label className={`rlp-${item.name}`} htmlFor={htmlFor} key={item.name + idx}>
                     {labelElement && <span className={`login-page8-label`}>{labelElement}</span>}
                     {cloneElement(item.children, {
                       ...props,

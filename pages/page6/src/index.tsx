@@ -37,7 +37,7 @@ const RenderLogin = () => {
               if (!item.children) return null;
               const labelElement = label[`$${item.name}`];
               return (
-                <label htmlFor={item.name} key={item.name + idx}>
+                <label className={`rlp-${item.name}`} htmlFor={item.name} key={item.name + idx}>
                   {labelElement && <span className={`login-page6-label`}>{labelElement}</span>}
                   {item.children}
                   {extraLabel && <div>{extraLabel}</div>}

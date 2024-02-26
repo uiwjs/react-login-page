@@ -10,7 +10,17 @@ export const Password: FC<PasswordProps> = (props) => {
   if (!elmProps.children) {
     elmProps.children = LockIcon;
   }
-  return <Input type="password" placeholder="Password" autoComplete="on" {...elmProps} name={nameBase} keyname={key} />;
+  return (
+    <Input
+      type="password"
+      placeholder="Password"
+      index={2}
+      autoComplete="on"
+      {...elmProps}
+      name={nameBase}
+      keyname={key}
+    />
+  );
 };
 
 Password.displayName = 'Login.Password';

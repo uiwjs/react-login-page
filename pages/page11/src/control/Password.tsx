@@ -12,7 +12,17 @@ export const Password: FC<PasswordProps> = (props) => {
   const { dispatch } = useStore();
   useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return <Input type="password" placeholder="Password" autoComplete="on" {...elmProps} name={nameBase} keyname={key} />;
+  return (
+    <Input
+      type="password"
+      placeholder="Password"
+      autoComplete="on"
+      index={2}
+      {...elmProps}
+      name={nameBase}
+      keyname={key}
+    />
+  );
 };
 
 Password.displayName = 'Login.Password';

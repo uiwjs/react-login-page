@@ -17,7 +17,14 @@ export const Username: FC<UsernameProps> = memo((props) => {
   const nameBase = name || rename || keyname;
 
   return (
-    <Input placeholder="Username" spellCheck={false} {...elmProps} name={nameBase} keyname={`$$${panelName}${key}`} />
+    <Input
+      placeholder="Username"
+      spellCheck={false}
+      index={1}
+      {...elmProps}
+      name={nameBase}
+      keyname={`$$${panelName}${key}`}
+    />
   );
 });
 

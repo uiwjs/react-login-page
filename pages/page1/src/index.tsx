@@ -30,6 +30,7 @@ const RenderLogin = () => {
           {fields
             .sort((a, b) => a.index - b.index)
             .map((item, idx) => {
+              console.log('item', item);
               if (!item.children) return null;
               return <label key={item.name + idx}>{item.children}</label>;
             })}

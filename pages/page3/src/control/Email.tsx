@@ -17,7 +17,9 @@ export const Email: FC<EmailProps> = memo((props) => {
 
   useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
-  return <Input type="email" placeholder="Email" spellCheck={false} {...elmProps} name={nameBase} keyname={key} />;
+  return (
+    <Input type="email" placeholder="Email" index={1} spellCheck={false} {...elmProps} name={nameBase} keyname={key} />
+  );
 });
 
 Email.displayName = 'Login.Email';

@@ -13,7 +13,14 @@ export const Username: FC<UsernameProps> = memo((props) => {
   useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
   return (
-    <Input placeholder="Username" spellCheck={false} {...elmProps} name={name || rename || keyname} keyname={key} />
+    <Input
+      placeholder="Username"
+      spellCheck={false}
+      index={1}
+      {...elmProps}
+      name={name || rename || keyname}
+      keyname={key}
+    />
   );
 });
 

@@ -20,6 +20,7 @@ export const Password: FC<PasswordProps> = memo((props) => {
       type="password"
       placeholder="Password"
       autoComplete="on"
+      index={2}
       {...elmProps}
       name={nameBase}
       keyname={`$$${panelName}${key}`}

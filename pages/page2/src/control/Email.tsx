@@ -10,7 +10,9 @@ export const Email: FC<EmailProps> = (props) => {
   if (!elmProps.children) {
     elmProps.children = EmailIcon;
   }
-  return <Input placeholder="Email" spellCheck={false} {...elmProps} type="email" name={nameBase} keyname={key} />;
+  return (
+    <Input placeholder="Email" spellCheck={false} index={1} {...elmProps} type="email" name={nameBase} keyname={key} />
+  );
 };
 
 Email.displayName = 'Login.Email';

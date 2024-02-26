@@ -22,6 +22,7 @@ export const Password: FC<PasswordProps> = memo((props) => {
       type="password"
       placeholder="Your Password"
       autoComplete="on"
+      index={1}
       {...elmProps}
       name={nameBase}
       visible={visible}

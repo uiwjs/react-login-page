@@ -23,6 +23,7 @@ export const Email: FC<EmailProps> = memo((props) => {
       placeholder="Your Email"
       spellCheck={false}
       visible={visible}
+      index={1}
       {...elmProps}
       name={nameBase}
       keyname={`$$${panel}${key}`}

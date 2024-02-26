@@ -13,7 +13,15 @@ export const Username: FC<UsernameProps> = (props) => {
   useEffect(() => dispatch({ [`$${key}`]: label }), [label]);
 
   return (
-    <Input placeholder="Username" autoComplete="on" spellCheck={false} {...elmProps} name={nameBase} keyname={key} />
+    <Input
+      placeholder="Username"
+      autoComplete="on"
+      spellCheck={false}
+      index={1}
+      {...elmProps}
+      name={nameBase}
+      keyname={key}
+    />
   );
 };
 

@@ -9,6 +9,7 @@ export const Password: FC<InputProps> = (props) => {
       type="password"
       placeholder="Password"
       autoComplete="on"
+      index={2}
       {...elmProps}
       name={name || rename || keyname}
       keyname={key}

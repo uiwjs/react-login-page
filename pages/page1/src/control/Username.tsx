@@ -5,7 +5,7 @@ export const Username: FC<InputProps> = (props) => {
   const { keyname = 'username', name, rename, ...elmProps } = props;
   const nameBase = name || rename || keyname;
   const key = (keyname || name) as string;
-  return <Input type="password" placeholder="Password" {...elmProps} name={nameBase} keyname={key} />;
+  return <Input type="text" index={1} placeholder="Username" {...elmProps} name={nameBase} keyname={key} />;
 };
 
 Username.displayName = 'Login.Username';

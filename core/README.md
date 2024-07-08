@@ -38,6 +38,7 @@
   <a href="https://www.npmjs.com/package/react-login-page" target="__blank">
     <img alt="npm version" src="https://img.shields.io/npm/v/react-login-page.svg">
   </a>
+  <a href="https://hellogithub.com/repository/49e71ff761fc4749bb0bbe87592c458a" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=49e71ff761fc4749bb0bbe87592c458a&claim_uid=ihlPcyk2p10TusQ&theme=small" alt="Featured｜HelloGitHub" /></a>
 </p>
 
 <br />

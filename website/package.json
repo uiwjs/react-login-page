@@ -45,7 +45,7 @@
     "react-code-preview-layout": "^3.0.0",
     "react-dom": "^18.2.0",
     "react-login-page": "1.0.4",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^7.0.0",
     "react-test-renderer": "^18.2.0",
     "styled-components": "^6.0.7"
   },

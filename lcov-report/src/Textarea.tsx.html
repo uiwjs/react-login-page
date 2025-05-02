@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">61.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>11/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -119,16 +119,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,10 +139,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { FC, memo, PropsWithChildren, useEffect } from 'react';
 import { useStore } from './store';
 &nbsp;
@@ -159,30 +159,30 @@ export interface TextareaProps extends React.InputHTMLAttributes&lt;HTMLTextArea
   index?: number;
 }
 &nbsp;
-export const Textarea: FC&lt;PropsWithChildren&lt;TextareaProps&gt;&gt; = <span class="cstat-no" title="statement not covered" >memo(<span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {</span>
-  const { fields = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> extra = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> $$index = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> dispatch } = <span class="cstat-no" title="statement not covered" >useStore();</span>
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-    const { rename, keyname, visible = <span class="branch-0 cbranch-no" title="branch not covered" >true,</span> children, ...elmProps } = <span class="cstat-no" title="statement not covered" >props;</span>
-<span class="cstat-no" title="statement not covered" >    if (keyname || elmProps.name) {</span>
-      const key = <span class="cstat-no" title="statement not covered" >(keyname || elmProps.name) as string;</span>
-<span class="cstat-no" title="statement not covered" >      delete fields[key];</span>
-<span class="cstat-no" title="statement not covered" >      delete extra[key];</span>
-<span class="cstat-no" title="statement not covered" >      delete $$index[key];</span>
-<span class="cstat-no" title="statement not covered" >      dispatch({</span>
+export const Textarea: FC&lt;PropsWithChildren&lt;TextareaProps&gt;&gt; = memo((props) =&gt; {
+  const { fields = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> extra = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> $$index = {}, dispatch } = useStore();
+  useEffect(() =&gt; {
+    const { rename, keyname, visible = true, children, ...elmProps } = props;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (keyname || <span class="branch-1 cbranch-no" title="branch not covered" >elmProps.name)</span> {
+      const key = (keyname || <span class="branch-1 cbranch-no" title="branch not covered" >elmProps.name)</span> as string;
+      delete fields[key];
+      delete extra[key];
+      delete $$index[key];
+      dispatch({
         $$index: { ...$$index, [key]: elmProps.index || 0 },
         extra: {
           ...extra,
-          [key]: children || null,
+          [key]: children || <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
         },
-        fields: { ...fields, [key]: visible ? &lt;textarea {...elmProps} name={rename || elmProps.name} /&gt; : null },
+        fields: { ...fields, [key]: visible ? &lt;textarea {...elmProps} name={rename || elmProps.name} /&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >null </span>},
       });
     }
   }, [props]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return null;</span>
+  return null;
 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >Textarea.displayName = 'Login.Textarea';</span>
+Textarea.displayName = 'Login.Textarea';
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -190,7 +190,7 @@ export const Textarea: FC&lt;PropsWithChildren&lt;TextareaProps&gt;&gt; = <span 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-01T18:12:59.096Z
+                at 2025-05-02T01:30:41.687Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>7/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -115,24 +115,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PropsWithChildren, useEffect, createElement, AllHTMLAttributes, memo } from 'react';
 import { useStore, BlockTagType, Blocks } from './store';
 &nbsp;
@@ -150,24 +150,24 @@ export interface BlockProps&lt;T extends BlockTagType&gt; extends AllHTMLAttribu
   tagName?: T;
 }
 &nbsp;
-export const Block = <span class="cstat-no" title="statement not covered" >memo(<span class="fstat-no" title="function not covered" >&lt;T</span>ag extends BlockTagType = 'div'&gt;(props: PropsWithChildren&lt;Partial&lt;BlockProps&lt;Tag&gt;&gt;&gt;) =&gt; {</span>
-  const { blocks = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> dispatch } = <span class="cstat-no" title="statement not covered" >useStore();</span>
-  const { name, keyname, visible = <span class="branch-0 cbranch-no" title="branch not covered" >true,</span> tagName = <span class="branch-0 cbranch-no" title="branch not covered" >'div',</span> ...elmProps } = <span class="cstat-no" title="statement not covered" >props;</span>
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (name || keyname) {</span>
-      const key = <span class="cstat-no" title="statement not covered" >(keyname || name) as string;</span>
-      const div = <span class="cstat-no" title="statement not covered" >visible ? createElement(tagName, { ...elmProps }, elmProps.children) : null;</span>
-<span class="cstat-no" title="statement not covered" >      delete blocks[key];</span>
-<span class="cstat-no" title="statement not covered" >      dispatch({</span>
+export const Block = memo(&lt;Tag extends BlockTagType = 'div'&gt;(props: PropsWithChildren&lt;Partial&lt;BlockProps&lt;Tag&gt;&gt;&gt;) =&gt; {
+  const { blocks = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> dispatch } = useStore();
+  const { name, keyname, visible = true, tagName = 'div', ...elmProps } = props;
+  useEffect(() =&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (name || keyname) {
+      const key = (keyname || <span class="branch-1 cbranch-no" title="branch not covered" >name)</span> as string;
+      const div = visible ? createElement(tagName, { ...elmProps }, elmProps.children) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+      delete blocks[key];
+      dispatch({
         blocks: { ...blocks, [key]: div as unknown as Blocks&lt;'div'&gt; },
       });
     }
   }, [props]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return null;</span>
+  return null;
 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >Block.displayName = 'Login.Block';</span>
+Block.displayName = 'Login.Block';
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -175,7 +175,7 @@ export const Block = <span class="cstat-no" title="statement not covered" >memo(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-01T18:12:59.096Z
+                at 2025-05-02T01:30:41.687Z
             </div>
         <script src="../prettify.js"></script>
         <script>

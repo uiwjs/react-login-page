@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,18 +98,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -118,7 +118,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FC, Fragment, Children, cloneElement, isValidElement } from 'react';
 import { useStore, RenderStateProps, InitialState } from './store';
 &nbsp;
@@ -126,18 +126,18 @@ export type RenderChildren =
   | { children?: (props: Required&lt;RenderStateProps&gt;, data: InitialState['data']) =&gt; React.ReactNode }
   | { children?: React.ReactNode };
 &nbsp;
-export const Render: FC&lt;RenderChildren&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> children }) =&gt; {</span>
-  const { fields = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> buttons = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> extra = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> $$index = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> blocks = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> data } = <span class="cstat-no" title="statement not covered" >useStore();</span>
-  const childs = <span class="cstat-no" title="statement not covered" >typeof children === 'function' ? [] : Children.toArray(children);</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
+export const Render: FC&lt;RenderChildren&gt; = ({ children }) =&gt; {
+  const { fields = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> buttons = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> extra = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> $$index = {}, blocks = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> data } = useStore();
+  const childs = typeof children === 'function' ? [] : Children.toArray(children);
+  return (
     &lt;Fragment&gt;
       {typeof children === 'function' &amp;&amp;
         !isValidElement(children) &amp;&amp;
         children({ fields, buttons, blocks, extra, $$index }, { ...data })}
       {typeof children !== 'function' &amp;&amp;
-        childs.map(<span class="fstat-no" title="function not covered" >(c</span>hild, key) =&gt; {
-<span class="cstat-no" title="statement not covered" >          if (!isValidElement(child)) <span class="cstat-no" title="statement not covered" >return null;</span></span>
-<span class="cstat-no" title="statement not covered" >          return cloneElement(child, {</span>
+        childs.map((child, key) =&gt; {
+          if (!isValidElement(child)) return null;
+          return cloneElement(child, {
             ...child.props,
             key,
           });
@@ -146,7 +146,7 @@ export const Render: FC&lt;RenderChildren&gt; = <span class="cstat-no" title="st
   );
 };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >Render.displayName = 'Login.Render';</span>
+Render.displayName = 'Login.Render';
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -154,7 +154,7 @@ export const Render: FC&lt;RenderChildren&gt; = <span class="cstat-no" title="st
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-01T18:12:59.096Z
+                at 2025-05-02T01:30:41.687Z
             </div>
         <script src="../prettify.js"></script>
         <script>

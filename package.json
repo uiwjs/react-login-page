@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^15.0.7",
+    "react-test-renderer": "^18",
     "husky": "^9.0.0",
     "lerna": "^8.0.0",
     "lint-staged": "^15.1.0",

@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useEffect, memo } from 'react';
+import { type FC, type PropsWithChildren, useEffect, memo } from 'react';
 import { useStore } from './store';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

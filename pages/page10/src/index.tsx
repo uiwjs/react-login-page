@@ -1,5 +1,5 @@
-import { FC, PropsWithChildren, cloneElement, forwardRef, isValidElement, useState } from 'react';
-import { Render, Provider, Container, useStore, ContainerProps } from 'react-login-page';
+import { cloneElement, forwardRef, isValidElement, useState } from 'react';
+import { Render, Provider, Container, useStore, type ContainerProps } from 'react-login-page';
 import { Email } from './control/login/Email';
 import { Password } from './control/login/Password';
 import { Submit } from './control/login/Submit';

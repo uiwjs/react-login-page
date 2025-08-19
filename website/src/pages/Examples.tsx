@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import type * as CSS from 'csstype';
 import LoginBase from '@react-login-page/base';
 import LoginLogo from 'react-login-page/logo-rect';
 import LoginPage1 from '@react-login-page/page1';
@@ -136,10 +136,10 @@ export const page9: Example = {
   ),
 };
 
-const page10Style = {
+const page10Style: CSS.Properties = {
   backgroundImage: `url(${Login10Img})`,
   '--login-inner-image': `url("${Login10InnerBgImg}")`,
-} as CSSProperties;
+} as CSS.Properties;
 export const page10: Example = {
   magnify: 2.5,
   children: (

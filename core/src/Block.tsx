@@ -1,5 +1,5 @@
 import { PropsWithChildren, useEffect, createElement, AllHTMLAttributes, memo } from 'react';
-import { useStore, BlockTagType, Blocks } from './store';
+import { useStore, type BlockTagType, Blocks } from './store';
 
 export interface BlockProps<T extends BlockTagType> extends AllHTMLAttributes<T> {
   keyname?: string;

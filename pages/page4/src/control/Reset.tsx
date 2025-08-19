@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Button, ButtonProps } from 'react-login-page';
+import { type FC } from 'react';
+import { Button, type ButtonProps } from 'react-login-page';
 
 export const Reset: FC<ButtonProps> = (props) => {
   const { keyname = 'reset', ...elmProps } = props;

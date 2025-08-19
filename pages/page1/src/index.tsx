@@ -1,5 +1,5 @@
 import { cloneElement, forwardRef, isValidElement } from 'react';
-import { Render, Provider, Container, useStore, ContainerProps } from 'react-login-page';
+import { Render, Provider, Container, useStore, type ContainerProps } from 'react-login-page';
 import { Username } from './control/Username';
 import { Password } from './control/Password';
 import { Submit } from './control/Submit';

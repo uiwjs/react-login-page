@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Input, InputProps } from 'react-login-page';
+import { type FC } from 'react';
+import { Input, type InputProps } from 'react-login-page';
 
 export const Password: FC<InputProps> = (props) => {
   const { keyname = 'password', name, ...elmProps } = props;

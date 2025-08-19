@@ -1,5 +1,5 @@
 import { FC, useEffect, memo } from 'react';
-import { Input, InputProps, useStore } from 'react-login-page';
+import { Input, type InputProps, useStore } from 'react-login-page';
 import { IconLock } from '../../icons/lock';
 
 export interface PasswordProps extends InputProps {

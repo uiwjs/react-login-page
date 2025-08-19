@@ -44,7 +44,7 @@ In the example above, we defined an empty `Login` component. The `<Provider>` co
 
 ```tsx
 import { PropsWithChildren } from 'react';
-import { Block, BlockProps, BlockTagType } from 'react-login-page';
+import { Block, type BlockProps, type BlockTagType } from 'react-login-page';
 
 export const Title = <T extends BlockTagType>(props: PropsWithChildren<Partial<BlockProps<T>>>) => {
   const { keyname = 'title', ...elmProps } = props;
@@ -85,8 +85,8 @@ If you need to display the `<Title>` component by default, you should add it to 
 ## Step 3: Define an `Input Box` Component
 
 ```tsx
-import { FC } from 'react';
-import { Input, InputProps } from 'react-login-page';
+import { type FC } from 'react';
+import { Input, type InputProps } from 'react-login-page';
 
 export const Username: FC<InputProps> = (props) => {
   const { keyname = 'username', name, ...elmProps } = props;
@@ -109,8 +109,8 @@ By default, you need to display the `<Username />` component, so add it to the `
 ## Step 4: Define a `Submit Button` Component
 
 ```tsx
-import { FC } from 'react';
-import { Button, ButtonProps } from 'react-login-page';
+import { type FC } from 'react';
+import { Button, type ButtonProps } from 'react-login-page';
 
 export const Submit: FC<ButtonProps> = (props) => {
   const { keyname = 'submit', ...elmProps } = props;
@@ -175,11 +175,11 @@ function Demo() {
 ## Complete Example
 
 ```tsx mdx:preview
-import React, { FC, PropsWithChildren, isValidElement, cloneElement } from 'react';
+import React, { type FC, type PropsWithChildren, isValidElement, cloneElement } from 'react';
 import { Render, Provider, Container, useStore } from 'react-login-page';
-import { Block, BlockProps, BlockTagType } from 'react-login-page';
-import { Button, ButtonProps } from 'react-login-page';
-import { Input, InputProps } from 'react-login-page';
+import { Block, type BlockProps, type BlockTagType } from 'react-login-page';
+import { Button, type ButtonProps } from 'react-login-page';
+import { Input, type InputProps } from 'react-login-page';
 
 // <Title /> Component
 const Title = <T extends BlockTagType>(props: PropsWithChildren<Partial<BlockProps<T>>>) => {

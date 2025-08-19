@@ -1,4 +1,4 @@
-import { Block, BlockProps, BlockTagType } from 'react-login-page';
+import { Block, type BlockProps, type BlockTagType } from 'react-login-page';
 
 export interface InnerBoxProps<Tag extends BlockTagType> extends BlockProps<Tag> {
   panel?: 'login' | 'signup';

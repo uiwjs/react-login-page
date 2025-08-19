@@ -1,4 +1,4 @@
-import { Block, BlockProps, BlockTagType } from 'react-login-page';
+import { Block, type BlockProps, type BlockTagType } from 'react-login-page';
 
 export const Footer = <Tag extends BlockTagType = 'footer'>(props: BlockProps<Tag | 'footer'>) => {
   const { keyname = 'footer', name, ...elmProps } = props;

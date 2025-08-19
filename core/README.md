@@ -517,7 +517,7 @@ export default Demo;
 ```
 
 ```jsx
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   keyname?: string;
   /** Can be shown or hidden with controls */
@@ -556,7 +556,7 @@ import { Render } from 'react-login-page';
 ```
 
 ```tsx
-import { FC } from 'react';
+import { type FC } from 'react';
 import { RenderStateProps, InitialState } from 'react-login-page';
 export type RenderChildren =
   | {

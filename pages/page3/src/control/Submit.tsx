@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Button, ButtonProps } from 'react-login-page';
+import { type FC } from 'react';
+import { Button, type ButtonProps } from 'react-login-page';
 
 export const Submit: FC<ButtonProps> = (props) => {
   const { keyname, name = 'submit', ...elmProps } = props;

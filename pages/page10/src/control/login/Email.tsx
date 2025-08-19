@@ -1,5 +1,5 @@
 import { FC, useEffect, memo } from 'react';
-import { Input, InputProps, useStore } from 'react-login-page';
+import { Input, type InputProps, useStore } from 'react-login-page';
 import { IconEmail } from '../../icons/email';
 
 export interface EmailProps extends InputProps {

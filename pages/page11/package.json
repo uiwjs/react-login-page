@@ -13,7 +13,7 @@
       "import": "./esm/index.js",
       "require": "./cjs/index.js"
     },
-    "./banner.jpg": "./assets/banner.jpg",
+    "./banner.jpg": "./esm/assets/banner.jpg",
     "./README.md": "./README.md",
     "./package.json": "./package.json"
   },

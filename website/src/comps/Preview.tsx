@@ -1,5 +1,6 @@
 import { FC, Fragment, PropsWithChildren } from 'react';
 import { Root, Element, RootContent } from 'hast';
+import type { ExtraProps } from 'react-markdown';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import { ScrollRestoration } from 'react-router-dom';
 import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
@@ -120,7 +121,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
               }
             }}
             components={{
-              div: ({ node, ...props }) => {
+              div: ({ node, ...props }: JSX.IntrinsicElements['div'] & ExtraProps) => {
                 const { 'data-meta': meta, 'data-md': metaData, ...rest } = props as any;
                 const line = node?.position?.start.line;
                 const metaId = getMetaId(metaData) || String(line);
